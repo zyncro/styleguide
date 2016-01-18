@@ -53,8 +53,8 @@ var deploy = require('gulp-gh-pages');
 /**
  * Push build to gh-pages
  */
-gulp.task('gh-pages', function () {
-  return gulp.src("gh-pages/**/*")
+gulp.task('deploy', function () {
+  return gulp.src("dist/**/*")
     .pipe(deploy())
 });
 
@@ -80,7 +80,7 @@ gulp.task('images', function() {
             progressive: true,
             interlaced: true
         })))
-        .pipe(gulp.dest('gh-pages/images'))
+        .pipe(gulp.dest('dist/images'))
         .pipe($.size({
             title: 'images'
         }));
@@ -94,7 +94,7 @@ gulp.task('copy', function() {
             'node_modules/apache-server-configs/dist/.htaccess'
         ], {
             dot: true
-        }).pipe(gulp.dest('gh-pages'))
+        }).pipe(gulp.dest('dist'))
         .pipe($.size({
             title: 'copy'
         }));
@@ -122,7 +122,7 @@ gulp.task('fontsDist', function() {
 // Copy Web Fonts To gh-pages
 gulp.task('fonts', function() {
     return gulp.src(['app/fonts/**'])
-        .pipe(gulp.dest('gh-pages/fonts'))
+        .pipe(gulp.dest('dist/fonts'))
         .pipe($.size({
             title: 'fonts'
         }));
@@ -157,7 +157,7 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('dev/styles'))
         // Concatenate And Minify Styles
         .pipe($.if('*.css', $.csso()))
-        .pipe(gulp.dest('gh-pages/styles'))
+        .pipe(gulp.dest('dist/styles'))
         .pipe($.size({
             title: 'styles'
         }));
@@ -184,7 +184,7 @@ gulp.task('stylesDist', function() {
         .pipe(gulp.dest('dist/styles'))
         // Concatenate And Minify Styles
         .pipe($.if('*.css', $.csso()))
-        .pipe(gulp.dest('gh-pages/styles'))
+        .pipe(gulp.dest('dist/styles'))
         .pipe($.size({
             title: 'styles'
         }));
@@ -234,7 +234,7 @@ gulp.task('html', function() {
         // Minify Any HTML
         .pipe($.if('*.html', $.minifyHtml()))
         // Output Files
-        .pipe(gulp.dest('gh-pages'))
+        .pipe(gulp.dest('dist'))
         .pipe($.size({
             title: 'html'
         }));
@@ -256,7 +256,7 @@ gulp.task('inject', function() {
 });
 
 // Clean Output Directory
-gulp.task('clean', del.bind(null, ['dev', 'gh-pages', 'dist', '.publish']));
+gulp.task('clean', del.bind(null, ['dev', 'dist', 'dist', '.publish']));
 
 // Watch Files For Changes & Reload
 gulp.task('serve', ['inject', 'concat', 'fontsDev', 'styles'], function() {
@@ -318,7 +318,7 @@ gulp.task('dist', function(cb) {
 
 // Copy Web Fonts To dev
 gulp.task('pages', function(cb) {
- runSequence('default', [ 'hjs2pages' ,'gh-pages'], cb);
+ runSequence('default', [ 'hjs2pages' ,'deploy'], cb);
 });
 
 // Load custom tasks from the `tasks` directory
