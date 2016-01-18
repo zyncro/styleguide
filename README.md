@@ -12,7 +12,7 @@
 #Publish Dist
 ```
 TODO: gulp task
-gulp dist && git add . && git commit -am"message" && git push origin master
+gulp dist && git add . && git commit -am"message" && git push origin stable
 ```
 
 

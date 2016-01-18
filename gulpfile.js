@@ -318,8 +318,7 @@ gulp.task('dist', function(cb) {
 
 // Copy Web Fonts To dev
 gulp.task('pages', function(cb) {
-    //'hjs2pages' ,
- runSequence('default', [ 'gh-pages'], cb);
+ runSequence('default', [ 'hjs2pages' ,'gh-pages'], cb);
 });
 
 // Load custom tasks from the `tasks` directory
