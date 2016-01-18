@@ -1,0 +1,29 @@
+//
+// Contenteditable
+// --------------------------------------------------
+
+// Base class
+     .contenteditable {
+        background: initial;
+        padding: 4px;
+        min-height: 150px;
+        height: 100%;
+        &:focus {
+            border: none;
+            box-shadow: none;
+            outline: none;
+        }
+
+
+     input.label-primary {
+        background-color: #eaeaea;
+        height: 20px;
+        border: none;
+        border-radius: 4px;
+        margin: 0 2px;
+    }
+     input.label-primary.hastag {
+        background: none;
+    }
+
+    }

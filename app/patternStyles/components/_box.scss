@@ -1,0 +1,34 @@
+//
+// Box
+// --------------------------------------------------
+
+// Base class
+.box {
+    min-height: 20px;
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 20px;
+    background-color: $well-bg;
+    border: 1px solid $well-border;
+    border-radius: $border-radius-base;
+    //var ->  #bebebe
+    @include box-shadow(0px -1px 0px #bebebe inset);
+}
+
+// Theme
+.box-white {
+    background-color: white;
+}
+
+// Theme
+.box-compound {
+    .box-compound-top,
+    .box-compound-top {
+        margin-bottom: 0;
+        box-shadow: none;
+        border-radius: 3px 3px 0 0;
+    }
+    .box-compound-bottom {
+        border-top: 0;
+        border-radius: 0 0 3px 3px;
+    }
+}

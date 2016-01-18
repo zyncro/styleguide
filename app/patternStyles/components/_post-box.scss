@@ -1,0 +1,32 @@
+//
+// Post-box
+// --------------------------------------------------
+
+// Base class
+.post-box {
+    @include box-shadow(0px -1px 0px #bebebe inset);
+}
+
+.post-box-top {
+    display: flex;
+    align-items: center;
+    > .pull-left {
+        margin-right: 10px;
+    }
+}
+
+//
+// Post-box-Active
+// --------------------------------------------------
+
+// Base class
+.post-box-active {
+    @include box-shadow(0px -1px 0px #bebebe inset);
+    > .post-box-content {
+        margin-top: 4px;
+    }
+}
+.post-box-head {
+    background: white;
+    padding: 14px;
+}

@@ -1,0 +1,33 @@
+//
+// Panels
+// --------------------------------------------------
+// Base class
+.plus {
+    .thumbnail-box-list {
+        // TODO: scroll
+        // This doesnt work, it cuts tooltips
+        // overflow: scroll;
+        // max-height: 249px;
+    }
+    .dropdown-menu {
+        padding: 0;
+        overflow: visible;
+    }
+    .post-box-active {
+        padding: 20px;
+    }
+    
+    .thumbnail-box {
+        margin: 5px;
+    }
+}
+
+.plus-content {
+    width: 300px;
+    padding: 0;
+}
+
+.plus-form {
+    padding: 20px;
+}
+

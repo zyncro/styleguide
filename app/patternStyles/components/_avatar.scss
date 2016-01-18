@@ -1,0 +1,191 @@
+//
+// Avatar
+// --------------------------------------------------
+.avatar {
+    //$radius, $size, $borderColor, $borderSize
+    @include avatar-variant(90px, 40px, white, 2px);
+}
+
+// Avatar Sizes
+// --------------------------------------------------
+
+.avatar-lg {
+    //$radius, $size, $borderColor, $borderSize
+    @include avatar-variant(90px, 126px, white, 2px);
+}
+
+.avatar-sm {
+    //$radius, $size, $borderColor, $borderSize
+    @include avatar-variant(20px, 20px, white, 2px);
+}
+
+//
+// Avatar-info-container
+// --------------------------------------------------
+
+.avatar-info {
+    margin-bottom: 20px;
+    padding-left: 0;
+    position: relative;
+    display: block;
+    padding: 0;
+    .avatar{
+        margin-right: 10px;
+    }
+}
+
+//
+// Avatar-actions
+// --------------------------------------------------
+
+.avatar-actions {
+    overflow: hidden;
+    cursor: pointer;
+    @extend .avatar;
+    i {
+        display: none;
+    }
+}
+.avatar-actions-hover {
+    &:hover {
+        background: $brand_primary;
+        padding: 10px;
+        img {
+            display: none;
+        }
+        .icon-checkbox {
+            display: block;
+        }
+    }
+}
+.avatar-actions-active {
+    background: $brand_primary;
+    padding: 10px;
+    img {
+        display: none;
+    }
+    .icon-check {
+        display: block;
+    }
+}
+// SIZES
+.avatar-actions-sm {
+    @extend .avatar-sm;
+    i {
+        font-size: 10px;
+    }
+    &.avatar-actions-active {
+        padding: 5px;
+    }
+    &:hover {
+        padding: 5px;
+    }
+}
+
+.avatar-actions-lg {
+    @extend .avatar-lg;
+    i {
+        font-size: 60px;
+    }
+    &.avatar-actions-active {
+        padding: 30px;
+    }
+    &:hover {
+        padding: 30px;
+    }
+}
+
+//
+// Avatar-paragraph
+// --------------------------------------------------
+
+.avatar-paragraph {
+    margin-bottom: 20px;
+    .avatar{
+        margin-right: 10px;
+    }
+}
+
+
+
+
+//
+// Avatar-paragraph
+// --------------------------------------------------
+.avatar-info-box{
+    margin: 10px 0;
+}
+
+//
+// Avatar-HEADER
+// --------------------------------------------------
+.avatar-header-row{
+    display: table-row;
+}
+.avatar-header-cell{
+    display: table-cell;
+    vertical-align: middle;
+}
+.avatar-header-cell.avatar {
+    margin: 0 10px;
+}
+
+
+//
+// avatar-icons
+// --------------------------------------------------
+.avatar-icon-primary {
+        @include avatar-icon(35px, $brand_primary);
+}
+.avatar-icon-success {
+        @include avatar-icon(35px, $brand_success);
+}
+.avatar-icon-default{
+     @include avatar-icon(35px, $gray);
+}
+//
+// File-extension-icons
+// --------------------------------------------------
+
+    .xls {
+        @include avatar-icon(35px, $icon-file-xls-bg);
+    }
+    .pdf {
+        @include avatar-icon(35px, $icon-file-pdf-bg);
+    }
+    .codigo, .txt {
+        @include avatar-icon(35px, $icon-file-css-bg);
+    }
+    .doc {
+        @include avatar-icon(35px, $icon-file-doc-bg);
+    }
+    .image {
+        @include avatar-icon(35px, $icon-file-image-bg);
+    }
+    .folder, .file {
+        @include avatar-icon(35px, $icon-folder-bg);
+    }
+    .zip, .ppt {
+        @include avatar-icon(35px, $icon-file-other-bg);
+    }
+    .xls-big {
+        @include avatar-icon(105px, $icon-file-xls-bg);
+    }
+    .pdf-big {
+        @include avatar-icon(105px, $icon-file-pdf-bg);
+    }
+    .codigo-big, .txt-big {
+        @include avatar-icon(105px, $icon-file-css-bg);
+    }
+    .doc-big {
+        @include avatar-icon(35px, $icon-file-doc-bg);
+    }
+    .image-big, .doc-big {
+        @include avatar-icon(105px, $icon-file-image-bg);
+    }
+    .folder-big, .file-big {
+        @include avatar-icon(105px, $icon-folder-bg);
+    }
+    .zip-big, .ppt-big {
+        @include avatar-icon(105px, $icon-file-other-bg);
+    }

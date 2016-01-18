@@ -1,0 +1,161 @@
+/**
+* Layout
+*/
+.table-layout {
+    // display: table;
+    width: 100%;
+    .head {
+        height: $navbar-height;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .table-layout-right,
+    .table-layout-left {
+        vertical-align: top;
+    }
+    .table-layout-right {
+        .widget {
+            padding: 0 7px;
+            width: $main-sidebar-right-widget-width;
+        }
+    }
+}
+
+$collape-button-size: 60px;
+
+.table-layout-collapsed {
+    width: $main-sidebar-left-width;
+}
+
+.table-layout-left {
+    width: $collape-button-size;
+}
+
+.table-layout-content {
+    padding-left: $collape-button-size;
+    padding-right: 0;
+}
+.main-body {
+    .table-layout-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+/**
+* Main Body
+*/
+.main-body {
+    .table-layout {
+        padding: 20px 0;
+    }
+    .table-layout-left {
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background: $brand-gray-blue;
+    }
+
+
+.table-layout-content {
+  /* margin-top: 20px; */
+      padding-bottom: 20px;
+  }
+    .table-layout-right {
+        position: fixed;
+        right: 10px;
+        bottom: 0;
+        top: 81px;
+    }
+    .table-layout-content {
+      >.container-fluid {
+        // border-right: 1px solid $gray-zyncro-4;
+        padding-top: 20px;
+      }
+    }
+}
+
+/**
+* Small Screens collapsed Sidebar
+*/
+.table-layout-collapsed {
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    background: $brand-gray-blue-dark;
+    left: 0;
+    right: 0;
+    top: $navbar-height;
+}
+
+/**
+* MEDIA QUERYS
+*/
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* X-Small devices (tablets, 768px and up) */
+@media (min-width: $screen-xs-min) {
+    .table-layout-collapsed {
+        width: $main-sidebar-left-width;
+    }
+    .table-layout-content {
+        padding-left: $collape-button-size;
+        padding-right: 0;
+    }
+    .main-body {
+        .table-layout-content {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+    .table-layout-content {
+        padding-left: $collape-button-size;
+        padding-right: $main-sidebar-right-width;
+    }
+    .main-body {
+        .table-layout-content {
+            padding-left: 0;
+            padding-right: $main-sidebar-right-width;
+        }
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+    .table-layout-left {
+        width: $collape-button-size;
+    }
+    .table-layout-content {
+        padding-left: $collape-button-size;
+        padding-right: $main-sidebar-right-width;
+    }
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+    .table-layout-left {
+        width: $main-sidebar-left-width;
+    }
+    .table-layout-content {
+        padding-left: $main-sidebar-left-width;
+        padding-right: $main-sidebar-right-width;
+    }
+    .main-body {
+        .table-layout-content {
+            padding-left: $main-sidebar-left-width;
+            padding-right: $main-sidebar-right-width;
+        }
+    }
+}
+
+

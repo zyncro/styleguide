@@ -1,0 +1,327 @@
+/**
+ *
+ *  Web Starter Kit
+ *  Copyright 2014 Google Inc. All rights reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License
+ *
+ */
+
+'use strict';
+
+// Include Gulp & Tools We'll Use
+var gulp = require('gulp');
+var $ = require('gulp-load-plugins')();
+var del = require('del');
+var runSequence = require('run-sequence');
+var browserSync = require('browser-sync');
+var pagespeed = require('psi');
+var reload = browserSync.reload;
+var debug = require('gulp-debug');
+var inject = require('gulp-inject');
+var ngannotate = require('gulp-ng-annotate')
+var concat = require('gulp-concat');
+// var sass = require('gulp-sass');
+// var merge = require('merge-stream');
+// var nginclude = require('gulp-nginclude');
+
+var AUTOPREFIXER_BROWSERS = [
+    'ie >= 10',
+    'ie_mob >= 10',
+    'ff >= 30',
+    'chrome >= 34',
+    'safari >= 7',
+    'opera >= 23',
+    'ios >= 7',
+    'android >= 4.4',
+    'bb >= 10'
+];
+
+
+var deploy = require('gulp-gh-pages');
+
+/**
+ * Push build to gh-pages
+ */
+gulp.task('gh-pages', function () {
+  return gulp.src("gh-pages/**/*")
+    .pipe(deploy())
+});
+
+
+
+
+// Lint JavaScript
+gulp.task('jshint', function() {
+    return gulp.src(['app/scripts/**/*.js', '!app/scripts/bower_components/**'])
+        .pipe(reload({
+            stream: true,
+            once: true
+        }))
+        .pipe($.jshint())
+        .pipe($.jshint.reporter('jshint-stylish'))
+        .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+});
+
+// Optimize Images
+gulp.task('images', function() {
+    return gulp.src('app/images/**/*')
+        .pipe($.cache($.imagemin({
+            progressive: true,
+            interlaced: true
+        })))
+        .pipe(gulp.dest('gh-pages/images'))
+        .pipe($.size({
+            title: 'images'
+        }));
+});
+
+// Copy All Files At The Root Level (app)
+gulp.task('copy', function() {
+    return gulp.src([
+            'app/*',
+            '!app/*.html',
+            'node_modules/apache-server-configs/dist/.htaccess'
+        ], {
+            dot: true
+        }).pipe(gulp.dest('gh-pages'))
+        .pipe($.size({
+            title: 'copy'
+        }));
+});
+
+
+// Copy Web Fonts To dev
+gulp.task('fontsDev', function() {
+    return gulp.src(['app/fonts/**'])
+        .pipe(gulp.dest('dev/fonts'))
+        .pipe($.size({
+            title: 'fonts'
+        }));
+});
+
+// Copy Web Fonts To dev
+gulp.task('fontsDist', function() {
+    return gulp.src(['app/fonts/**'])
+        .pipe(gulp.dest('dist/fonts'))
+        .pipe($.size({
+            title: 'fonts'
+        }));
+});
+
+// Copy Web Fonts To gh-pages
+gulp.task('fonts', function() {
+    return gulp.src(['app/fonts/**'])
+        .pipe(gulp.dest('gh-pages/fonts'))
+        .pipe($.size({
+            title: 'fonts'
+        }));
+});
+
+gulp.task('concat', function() {
+    var scssStream = gulp.src(['app/patternStyles/main.scss','app/docStyles/docs.scss'])
+        .pipe(concat('zyncro-styleguide.scss'))
+        .pipe(gulp.dest('app/patternStyles'));
+    return scssStream;
+});
+
+
+// Compile and Automatically Prefix Stylesheets
+gulp.task('styles', function() {
+
+    // For best performance, don't add Sass partials to `gulp.src`
+    return gulp.src([
+            'app/patternStyles/zyncro-styleguide.scss'
+        ])
+        .pipe(debug())
+        .pipe($.changed('styles', {
+            extension: '.scss'
+        }))
+        .pipe($.rubySass({
+                style: 'expanded',
+                precision: 10
+            })
+            .on('error', console.error.bind(console))
+        )
+        .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+        .pipe(gulp.dest('dev/styles'))
+        // Concatenate And Minify Styles
+        .pipe($.if('*.css', $.csso()))
+        .pipe(gulp.dest('gh-pages/styles'))
+        .pipe($.size({
+            title: 'styles'
+        }));
+});
+
+// Compile and Automatically Prefix Stylesheets
+gulp.task('stylesDist', function() {
+
+    // For best performance, don't add Sass partials to `gulp.src`
+    return gulp.src([
+            'app/patternStyles/zyncro-styleguide.scss'
+        ])
+        .pipe(debug())
+        .pipe($.changed('styles', {
+            extension: '.scss'
+        }))
+        .pipe($.rubySass({
+                style: 'expanded',
+                precision: 10
+            })
+            .on('error', console.error.bind(console))
+        )
+        .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+        .pipe(gulp.dest('dist/styles'))
+        // Concatenate And Minify Styles
+        .pipe($.if('*.css', $.csso()))
+        .pipe(gulp.dest('gh-pages/styles'))
+        .pipe($.size({
+            title: 'styles'
+        }));
+});
+
+
+
+
+// Scan Your HTML For Assets & Optimize Them
+gulp.task('html', function() {
+    var assets = $.useref.assets({
+        searchPath: '{dev,app}'
+    });
+
+    return gulp.src('app/**/*.html')
+        .pipe(assets)
+        // Concatenate And Minify JavaScript
+        .pipe($.if('*.js', $.uglify(
+        {
+            preserveComments: 'some',
+            mangle: false,
+            compress: true
+        }
+        )))
+
+        // Remove Any Unused CSS
+        // Note: If not using the Style Guide, you can delete it from
+        // the next line to only include styles your project uses.
+        .pipe($.if('*.css', $.uncss({
+            html: [
+                'app/index.html',
+                'app/styleguide.html'
+            ],
+            // CSS Selectors for UnCSS to ignore
+            ignore: [
+                /.navdrawer-container.open/,
+                /.app-bar.open/
+            ]
+        })))
+        // Concatenate And Minify Styles
+        // In case you are still using useref build blocks
+        .pipe($.if('*.css', $.csso()))
+        .pipe(assets.restore())
+        .pipe($.useref())
+        // // Update Production Style Guide Paths
+        // .pipe($.replace('components/components.css', 'components/main.min.css'))
+        // Minify Any HTML
+        .pipe($.if('*.html', $.minifyHtml()))
+        // Output Files
+        .pipe(gulp.dest('gh-pages'))
+        .pipe($.size({
+            title: 'html'
+        }));
+});
+
+
+gulp.task('inject', function() {
+    gulp.src('app/scripts/styleguide/styleguide.html')
+        .pipe(debug())
+        .pipe(inject(gulp.src(['app/patternTemplates/{,*/}*.html']), {
+            starttag: '<!-- inject:head:{{ext}} -->',
+            transform: function(filePath, file) {
+                // return file contents as string
+                return file.contents.toString('utf8');
+            }
+        }))
+        .pipe(gulp.dest('app/scripts/styleguide/'));
+
+});
+
+// Clean Output Directory
+gulp.task('clean', del.bind(null, ['dev', 'gh-pages', 'dist', '.publish']));
+
+// Watch Files For Changes & Reload
+gulp.task('serve', ['inject', 'concat', 'fontsDev', 'styles'], function() {
+    browserSync({
+        notify: false,
+        // Run as an https by uncommenting 'https: true'
+        // Note: this uses an unsigned certificate which on first access
+        //       will present a certificate warning in the browser.
+        // https: true,
+        server: ['dev', 'app']
+    });
+
+    gulp.watch(['app/**/*.html'], reload);
+    gulp.watch(['app/**/**/*.html'], reload);
+    //Include patterns in styleguide
+    gulp.watch('app/patternTemplates/**/*.html').on('change', function() {
+        gulp.src('app/scripts/styleguide/styleguide.html')
+            .pipe(debug())
+            .pipe(inject(gulp.src(['app/patternTemplates/{,*/}*.html']), {
+                starttag: '<!-- inject:head:{{ext}} -->',
+                transform: function(filePath, file) {
+                    // return file contents as string
+                    return file.contents.toString('utf8');
+                }
+            }))
+            .pipe(gulp.dest('app/scripts/styleguide/'));
+    });
+    gulp.watch(['app/patternStyles/**/*.{scss,css}','app/docStyles/docs.scss'], ['concat', 'styles', reload]);
+    gulp.watch(['app/scripts/**/*.js'], ['jshint']);
+    gulp.watch(['app/images/**/*'], reload);
+});
+
+// Build Production Files, the Default Task
+gulp.task('default', ['clean'], function(cb) {
+    runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
+});
+
+// Run PageSpeed Insights
+// Update `url` below to the public URL for your site
+gulp.task('pagespeed', pagespeed.bind(null, {
+    // By default, we use the PageSpeed Insights
+    // free (no API key) tier. You can use a Google
+    // Developer API key if you have one. See
+    // http://goo.gl/RkN0vE for info key: 'YOUR_API_KEY'
+    url: 'https://example.com',
+    strategy: 'mobile'
+}));
+
+// hjs to pages
+gulp.task('hjs2pages', function() {
+    return gulp.src(['app/scripts/bower_components/highlightjs/styles/paraiso.dark.css'])
+        .pipe(gulp.dest('scripts/bower_components/highlightjs/styles/paraiso.dark.css'))
+});
+
+// Copy Web Fonts To dev
+gulp.task('dist', function(cb) {
+ runSequence('default', ['fontsDist', 'stylesDist'], cb);
+});
+
+// Copy Web Fonts To dev
+gulp.task('pages', function(cb) {
+ runSequence('default', [ 'hjs2pages' ,'gh-pages'], cb);
+});
+
+// Load custom tasks from the `tasks` directory
+try {
+    require('require-dir')('tasks');
+} catch (err) {}

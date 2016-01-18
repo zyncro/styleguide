@@ -1,0 +1,66 @@
+//
+// Labels
+// --------------------------------------------------
+.search {
+    .input-group {
+        margin: 10px;
+    }
+    .search-input {
+        position: relative;
+        z-index: 2;
+        float: left;
+        width: 100%;
+        margin-bottom: 0;
+        > .dropdown-menu {
+            width: 100%;
+        }
+    }
+    .dropdown-toggle {
+        padding: 6px 12px;
+        line-height: 2;
+        text-align: center;
+        border: none;
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+    .btn-search {
+        // TODO: Variable
+        height: 38px;
+        border: none;
+    }
+}
+
+.search-icon {
+    input {
+        padding-left: 34px;
+    }
+    .icon {
+        color: white;
+        position: absolute;
+        z-index: 5;
+        height: 100%;
+        margin-left: 10px;
+        @extend .vertical-container;
+    }
+}
+
+.search-bg {
+    input {
+        background: $brand-primary-light;
+        border: none;
+        box-shadow: none;
+        color: white;
+        @include placeholder(white);
+    }
+
+    input:active,
+    input:focus,
+    input:active ~ .icon,
+    input:focus ~ .icon
+     {
+        background: white;
+        color: $gray-dark;
+        @include placeholder($gray-dark);
+    }
+ 
+}

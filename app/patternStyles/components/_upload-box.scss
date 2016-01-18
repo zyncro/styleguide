@@ -1,0 +1,54 @@
+//
+// upload-bo
+// --------------------------------------------------
+
+
+// Base class
+.upload-box {
+    padding: 20px;
+    // background-color: $gray;
+    // border: 1px solid $gray;
+    margin-bottom: 10px;
+    > .row {
+        margin: 0;
+        margin-top: 10px;
+    }
+    .drop-area {
+        position: relative;
+        background-color: #FFF;
+        padding-top: 120px;
+        border: dashed 2px $gray;
+
+        &.dragover {
+            border-color: $brand-primary;
+        }
+
+        &.dragover-err {
+            border-color: $brand-warning;
+        }
+
+        > .drop-handler {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        > .drop-label {
+            display: block;
+            position: absolute;
+            top: 40px;
+            left: 20%;
+            right: 20%;
+            text-align: center;
+            height: auto;
+            z-index: 1;
+
+            @include user-select(none);
+        }
+    }
+}

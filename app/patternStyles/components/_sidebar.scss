@@ -1,0 +1,41 @@
+// WIP
+
+//
+// Sidemenu
+// --------------------------------------------------
+.sidemenu {
+    padding-left: 0;
+    margin: $navbar-height 0 0;
+    list-style: none;
+    width: $table-layout-left-width;
+    background: $brand-gray-blue;
+}
+
+.sidemenu-item {
+    height: 60px;
+    border-bottom: 1px solid #131922;
+    box-shadow: 0 2px 2px -3px #aaa;
+    &.selected {
+        background: #0f131a;
+        a {
+            color: $gray;
+        }
+    }
+    a {
+        height: $navbar-height;
+        padding: 20px 20px 20px;
+        display: block;
+        text-decoration: none;
+        color: $gray;
+        i {
+            width: 30px;
+        }
+        &:hover {
+            background: $brand-gray-blue-light;
+            color: white;
+        }
+        &:active {
+            background: $brand-gray-blue-dark;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+// Avatar
+@mixin avatar-variant($radius, $size, $borderColor, $borderSize) {
+    border-radius: $radius;
+    // border: $borderSize solid $borderColor;
+    width: $size;
+    height: $size;
+    background-size: $size $size;
+    background-repeat: no-repeat;
+}
+
+@mixin avatar-icon($size, $background) {
+    background: $background;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    text-align: center;
+    line-height: $size + 5;
+    vertical-align: middle;
+    padding: 0px;
+    color: #ffffff;
+}

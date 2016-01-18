@@ -1,0 +1,32 @@
+//
+// Box
+// --------------------------------------------------
+
+// Base class
+
+.zy-datepicker {
+    display: inline-block;
+    .btn-default {
+        background: none;
+        border: none;
+    }
+    tr > td:first-child {
+        display: none;
+    }
+    th:first-child {
+        display: none;
+    }
+}
+
+
+
+.zy-datepicker .btn-default.active,
+ .zy-datepicker + ul .btn-default.active{
+    background:$brand-primary;
+    color:white;
+}
+
+
+.zy-datepicker + ul {
+    @extend .zy-datepicker;
+}

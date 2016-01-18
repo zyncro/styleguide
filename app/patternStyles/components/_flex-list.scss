@@ -1,0 +1,136 @@
+//
+// FLEX List
+// --------------------------------------------------
+
+// Base class
+//
+.list-flex{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+.list-flex-row {
+    display: flex;
+    background-color: $list-group-bg;
+    position: relative;
+    margin-bottom: -1px;
+    @extend .vertical-container;
+    &:first-child {
+        @include border-top-radius($list-group-border-radius);
+    }
+    &:last-child {
+        margin-bottom: 0;
+        @include border-bottom-radius($list-group-border-radius);
+    }
+    &:hover,
+    &:focus {
+        color: $list-group-link-hover-color;
+        background-color: $list-group-hover-bg;
+        cursor: pointer;
+    }
+    &.active,
+    &.active:hover,
+    &.active:focus {
+        color: $list-group-active-color;
+        background-color: $list-group-active-bg;
+        border-color: $list-group-active-border;
+    }
+    &.active {
+        .list-flex-btn {
+            color: $list-group-active-color;
+        }
+        //DROPDOWN STYLE
+        .list-flex-btn {
+            > a {
+                color: $list-group-active-color;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.list-flex-row-footer {
+    background-color: $gray;
+    padding: 10px;
+    text-align: center;
+}
+
+// HARDOCODED TODO variables!!!
+.list-flex-level {
+    padding-left: 20px;
+}
+
+.list-flex-item {
+    padding: 10px;
+}
+
+.list-flex-item-heading {
+    font-weight: bold;
+}
+
+//*** TODO: Move to mixins
+// Helpers
+.flex-initial {
+    flex: initial;
+}
+
+.flex-none {
+    flex: none;
+}
+
+.flex1 {
+    flex: 1;
+}
+
+.flex2 {
+    flex: 2;
+}
+
+
+// TODO: move to helpers
+.ellipsis {
+    // text-align: left;
+    padding: 0 5px;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.vertical-container {
+    display: flex;
+    align-list-flex-items: center;
+    justify-content: center;
+    align-items: center;
+}
+// END TODO: move to helpers
+
+
+
+.list-flex-title,
+.list-flex-title:hover
+{
+    color:white;
+    background: $brand-primary;
+}
+
+//Variants
+.list-flex-bordered {
+    .list-flex-row {
+        border: 1px solid $list-group-border;
+    }
+}
+.list-flex-sm{
+    .list-flex-item{
+           padding: 4px 5px;
+    }
+}
+
+.list-flex-mobile {
+    background: $gray-lighter;
+    .list-flex-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+}

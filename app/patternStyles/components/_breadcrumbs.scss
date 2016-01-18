@@ -1,0 +1,40 @@
+//
+// Breadcrumbs
+// --------------------------------------------------
+.breadcrumb {
+    padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;
+    margin-bottom: $line-height-computed;
+    list-style: none;
+    background-color: $breadcrumb-bg;
+    border-radius: $border-radius-base;
+    > li {
+        display: inline-block;
+        + li:before {
+            content: "#{$breadcrumb-separator}\00a0"; // Unicode space added since inline-block means non-collapsing white-space
+            padding: 0 5px;
+            color: $breadcrumb-color;
+        }
+    }
+    > .active {
+        color: $breadcrumb-active-color;
+    }
+}
+
+.zy-breadcrumb {
+    background: none;
+    > li {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    > li + li:before {
+        content: "!";
+        font-family: "zyncro-icons";
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        speak: none;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
