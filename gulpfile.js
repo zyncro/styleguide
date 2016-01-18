@@ -53,12 +53,25 @@ var deploy = require('gulp-gh-pages');
 /**
  * Push build to gh-pages
  */
-gulp.task('deploy', function () {
+gulp.task('pages', function () {
   return gulp.src("dist/**/*")
     .pipe(deploy())
 });
 
 
+
+gulp.task('deploy-pages', function(done) {
+    runSequence('default', 'pages', function() {
+        console.log('Run something else');
+        done();
+    });
+});
+
+
+// Build Production Files, the Default Task
+gulp.task('deploy-src', ['clean'], function(cb) {
+    runSequence(['stylesSrc', 'fontsSrc'], cb);
+});
 
 
 // Lint JavaScript
@@ -102,7 +115,7 @@ gulp.task('copy', function() {
 
 
 // Copy Web Fonts To dev
-gulp.task('fontsDev', function() {
+gulp.task('fontsTemp', function() {
     return gulp.src(['app/fonts/**'])
         .pipe(gulp.dest('dev/fonts'))
         .pipe($.size({
@@ -110,16 +123,17 @@ gulp.task('fontsDev', function() {
         }));
 });
 
-// Copy Web Fonts To dev
-gulp.task('fontsDist', function() {
+// Copy Web Fonts To src
+gulp.task('fontsSrc', function() {
     return gulp.src(['app/fonts/**'])
-        .pipe(gulp.dest('dist/fonts'))
+        .pipe(gulp.dest('src/fonts'))
         .pipe($.size({
             title: 'fonts'
         }));
 });
 
-// Copy Web Fonts To gh-pages
+
+// Copy Web Fonts To Dist
 gulp.task('fonts', function() {
     return gulp.src(['app/fonts/**'])
         .pipe(gulp.dest('dist/fonts'))
@@ -164,7 +178,7 @@ gulp.task('styles', function() {
 });
 
 // Compile and Automatically Prefix Stylesheets
-gulp.task('stylesDist', function() {
+gulp.task('stylesSrc', function() {
 
     // For best performance, don't add Sass partials to `gulp.src`
     return gulp.src([
@@ -181,17 +195,14 @@ gulp.task('stylesDist', function() {
             .on('error', console.error.bind(console))
         )
         .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-        .pipe(gulp.dest('dist/styles'))
+        .pipe(gulp.dest('dev/styles'))
         // Concatenate And Minify Styles
         .pipe($.if('*.css', $.csso()))
-        .pipe(gulp.dest('dist/styles'))
+        .pipe(gulp.dest('src/styles'))
         .pipe($.size({
             title: 'styles'
         }));
 });
-
-
-
 
 // Scan Your HTML For Assets & Optimize Them
 gulp.task('html', function() {
@@ -256,10 +267,20 @@ gulp.task('inject', function() {
 });
 
 // Clean Output Directory
-gulp.task('clean', del.bind(null, ['dev', 'dist', 'dist', '.publish']));
+gulp.task('clean', del.bind(null, ['dev', 'dist', 'src', '.publish']));
+
+
+
+// hjs to pages
+gulp.task('hjs2pages', function() {
+    return gulp.src(['app/scripts/bower_components/highlightjs/styles/paraiso.dark.css'])
+        .pipe(gulp.dest('dist/scripts/bower_components/highlightjs/styles/'))
+});
+
+
 
 // Watch Files For Changes & Reload
-gulp.task('serve', ['inject', 'concat', 'fontsDev', 'styles'], function() {
+gulp.task('serve', ['inject', 'concat', 'fontsTemp', 'styles'], function() {
     browserSync({
         notify: false,
         // Run as an https by uncommenting 'https: true'
@@ -289,9 +310,11 @@ gulp.task('serve', ['inject', 'concat', 'fontsDev', 'styles'], function() {
     gulp.watch(['app/images/**/*'], reload);
 });
 
+
+
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function(cb) {
-    runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
+    runSequence('styles', ['jshint','inject', 'concat', 'hjs2pages', 'html', 'images', 'fonts', 'copy' ], cb);
 });
 
 // Run PageSpeed Insights
@@ -305,21 +328,7 @@ gulp.task('pagespeed', pagespeed.bind(null, {
     strategy: 'mobile'
 }));
 
-// hjs to pages
-gulp.task('hjs2pages', function() {
-    return gulp.src(['app/scripts/bower_components/highlightjs/styles/paraiso.dark.css'])
-        .pipe(gulp.dest('scripts/bower_components/highlightjs/styles/paraiso.dark.css'))
-});
 
-// Copy Web Fonts To dev
-gulp.task('dist', function(cb) {
- runSequence('default', ['fontsDist', 'stylesDist'], cb);
-});
-
-// Copy Web Fonts To dev
-gulp.task('pages', function(cb) {
- runSequence('default', [ 'hjs2pages' ,'deploy'], cb);
-});
 
 // Load custom tasks from the `tasks` directory
 try {

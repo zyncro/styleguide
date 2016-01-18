@@ -4,6 +4,7 @@ node_modules
 .publish
 .sass-cache
 dev
+dist
 .tmp
 logs/*
 !.gitkeep
