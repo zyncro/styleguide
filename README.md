@@ -11,7 +11,7 @@
 ##Publish Dist
 ```
 TODO: gulp task
-gulp deploy-src && git add . && git commit -am"message" && git push origin stable
+gulp deploy-src && git add . && git commit -am"message" && git push origin master
 ```
 
 
