@@ -137,14 +137,15 @@ margin:0;
     }
 }
 
-
 .glyphs > li {
     float: left;
     margin: 10px;
     list-style: none;
 }
 
-
+.modal-dialog {
+    width: 100%;
+}
 .avatar-icon {display:inline-block;}
 
 hr{
