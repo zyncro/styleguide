@@ -25,8 +25,6 @@ sudo gem install sass
 
 ### Clone
 
-Clone the angular-web-starter repository using [git][git]:
-
 ```
 git clone https://github.com/zyncro/styleguide.git
 cd styleguide
