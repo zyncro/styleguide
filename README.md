@@ -1,19 +1,6 @@
-##Dev
-```
- gulp serv
-```
 
-##Publish to git pages gulp gh-pages (Wait for DNS propagation on github)
-```
- gulp deploy-pages
-```
-
-##Publish Dist
-```
-TODO: gulp task
-gulp deploy-src && git add . && git commit -am"message" && git push origin master
-```
-
+# [Zyncro Styleguide](http://zyncro.github.io/styleguide/#/styleguide)
+[Preview](http://zyncro.github.io/styleguide/#/styleguide)
 
 ## Prerequisites
 
@@ -54,4 +41,66 @@ this server is:
 ```
 npm start
 ```
+
+---
+
+##Dev
+```
+ gulp serv
+```
+
+##Publish to git pages gulp gh-pages (Wait for DNS propagation on github)
+```
+ gulp deploy-pages
+```
+
+## Publish Dist
+```
+TODO: gulp task
+gulp deploy-src && git add . && git commit -am"message" && git push origin master
+```
+
+---
+
+## Components
+Just add a new html file to the path and the gulp task will do everything for you
+- Automatic generated menu
+- Automatic code snippets
+- Automatic Inject Templates
+
+```
+zyncro-styleguide/
+  |- app/
+  |  |- patternStyles (SASS)
+  |  |- patternTemplate (HTML)
+```
+
+### patternTemplate
+
+#### Required:
+```
+<section id="" class="">
+<h1>
+<div class="code-sample">
+```
+
+#### Example:
+
+```
+<section id="Box" class="styleguide">
+    <h1>Box</h1>
+    <div class="code-sample">
+        <h2>Box-single</h2>
+        <div class="box">Default Box</div>
+        <div class="box box-white">White Box</div>
+        <h2>Box-compound</h2>
+        <hr/>
+        <div class="box-compound">
+            <div class="box box-compound-top box-white">Small Boxx</div>
+            <div class="box box-compound-bottom">Default Bo</div>
+        </div>
+    </div>
+</section>
+```
+
 
