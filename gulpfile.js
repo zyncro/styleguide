@@ -61,7 +61,7 @@ gulp.task('pages', function () {
 
 
 gulp.task('deploy-pages', function(done) {
-    runSequence('default', 'pages', function() {
+    runSequence('default', ['pages'], function() {
         console.log('Run something else');
         done();
     });
@@ -320,7 +320,7 @@ gulp.task('serve', ['inject', 'concat', 'fontsTemp', 'styles'], function() {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function(cb) {
-    runSequence('styles', ['jshint','inject', 'concatSrc', 'hjs2pages', 'html', 'images', 'fonts', 'copy' ], cb);
+    runSequence('styles', ['jshint','inject', 'concat', 'hjs2pages', 'html', 'images', 'fonts', 'copy' ], cb);
 });
 
 // Run PageSpeed Insights

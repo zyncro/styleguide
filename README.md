@@ -1,7 +1,7 @@
 
 # [Zyncro Styleguide](http://zyncro.github.io/styleguide/#/styleguide)
 [Preview](http://zyncro.github.io/styleguide/#/styleguide)
-
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
 ## Prerequisites
 
 
@@ -68,6 +68,8 @@ Just add a new html file to the path and the gulp task will do everything for yo
 - Automatic code snippets
 - Automatic Inject Templates
 
+
+
 ```
 zyncro-styleguide/
   |- app/
@@ -75,9 +77,8 @@ zyncro-styleguide/
   |  |- patternTemplate (HTML)
 ```
 
-### patternTemplate
 
-#### Required:
+#### patternTemplate Requires:
 ```
 <section id="" class="">
 <h1>
