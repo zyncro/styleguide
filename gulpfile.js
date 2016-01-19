@@ -70,7 +70,7 @@ gulp.task('deploy-pages', function(done) {
 
 // Build Production Files, the Default Task
 gulp.task('deploy-src', ['clean'], function(cb) {
-    runSequence(['stylesSrc', 'fontsSrc'], cb);
+    runSequence(['concatSrc', 'stylesSrc', 'fontsSrc'], cb);
 });
 
 
