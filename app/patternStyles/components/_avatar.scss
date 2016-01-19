@@ -41,6 +41,7 @@
 .avatar-actions {
     overflow: hidden;
     cursor: pointer;
+    display: inline-block;
     @extend .avatar;
     i {
         display: none;
@@ -68,6 +69,7 @@
         display: block;
     }
 }
+
 // SIZES
 .avatar-actions-sm {
     @extend .avatar-sm;
@@ -106,11 +108,8 @@
     }
 }
 
-
-
-
 //
-// Avatar-paragraph
+// Avatar-info-box
 // --------------------------------------------------
 .avatar-info-box{
     margin: 10px 0;
@@ -132,7 +131,7 @@
 
 
 //
-// avatar-icons
+// Avatar-icons
 // --------------------------------------------------
 .avatar-icon-primary {
         @include avatar-icon(35px, $brand_primary);

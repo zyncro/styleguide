@@ -176,11 +176,19 @@
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
 </div>
+
+<em>EJ: Eliminar comentario</em>
+<div class="alert alert-gray">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <em>Mensaje borrado</em> <a href="#" class="alert-link">deshacer.</a>
+</div>
+
 <div class="alert">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <h4>Warning!</h4>
     <p>This is a block style alert.</p>
 </div>
+
 </div>
 </section>
             
@@ -188,7 +196,7 @@
 <section id="Avatar" name="Avatar" class="styleguide">
     <h1>Avatar</h1>
     <div class="code-sample">
-            <h2>Avatar-Sizes</h2>
+        <h2>Avatar-Sizes</h2>
         <hr/>
         <img class="avatar-sm" src="http://placehold.it/20x20" />
  
@@ -400,6 +408,60 @@
         <div class="badge badge-info">10</div>
         <div class="badge badge-warning">10</div>
         <div class="badge badge-danger">10</div>
+    </div>
+</section>
+
+            
+
+<section id="Box-filter" class="styleguide">
+    <h1>Box-filter</h1>
+    <div class="code-sample">
+        <form class="form-inline box ng-pristine ng-valid">
+            <label>Resultados: </label>
+            <input type="text" class="form-control" placeholder="Donde:">
+            <input type="text" class="form-control" placeholder="Cuando:">
+            <input type="text" class="form-control" placeholder="Quien:">
+        </form>
+    </div>
+</section>
+
+            
+
+<section id="Box-summary" class="styleguide">
+    <h1>Box-summary</h1>
+    <div class="code-sample">
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="box box-white">
+                    <div class="clearfix">
+                        <h4 class="pull-left">Usuarios Añadir</h4>
+                        <h4 class="pull-right">Usuarios</h4>
+                    </div>
+                    <div class="clearfix">
+                        <h4 class="pull-right">2000</h4>
+                    </div>
+                    <div class="progress progress-striped">
+                        <div class="progress-bar progress-bar-info" style="width: 20%">40</div>
+                    </div>
+                    <h4>Tienes asignados 4 de 2000 usuarios</h4>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="box box-white">
+                    <div class="clearfix">
+                        <h4 class="pull-left">Usuarios Añadir</h4>
+                        <h4 class="pull-right">Usuarios</h4>
+                    </div>
+                    <div class="clearfix">
+                        <h4 class="pull-right">2000</h4>
+                    </div>
+                    <div class="progress progress-striped">
+                        <div class="progress-bar progress-bar-info" style="width: 20%">40</div>
+                    </div>
+                    <h4>Tienes asignados 4 de 2000 usuarios</h4>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -1039,30 +1101,29 @@
     <h1>List-Flex</h1>
     <div class="code-sample">
         <div class="list-flex list-flex-bordered">
-            <div class="list-flex list-flex-bordered">
-                <!-- ROW -->
-                <div class="list-flex-row">
-                    <div class="list-flex-item flex-initial">
-                        <div class="avatar-actions avatar-actions-hover">
-                            <img class="avatar" src="http://placehold.it/126x126">
-                            <i class="icon icon-check"></i>
-                            <i class="icon icon-checkbox"></i>
-                        </div>
+            <!-- ROW -->
+            <div class="list-flex-row">
+                <div class="list-flex-item flex-initial">
+                    <div class="avatar-actions avatar-actions-hover">
+                        <img class="avatar" src="http://placehold.it/126x126">
+                        <i class="icon icon-check"></i>
+                        <i class="icon icon-checkbox"></i>
                     </div>
-                    <div class="list-flex-item flex1 ellipsis">
-                        <div class="list-flex-item-heading ellipsis"> He'll try to make the precise location appear </div>
-                        <div class="list-flex-item-text ellipsis">
-                            He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say. I've done more that.
-                        </div>
+                </div>
+                <div class="list-flex-item flex1 ellipsis">
+                    <div class="list-flex-item-heading ellipsis"> He'll try to make the precise location appear </div>
+                    <div class="list-flex-item-text ellipsis">
+                        He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say. I've done more that.
                     </div>
-                    <div class="list-flex-item flex-none hidden-xs hidden-sm hidden-md">
-                        <button class="btn btn-default btn-xs">SOLICITAR ACCESO</button>
-                    </div>
-                    <div class="list-flex-item flex-none">
-                        <a role="button" href="#" class="list-flex-btn btn btn-link btn-link-icon hidden-xs hidden-sm hidden-md">
-                            <i class="icon-star-off " tooltip="Marcar como..."></i>
-                        </a>
-                        <span class="dropdown btn btn-link btn-link-icon" dropdown on-toggle="toggled(open)">
+                </div>
+                <div class="list-flex-item flex-none hidden-xs hidden-sm hidden-md">
+                    <button class="btn btn-default btn-xs">SOLICITAR ACCESO</button>
+                </div>
+                <div class="list-flex-item flex-none">
+                    <a role="button" href="#" class="list-flex-btn btn btn-link btn-link-icon hidden-xs hidden-sm hidden-md">
+                        <i class="icon-star-off " tooltip="Marcar como..."></i>
+                    </a>
+                    <span class="dropdown btn btn-link btn-link-icon" dropdown on-toggle="toggled(open)">
                         <a href dropdown-toggle role="button" href="#" class="dropdown-toggle list-flex-btn btn btn-link btn-link-icon">
                              <i class="icon icon-more"></i>
                         </a>
@@ -1072,52 +1133,52 @@
                             </li>
                         </ul>
                     </span>
-                    </div>
                 </div>
-                <!-- Moble -->
-                <div class="list-flex-mobile list-flex-row visible-xs visible-sm visible-md">
-                    <div class="list-flex-item">
-                        <div class="btn-group">
-                            <button class="btn btn-primary btn-xs">SOLICITAR ACCESO</button>
-                            <a role="button" href="#" class="btn btn-link btn-link-icon">
-                                <i tooltip="Add like" class="icon-like-off"></i>
-                            </a>
-                            <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
-                                <i class="icon-comment"></i>
-                            </a>
-                            <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
-                                <i class="icon-star-off " tooltip="Marcar como..."></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- END ROW -->
-                <!-- ROW -->
-                <div class="list-flex-row list-flex-level">
-                    <div class="list-flex-item flex-initial">
-                        <i class="icon-pag-next" tooltip="tooltip"></i>
-                    </div>
-                    <div class="list-flex-item flex-initial">
-                        <div class="avatar-actions avatar-actions-hover">
-                            <img class="avatar" src="http://placehold.it/126x126">
-                            <i class="icon icon-check"></i>
-                            <i class="icon icon-checkbox"></i>
-                        </div>
-                    </div>
-                    <div class="list-flex-item flex1 ellipsis">
-                        <div class="list-flex-item-heading ellipsis"> He'll try to make the precise location appear </div>
-                        <div class="list-flex-item-text ellipsis">
-                            He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say. I've done more that.
-                        </div>
-                    </div>
-                    <div class="list-flex-item flex-none hidden-xs hidden-sm hidden-md">
-                        <button class="btn btn-default btn-xs">SOLICITAR ACCESO</button>
-                    </div>
-                    <div class="list-flex-item flex-none">
-                        <a role="button" href="#" class="list-flex-btn btn btn-link btn-link-icon hidden-xs hidden-sm hidden-md">
+            </div>
+            <!-- Moble -->
+            <div class="list-flex-mobile list-flex-row visible-xs visible-sm visible-md">
+                <div class="list-flex-item">
+                    <div class="btn-group">
+                        <button class="btn btn-primary btn-xs">SOLICITAR ACCESO</button>
+                        <a role="button" href="#" class="btn btn-link btn-link-icon">
+                            <i tooltip="Add like" class="icon-like-off"></i>
+                        </a>
+                        <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
+                            <i class="icon-comment"></i>
+                        </a>
+                        <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
                             <i class="icon-star-off " tooltip="Marcar como..."></i>
                         </a>
-                        <span class="dropdown btn btn-link btn-link-icon" dropdown on-toggle="toggled(open)">
+                    </div>
+                </div>
+            </div>
+            <!-- END ROW -->
+            <!-- ROW -->
+            <div class="list-flex-row list-flex-level">
+                <div class="list-flex-item flex-initial">
+                    <i class="icon-pag-next" tooltip="tooltip"></i>
+                </div>
+                <div class="list-flex-item flex-initial">
+                    <div class="avatar-actions avatar-actions-hover">
+                        <img class="avatar" src="http://placehold.it/126x126">
+                        <i class="icon icon-check"></i>
+                        <i class="icon icon-checkbox"></i>
+                    </div>
+                </div>
+                <div class="list-flex-item flex1 ellipsis">
+                    <div class="list-flex-item-heading ellipsis"> He'll try to make the precise location appear </div>
+                    <div class="list-flex-item-text ellipsis">
+                        He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say. I've done more that.
+                    </div>
+                </div>
+                <div class="list-flex-item flex-none hidden-xs hidden-sm hidden-md">
+                    <button class="btn btn-default btn-xs">SOLICITAR ACCESO</button>
+                </div>
+                <div class="list-flex-item flex-none">
+                    <a role="button" href="#" class="list-flex-btn btn btn-link btn-link-icon hidden-xs hidden-sm hidden-md">
+                        <i class="icon-star-off " tooltip="Marcar como..."></i>
+                    </a>
+                    <span class="dropdown btn btn-link btn-link-icon" dropdown on-toggle="toggled(open)">
                         <a href dropdown-toggle role="button" href="#" class="dropdown-toggle list-flex-btn btn btn-link btn-link-icon">
                              <i class="icon icon-more"></i>
                         </a>
@@ -1127,49 +1188,49 @@
                             </li>
                         </ul>
                     </span>
-                    </div>
                 </div>
-                <!-- Moble -->
-                <div class="list-flex-mobile list-flex-row visible-xs visible-sm visible-md">
-                    <div class="list-flex-item">
-                        <div class="btn-group">
-                            <button class="btn btn-primary btn-xs">SOLICITAR ACCESO</button>
-                            <a role="button" href="#" class="btn btn-link btn-link-icon">
-                                <i tooltip="Add like" class="icon-like-off"></i>
-                            </a>
-                            <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
-                                <i class="icon-comment"></i>
-                            </a>
-                            <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
-                                <i class="icon-star-off " tooltip="Marcar como..."></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- END ROW -->
-                <!-- ROW -->
-                <div class="list-flex-row active">
-                    <div class="list-flex-item flex-initial">
-                        <div class="avatar-actions avatar-actions-hover">
-                            <img class="avatar" src="http://placehold.it/126x126">
-                            <i class="icon icon-check"></i>
-                            <i class="icon icon-checkbox"></i>
-                        </div>
-                    </div>
-                    <div class="list-flex-item flex1 ellipsis">
-                        <div class="list-flex-item-heading ellipsis"> He'll try to make the precise location appear </div>
-                        <div class="list-flex-item-text ellipsis">
-                            He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say. I've done more that.
-                        </div>
-                    </div>
-                    <div class="list-flex-item flex-none hidden-xs hidden-sm hidden-md">
-                        <button class="btn btn-default btn-xs">SOLICITAR ACCESO</button>
-                    </div>
-                    <div class="list-flex-item flex-none">
-                        <a role="button" href="#" class="list-flex-btn btn btn-link btn-link-icon hidden-xs hidden-sm hidden-md">
+            </div>
+            <!-- Moble -->
+            <div class="list-flex-mobile list-flex-row visible-xs visible-sm visible-md">
+                <div class="list-flex-item">
+                    <div class="btn-group">
+                        <button class="btn btn-primary btn-xs">SOLICITAR ACCESO</button>
+                        <a role="button" href="#" class="btn btn-link btn-link-icon">
+                            <i tooltip="Add like" class="icon-like-off"></i>
+                        </a>
+                        <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
+                            <i class="icon-comment"></i>
+                        </a>
+                        <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
                             <i class="icon-star-off " tooltip="Marcar como..."></i>
                         </a>
-                        <span class="dropdown btn btn-link btn-link-icon" dropdown on-toggle="toggled(open)">
+                    </div>
+                </div>
+            </div>
+            <!-- END ROW -->
+            <!-- ROW -->
+            <div class="list-flex-row active">
+                <div class="list-flex-item flex-initial">
+                    <div class="avatar-actions avatar-actions-hover">
+                        <img class="avatar" src="http://placehold.it/126x126">
+                        <i class="icon icon-check"></i>
+                        <i class="icon icon-checkbox"></i>
+                    </div>
+                </div>
+                <div class="list-flex-item flex1 ellipsis">
+                    <div class="list-flex-item-heading ellipsis"> He'll try to make the precise location appear </div>
+                    <div class="list-flex-item-text ellipsis">
+                        He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say. I've done more that.
+                    </div>
+                </div>
+                <div class="list-flex-item flex-none hidden-xs hidden-sm hidden-md">
+                    <button class="btn btn-default btn-xs">SOLICITAR ACCESO</button>
+                </div>
+                <div class="list-flex-item flex-none">
+                    <a role="button" href="#" class="list-flex-btn btn btn-link btn-link-icon hidden-xs hidden-sm hidden-md">
+                        <i class="icon-star-off " tooltip="Marcar como..."></i>
+                    </a>
+                    <span class="dropdown btn btn-link btn-link-icon" dropdown on-toggle="toggled(open)">
                         <a href dropdown-toggle role="button" href="#" class="dropdown-toggle list-flex-btn btn btn-link btn-link-icon">
                              <i class="icon icon-more"></i>
                         </a>
@@ -1179,217 +1240,250 @@
                             </li>
                         </ul>
                     </span>
-                    </div>
                 </div>
-                <!-- Moble -->
-                <div class="list-flex-mobile list-flex-row visible-xs visible-sm visible-md">
-                    <div class="list-flex-item">
-                        <div class="btn-group">
-                            <button class="btn btn-primary btn-xs">SOLICITAR ACCESO</button>
-                            <a role="button" href="#" class="btn btn-link btn-link-icon">
-                                <i tooltip="Add like" class="icon-like-off"></i>
-                            </a>
-                            <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
-                                <i class="icon-comment"></i>
-                            </a>
-                            <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
-                                <i class="icon-star-off " tooltip="Marcar como..."></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- END ROW -->
-                <!-- ROW-Footer -->
-                <div class="list-flex-row list-flex-row-footer">
-                    <div class="list-flex-item flex1 ellipsis">
-                        Ver todos los resultados
+            </div>
+            <!-- Moble -->
+            <div class="list-flex-mobile list-flex-row visible-xs visible-sm visible-md">
+                <div class="list-flex-item">
+                    <div class="btn-group">
+                        <button class="btn btn-primary btn-xs">SOLICITAR ACCESO</button>
+                        <a role="button" href="#" class="btn btn-link btn-link-icon">
+                            <i tooltip="Add like" class="icon-like-off"></i>
+                        </a>
+                        <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
+                            <i class="icon-comment"></i>
+                        </a>
+                        <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
+                            <i class="icon-star-off " tooltip="Marcar como..."></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            <hr/>
-            <h4>List-Flex-Titled</h4>
-           
-            <!-- list-flex-titled -->
-            <ul class="list-flex list-flex-sm">
-                <!-- TITLE -->
-                <li class="list-flex-row list-flex-title">
-                    <div class="list-flex-item flex-initial">
-                        <img class="avatar avatar-sm" src="http://placehold.it/126x126">
-                    </div>
-                    <div class="list-flex-item flex1 ellipsis">
-                        <div class="list-flex-item-text ellipsis">
-                            Invitaciones
-                        </div>
-                    </div>
-                    <div class="list-flex-item flex-none">
-                        <button class="btn btn-default btn-xs">Ver todo</button>
-                    </div>
-                </li>
-                <!-- TITLE -->
-                <li class="list-flex-row">
-                    <div class="list-flex-item flex-initial">
-                        <img class="avatar avatar-sm" src="http://placehold.it/126x126">
-                    </div>
-                    <div class="list-flex-item flex1 ellipsis">
-                        <div class="list-flex-item-heading ellipsis"> He'll try to make the precise location appear </div>
-                        <div class="list-flex-item-text ellipsis">
-                            He says he's found the main
-                        </div>
-                    </div>
-                    <div class="list-flex-item flex-none">
-                        Date
-                    </div>
-                    <div class="list-flex-item flex-none">
-                        <div class="avatar-icon avatar-icon-primary">
-                            <i class="icon icon-check"></i>
-                        </div>
-                        <div class="avatar-icon avatar-icon-default">
-                            <i class="icon icon-close"></i>
-                        </div>
-                        <div class="avatar-icon avatar-icon-success">
-                            <i class="icon icon-check"></i>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-flex-row">
-                    <div class="list-flex-item flex-initial">
-                        <img class="avatar avatar-sm" src="http://placehold.it/126x126">
-                    </div>
-                    <div class="list-flex-item flex1 ellipsis">
-                        <div class="list-flex-item-heading ellipsis"> He'll try to make the precise location appear </div>
-                        <div class="list-flex-item-text ellipsis">
-                            He says he's found the main
-                        </div>
-                    </div>
-                    <div class="list-flex-item flex-none">
-                        Date
-                    </div>
-                    <div class="list-flex-item flex-none">
-                        <div class="avatar-icon avatar-icon-primary">
-                            <i class="icon icon-check"></i>
-                        </div>
-                        <div class="avatar-icon avatar-icon-default">
-                            <i class="icon icon-close"></i>
-                        </div>
-                        <div class="avatar-icon avatar-icon-success">
-                            <i class="icon icon-check"></i>
-                        </div>
-                </li>
-                <!-- TITLE -->
-                <li class="list-flex-row list-flex-title">
-                    <div class="list-flex-item flex-initial">
-                        <img class="avatar avatar-sm" src="http://placehold.it/126x126">
-                    </div>
-                    <div class="list-flex-item flex1 ellipsis">
-                        <div class="list-flex-item-text ellipsis">
-                            Notificaciones
-                        </div>
-                    </div>
-                    <div class="list-flex-item flex-none">
-                        <button class="btn btn-default btn-xs">Ver todo</button>
-                    </div>
-                </li>
-                <!-- TITLE -->
-                <li class="list-flex-row">
-                    <div class="list-flex-item flex-initial">
-                        <img class="avatar avatar-sm" src="http://placehold.it/126x126">
-                    </div>
-                    <div class="list-flex-item flex1 ellipsis">
-                        <div class="list-flex-item-heading ellipsis"> He'll try to make the precise location appear </div>
-                        <div class="list-flex-item-text ellipsis">
-                            He says he's found the main
-                        </div>
-                    </div>
-                    <div class="list-flex-item flex-none">
-                        Date
-                    </div>
-                    <div class="list-flex-item flex-none">
-                        <div class="avatar-icon avatar-icon-primary">
-                            <i class="icon icon-check"></i>
-                        </div>
-                        <div class="avatar-icon avatar-icon-default">
-                            <i class="icon icon-close"></i>
-                        </div>
-                        <div class="avatar-icon avatar-icon-success">
-                            <i class="icon icon-check"></i>
-                        </div>
-                </li>
-                <li class="list-flex-row">
-                    <div class="list-flex-item flex-initial">
-                        <img class="avatar avatar-sm" src="http://placehold.it/126x126">
-                    </div>
-                    <div class="list-flex-item flex1 ellipsis">
-                        <div class="list-flex-item-heading ellipsis"> He'll try to make the precise location appear </div>
-                        <div class="list-flex-item-text ellipsis">
-                            He says he's found the main
-                        </div>
-                    </div>
-                    <div class="list-flex-item flex-none">
-                        Date
-                    </div>
-                    <div class="list-flex-item flex-none">
-                        <div class="avatar-icon avatar-icon-primary">
-                            <i class="icon icon-check"></i>
-                        </div>
-                        <div class="avatar-icon avatar-icon-default">
-                            <i class="icon icon-close"></i>
-                        </div>
-                        <div class="avatar-icon avatar-icon-success">
-                            <i class="icon icon-check"></i>
-                        </div>
-                </li>
-            </ul>
-            <hr/>
-            <h4>Small</h4>
-            <!-- list-flex-bordered -->
-            <div class="list-flex list-flex-sm">
-                <!-- ROW -->
-                <div class="list-flex-row">
-                    <div class="list-flex-item flex-initial">
-                        <img class="avatar avatar-sm" src="http://placehold.it/126x126">
-                    </div>
-                    <div class="list-flex-item flex1 ellipsis">
-                        <div class="list-flex-item-text ellipsis">
-                            He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say. I've done more that.
-                        </div>
-                    </div>
-                    <div class="list-flex-item flex-none">
-                        <button class="btn btn-default btn-xs">SOLICITAR ACCESO</button>
-                    </div>
+            <!-- END ROW -->
+            <!-- ROW-Footer -->
+            <div class="list-flex-row list-flex-row-footer">
+                <div class="list-flex-item flex1 ellipsis">
+                    Ver todos los resultados
                 </div>
-                <!-- END ROW -->
-                <!-- ROW -->
-                <div class="list-flex-row">
-                    <div class="list-flex-item flex-initial">
-                        <img class="avatar avatar-sm" src="http://placehold.it/126x126">
-                    </div>
-                    <div class="list-flex-item flex1 ellipsis">
-                        <div class="list-flex-item-text ellipsis">
-                            He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say. I've done more that.
-                        </div>
-                    </div>
-                    <div class="list-flex-item flex-none">
-                        <button class="btn btn-default btn-xs">SOLICITAR ACCESO</button>
-                    </div>
-                </div>
-                <!-- END ROW -->
-                <!-- ROW -->
-                <div class="list-flex-row">
-                    <div class="list-flex-item flex-initial">
-                        <img class="avatar avatar-sm" src="http://placehold.it/126x126">
-                    </div>
-                    <div class="list-flex-item flex1 ellipsis">
-                        <div class="list-flex-item-text ellipsis">
-                            He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say. I've done more that.
-                        </div>
-                    </div>
-                    <div class="list-flex-item flex-none">
-                        <button class="btn btn-default btn-xs">SOLICITAR ACCESO</button>
-                    </div>
-                </div>
-                <!-- END ROW -->
             </div>
+        </div>
+
+
+
+
+
+
+
+
+        <hr/>
+        <h4>List-Flex-simple</h4>
+        <div class="list-flex list-flex-bordered">
+            <!-- ROW -->
+            <div class="list-flex-row">
+                <div class="list-flex-item flex-initial">
+                    <div class="avatar-actions avatar-actions-hover">
+                        <img class="avatar" src="http://placehold.it/126x126">
+                        <i class="icon icon-check"></i>
+                        <i class="icon icon-checkbox"></i>
+                    </div>
+                </div>
+                <div class="list-flex-item flex2 ellipsis">
+                    <div class="list-flex-item-heading ellipsis">2pac Shakur</div>
+                    <div class="list-flex-item-text ellipsis">
+                        2pac@yopmail.com
+                    </div>
+                </div>
+                <div class="list-flex-item flex-none">
+                    Dueño
+                </div>
             </div>
+        </div>
+
+
+
+        <hr/>
+        <h4>List-Flex-Titled</h4>
+        <!-- list-flex-titled -->
+        <ul class="list-flex list-flex-sm">
+            <!-- TITLE -->
+            <li class="list-flex-row list-flex-title">
+                <div class="list-flex-item flex-initial">
+                    <img class="avatar avatar-sm" src="http://placehold.it/126x126">
+                </div>
+                <div class="list-flex-item flex1 ellipsis">
+                    <div class="list-flex-item-text ellipsis">
+                        Invitaciones
+                    </div>
+                </div>
+                <div class="list-flex-item flex-none">
+                    <button class="btn btn-default btn-xs">Ver todo</button>
+                </div>
+            </li>
+            <!-- TITLE -->
+            <li class="list-flex-row">
+                <div class="list-flex-item flex-initial">
+                    <img class="avatar avatar-sm" src="http://placehold.it/126x126">
+                </div>
+                <div class="list-flex-item flex1 ellipsis">
+                    <div class="list-flex-item-heading ellipsis"> He'll try to make the precise location appear </div>
+                    <div class="list-flex-item-text ellipsis">
+                        He says he's found the main
+                    </div>
+                </div>
+                <div class="list-flex-item flex-none">
+                    Date
+                </div>
+                <div class="list-flex-item flex-none">
+                    <div class="avatar-icon avatar-icon-primary">
+                        <i class="icon icon-check"></i>
+                    </div>
+                    <div class="avatar-icon avatar-icon-default">
+                        <i class="icon icon-close"></i>
+                    </div>
+                    <div class="avatar-icon avatar-icon-success">
+                        <i class="icon icon-check"></i>
+                    </div>
+                </div>
+            </li>
+            <li class="list-flex-row">
+                <div class="list-flex-item flex-initial">
+                    <img class="avatar avatar-sm" src="http://placehold.it/126x126">
+                </div>
+                <div class="list-flex-item flex1 ellipsis">
+                    <div class="list-flex-item-heading ellipsis"> He'll try to make the precise location appear </div>
+                    <div class="list-flex-item-text ellipsis">
+                        He says he's found the main
+                    </div>
+                </div>
+                <div class="list-flex-item flex-none">
+                    Date
+                </div>
+                <div class="list-flex-item flex-none">
+                    <div class="avatar-icon avatar-icon-primary">
+                        <i class="icon icon-check"></i>
+                    </div>
+                    <div class="avatar-icon avatar-icon-default">
+                        <i class="icon icon-close"></i>
+                    </div>
+                    <div class="avatar-icon avatar-icon-success">
+                        <i class="icon icon-check"></i>
+                    </div>
+            </li>
+            <!-- TITLE -->
+            <li class="list-flex-row list-flex-title">
+                <div class="list-flex-item flex-initial">
+                    <img class="avatar avatar-sm" src="http://placehold.it/126x126">
+                </div>
+                <div class="list-flex-item flex1 ellipsis">
+                    <div class="list-flex-item-text ellipsis">
+                        Notificaciones
+                    </div>
+                </div>
+                <div class="list-flex-item flex-none">
+                    <button class="btn btn-default btn-xs">Ver todo</button>
+                </div>
+            </li>
+            <!-- TITLE -->
+            <li class="list-flex-row">
+                <div class="list-flex-item flex-initial">
+                    <img class="avatar avatar-sm" src="http://placehold.it/126x126">
+                </div>
+                <div class="list-flex-item flex1 ellipsis">
+                    <div class="list-flex-item-heading ellipsis"> He'll try to make the precise location appear </div>
+                    <div class="list-flex-item-text ellipsis">
+                        He says he's found the main
+                    </div>
+                </div>
+                <div class="list-flex-item flex-none">
+                    Date
+                </div>
+                <div class="list-flex-item flex-none">
+                    <div class="avatar-icon avatar-icon-primary">
+                        <i class="icon icon-check"></i>
+                    </div>
+                    <div class="avatar-icon avatar-icon-default">
+                        <i class="icon icon-close"></i>
+                    </div>
+                    <div class="avatar-icon avatar-icon-success">
+                        <i class="icon icon-check"></i>
+                    </div>
+            </li>
+            <li class="list-flex-row">
+                <div class="list-flex-item flex-initial">
+                    <img class="avatar avatar-sm" src="http://placehold.it/126x126">
+                </div>
+                <div class="list-flex-item flex1 ellipsis">
+                    <div class="list-flex-item-heading ellipsis"> He'll try to make the precise location appear </div>
+                    <div class="list-flex-item-text ellipsis">
+                        He says he's found the main
+                    </div>
+                </div>
+                <div class="list-flex-item flex-none">
+                    Date
+                </div>
+                <div class="list-flex-item flex-none">
+                    <div class="avatar-icon avatar-icon-primary">
+                        <i class="icon icon-check"></i>
+                    </div>
+                    <div class="avatar-icon avatar-icon-default">
+                        <i class="icon icon-close"></i>
+                    </div>
+                    <div class="avatar-icon avatar-icon-success">
+                        <i class="icon icon-check"></i>
+                    </div>
+            </li>
+        </ul>
+        <hr/>
+        <h4>Small</h4>
+        <!-- list-flex-bordered -->
+        <div class="list-flex list-flex-sm">
+            <!-- ROW -->
+            <div class="list-flex-row">
+                <div class="list-flex-item flex-initial">
+                    <img class="avatar avatar-sm" src="http://placehold.it/126x126">
+                </div>
+                <div class="list-flex-item flex1 ellipsis">
+                    <div class="list-flex-item-text ellipsis">
+                        He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say. I've done more that.
+                    </div>
+                </div>
+                <div class="list-flex-item flex-none">
+                    <button class="btn btn-default btn-xs">SOLICITAR ACCESO</button>
+                </div>
+            </div>
+            <!-- END ROW -->
+            <!-- ROW -->
+            <div class="list-flex-row">
+                <div class="list-flex-item flex-initial">
+                    <img class="avatar avatar-sm" src="http://placehold.it/126x126">
+                </div>
+                <div class="list-flex-item flex1 ellipsis">
+                    <div class="list-flex-item-text ellipsis">
+                        He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say. I've done more that.
+                    </div>
+                </div>
+                <div class="list-flex-item flex-none">
+                    <button class="btn btn-default btn-xs">SOLICITAR ACCESO</button>
+                </div>
+            </div>
+            <!-- END ROW -->
+            <!-- ROW -->
+            <div class="list-flex-row">
+                <div class="list-flex-item flex-initial">
+                    <img class="avatar avatar-sm" src="http://placehold.it/126x126">
+                </div>
+                <div class="list-flex-item flex1 ellipsis">
+                    <div class="list-flex-item-text ellipsis">
+                        He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say. I've done more that.
+                    </div>
+                </div>
+                <div class="list-flex-item flex-none">
+                    <button class="btn btn-default btn-xs">SOLICITAR ACCESO</button>
+                </div>
+            </div>
+            <!-- END ROW -->
+        </div>
+    </div>
 </section>
 
             
