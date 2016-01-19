@@ -966,7 +966,20 @@ $component-active-bg: $brand-primary;
 
 
 // Typography
-$font-family-sans-serif: Open Sans;
+$font-path: 		'../fonts/open-sans-fontfacekit/';
+$font-name:          "OpenSans-Regular-webfont" !default;
+$font-svg-id:        "open_sansregular" !default;
+
+@font-face {
+  font-family: 'open_sansregular';
+  src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$font-path}#{$font-name}.eot'), '#{$font-path}#{$font-name}.eot'));
+  src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$font-path}#{$font-name}.eot?#iefix'), '#{$font-path}#{$font-name}.eot?#iefix')) format('embedded-opentype'),
+       url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$font-path}#{$font-name}.woff'), '#{$font-path}#{$font-name}.woff')) format('woff'),
+       url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$font-path}#{$font-name}.ttf'), '#{$font-path}#{$font-name}.ttf')) format('truetype'),
+       url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$font-path}#{$font-name}.svg##{$font-svg-id}'), '#{$icon-font-path}#{$font-name}.svg##{$font-svg-id}')) format('svg');
+}
+
+$font-family-sans-serif: open_sansregular;
 $font-family-serif: PT Serif;
 $font-family-monospace: Monaco;
 $font-family-base: $font-family-sans-serif;
