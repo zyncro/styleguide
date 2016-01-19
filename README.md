@@ -105,3 +105,13 @@ zyncro-styleguide/
 ```
 
 
+#### patternStyles Requires:
+```
+zyncro-styleguide/
+  |- app/
+  |  |- patternStyles (SASS)
+  |  |	|- mains.scss
+```
+
+@import "components/componentName";
+
