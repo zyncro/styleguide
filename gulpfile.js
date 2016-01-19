@@ -148,6 +148,12 @@ gulp.task('concat', function() {
         .pipe(gulp.dest('app/patternStyles'));
     return scssStream;
 });
+gulp.task('concatSrc', function() {
+    var scssStream = gulp.src(['app/patternStyles/main.scss'])
+        .pipe(concat('zyncro-styleguide.scss'))
+        .pipe(gulp.dest('app/patternStyles'));
+    return scssStream;
+});
 
 
 // Compile and Automatically Prefix Stylesheets
@@ -314,7 +320,7 @@ gulp.task('serve', ['inject', 'concat', 'fontsTemp', 'styles'], function() {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function(cb) {
-    runSequence('styles', ['jshint','inject', 'concat', 'hjs2pages', 'html', 'images', 'fonts', 'copy' ], cb);
+    runSequence('styles', ['jshint','inject', 'concatSrc', 'hjs2pages', 'html', 'images', 'fonts', 'copy' ], cb);
 });
 
 // Run PageSpeed Insights
