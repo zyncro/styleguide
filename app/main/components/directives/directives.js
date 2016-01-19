@@ -11,16 +11,6 @@ angular.module('myApp.directives', [])
                 resize(attrs.w);
             });
 
-            // $window.addEventListener('resize', reset());
-
-            // function reset() {
-            //     var e = document.querySelector('.container-breakpoints');
-            //      if(e){
-            //        e.removeAttribute('style'); 
-            //     }
-            // }
-
-
             function resize(w) {            
                 var e = document.querySelector('.container-breakpoints');
                 
@@ -38,13 +28,13 @@ angular.module('myApp.directives', [])
 .directive('navbar', function($timeout, $location, $anchorScroll) {
     return {
         restrict: 'EA',
-        templateUrl: 'scripts/components/directives/navbar.html',
+        templateUrl: 'main/components/directives/navbar.html',
         link: function(scope, element) {
 
 
             //NAVBBAR ACTIVE
             scope.isActive = function (viewLocation) { 
-                    return viewLocation === $location.path();
+                return viewLocation === $location.path();
             };
 
             scope.status = {
@@ -108,27 +98,15 @@ angular.module('myApp.directives', [])
 .directive('includes', function($compile) {
     return {
         restrict: 'EAC',
-            scope:{
-                template: '='
-            },
-            replace: true,
-            link: function(scope, element, attrs) {
-
+        scope:{
+            template: '='
+        },
+        replace: true,
+        link: function(scope, element, attrs) {
             angular.element(element).ready(function() {
-             var e = document.querySelectorAll(scope.template);
-
-             console.log(element[0]);
-                console.log(e[0]);
-
-            element.append(e[0]);
-            // $compile(e)(scope);
-
+               var e = document.querySelectorAll(scope.template);
+               element.append(e[0]);
             });
-
-
-
-            }
+        }
     };
-})
-
-;
+});

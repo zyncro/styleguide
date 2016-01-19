@@ -76,7 +76,7 @@ gulp.task('deploy-src', ['clean'], function(cb) {
 
 // Lint JavaScript
 gulp.task('jshint', function() {
-    return gulp.src(['app/scripts/**/*.js', '!app/scripts/bower_components/**'])
+    return gulp.src(['app/main/**/*.js', '!app/main/bower_components/**'])
         .pipe(reload({
             stream: true,
             once: true
@@ -143,12 +143,17 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('concat', function() {
-    var scssStream = gulp.src(['app/patternStyles/main.scss','app/docStyles/docs.scss'])
+    var scssStream = gulp.src(['app/patternStyles/main.scss','app/main/styles/docs.scss'])
         .pipe(concat('zyncro-styleguide.scss'))
         .pipe(gulp.dest('app/patternStyles'));
     return scssStream;
 });
-
+gulp.task('concatSrc', function() {
+    var scssStream = gulp.src(['app/patternStyles/main.scss'])
+        .pipe(concat('zyncro-styleguide.scss'))
+        .pipe(gulp.dest('app/patternStyles'));
+    return scssStream;
+});
 
 // Compile and Automatically Prefix Stylesheets
 gulp.task('styles', function() {
@@ -253,7 +258,7 @@ gulp.task('html', function() {
 
 
 gulp.task('inject', function() {
-    gulp.src('app/scripts/styleguide/styleguide.html')
+    gulp.src('app/main/styleguide/styleguide.html')
         .pipe(debug())
         .pipe(inject(gulp.src(['app/patternTemplates/{,*/}*.html']), {
             starttag: '<!-- inject:head:{{ext}} -->',
@@ -262,7 +267,7 @@ gulp.task('inject', function() {
                 return file.contents.toString('utf8');
             }
         }))
-        .pipe(gulp.dest('app/scripts/styleguide/'));
+        .pipe(gulp.dest('app/main/styleguide/'));
 
 });
 
@@ -273,8 +278,8 @@ gulp.task('clean', del.bind(null, ['dev', 'dist', 'src', '.publish']));
 
 // hjs to pages
 gulp.task('hjs2pages', function() {
-    return gulp.src(['app/scripts/bower_components/highlightjs/styles/paraiso.dark.css'])
-        .pipe(gulp.dest('dist/scripts/bower_components/highlightjs/styles/'))
+    return gulp.src(['app/main/bower_components/highlightjs/styles/paraiso.dark.css'])
+        .pipe(gulp.dest('dist/main/bower_components/highlightjs/styles/'))
 });
 
 
@@ -294,7 +299,7 @@ gulp.task('serve', ['inject', 'concat', 'fontsTemp', 'styles'], function() {
     gulp.watch(['app/**/**/*.html'], reload);
     //Include patterns in styleguide
     gulp.watch('app/patternTemplates/**/*.html').on('change', function() {
-        gulp.src('app/scripts/styleguide/styleguide.html')
+        gulp.src('app/main/styleguide/styleguide.html')
             .pipe(debug())
             .pipe(inject(gulp.src(['app/patternTemplates/{,*/}*.html']), {
                 starttag: '<!-- inject:head:{{ext}} -->',
@@ -303,10 +308,10 @@ gulp.task('serve', ['inject', 'concat', 'fontsTemp', 'styles'], function() {
                     return file.contents.toString('utf8');
                 }
             }))
-            .pipe(gulp.dest('app/scripts/styleguide/'));
+            .pipe(gulp.dest('app/main/styleguide/'));
     });
-    gulp.watch(['app/patternStyles/**/*.{scss,css}','app/docStyles/docs.scss'], ['concat', 'styles', reload]);
-    gulp.watch(['app/scripts/**/*.js'], ['jshint']);
+    gulp.watch(['app/patternStyles/**/*.{scss,css}','app/main/styles/docs.scss'], ['concat', 'styles', reload]);
+    gulp.watch(['app/main/**/*.js'], ['jshint']);
     gulp.watch(['app/images/**/*'], reload);
 });
 
@@ -314,7 +319,7 @@ gulp.task('serve', ['inject', 'concat', 'fontsTemp', 'styles'], function() {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function(cb) {
-    runSequence('styles', ['jshint','inject', 'concat', 'hjs2pages', 'html', 'images', 'fonts', 'copy' ], cb);
+    runSequence('styles', ['jshint','inject', 'concatSrc', 'hjs2pages', 'html', 'images', 'fonts', 'copy' ], cb);
 });
 
 // Run PageSpeed Insights

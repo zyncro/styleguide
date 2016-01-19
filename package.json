@@ -45,8 +45,7 @@
     "psi": "^0.1.2",
     "require-dir": "^0.1.0",
     "run-sequence": "^0.3.6",
-    "shelljs": "^0.2.6",
-    "browserstack-client": "^2.0.0"
+    "shelljs": "^0.2.6"
   },
   "engines": {
     "node": ">=0.10.0"

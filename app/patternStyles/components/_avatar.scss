@@ -4,6 +4,7 @@
 .avatar {
     //$radius, $size, $borderColor, $borderSize
     @include avatar-variant(90px, 40px, white, 2px);
+    color: white;
 }
 
 // Avatar Sizes

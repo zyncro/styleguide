@@ -5,7 +5,7 @@ angular.module('myApp.styleguide', ['ngRoute','ngSanitize', 'ui.select'])
 .config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.when('/styleguide', {
-            templateUrl: 'scripts/styleguide/styleguide.html',
+            templateUrl: 'main/styleguide/styleguide.html',
             controller: 'styleguideCtrl'
         });
     }
