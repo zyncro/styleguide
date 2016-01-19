@@ -3,18 +3,6 @@
  *  Web Starter Kit
  *  Copyright 2014 Google Inc. All rights reserved.
  *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License
- *
  */
 
 'use strict';
@@ -31,10 +19,7 @@ var debug = require('gulp-debug');
 var inject = require('gulp-inject');
 var ngannotate = require('gulp-ng-annotate')
 var concat = require('gulp-concat');
-// var sass = require('gulp-sass');
-// var merge = require('merge-stream');
-// var nginclude = require('gulp-nginclude');
-
+var deploy = require('gulp-gh-pages');
 var AUTOPREFIXER_BROWSERS = [
     'ie >= 10',
     'ie_mob >= 10',
@@ -47,30 +32,24 @@ var AUTOPREFIXER_BROWSERS = [
     'bb >= 10'
 ];
 
-
-var deploy = require('gulp-gh-pages');
-
 /**
  * Push build to gh-pages
  */
 gulp.task('pages', function () {
-  return gulp.src("dist/**/*")
+  return gulp.src("pages/**/*")
     .pipe(deploy())
 });
 
-
-
 gulp.task('deploy-pages', function(done) {
-    runSequence('default', ['pages'], function() {
+    runSequence('default', 'pages', function() {
         console.log('Run something else');
         done();
     });
 });
 
-
 // Build Production Files, the Default Task
 gulp.task('deploy-src', ['clean'], function(cb) {
-    runSequence(['concatSrc', 'stylesSrc', 'fontsSrc'], cb);
+    runSequence(['stylesSrc', 'fontsSrc'], cb);
 });
 
 
@@ -93,7 +72,7 @@ gulp.task('images', function() {
             progressive: true,
             interlaced: true
         })))
-        .pipe(gulp.dest('dist/images'))
+        .pipe(gulp.dest('pages/images'))
         .pipe($.size({
             title: 'images'
         }));
@@ -104,10 +83,10 @@ gulp.task('copy', function() {
     return gulp.src([
             'app/*',
             '!app/*.html',
-            'node_modules/apache-server-configs/dist/.htaccess'
+            'node_modules/apache-server-configs/pages/.htaccess'
         ], {
             dot: true
-        }).pipe(gulp.dest('dist'))
+        }).pipe(gulp.dest('pages'))
         .pipe($.size({
             title: 'copy'
         }));
@@ -133,10 +112,10 @@ gulp.task('fontsSrc', function() {
 });
 
 
-// Copy Web Fonts To Dist
+// Copy Web Fonts To pages
 gulp.task('fonts', function() {
     return gulp.src(['app/fonts/**'])
-        .pipe(gulp.dest('dist/fonts'))
+        .pipe(gulp.dest('pages/fonts'))
         .pipe($.size({
             title: 'fonts'
         }));
@@ -144,12 +123,6 @@ gulp.task('fonts', function() {
 
 gulp.task('concat', function() {
     var scssStream = gulp.src(['app/patternStyles/main.scss','app/main/styles/docs.scss'])
-        .pipe(concat('zyncro-styleguide.scss'))
-        .pipe(gulp.dest('app/patternStyles'));
-    return scssStream;
-});
-gulp.task('concatSrc', function() {
-    var scssStream = gulp.src(['app/patternStyles/main.scss'])
         .pipe(concat('zyncro-styleguide.scss'))
         .pipe(gulp.dest('app/patternStyles'));
     return scssStream;
@@ -177,7 +150,7 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('dev/styles'))
         // Concatenate And Minify Styles
         .pipe($.if('*.css', $.csso()))
-        .pipe(gulp.dest('dist/styles'))
+        .pipe(gulp.dest('pages/styles'))
         .pipe($.size({
             title: 'styles'
         }));
@@ -251,7 +224,7 @@ gulp.task('html', function() {
         // Minify Any HTML
         .pipe($.if('*.html', $.minifyHtml()))
         // Output Files
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('pages'))
         .pipe($.size({
             title: 'html'
         }));
@@ -273,14 +246,14 @@ gulp.task('inject', function() {
 });
 
 // Clean Output Directory
-gulp.task('clean', del.bind(null, ['dev', 'dist', 'src', '.publish']));
+gulp.task('clean', del.bind(null, ['dev', 'pages', 'src', '.publish']));
 
 
 
 // hjs to pages
 gulp.task('hjs2pages', function() {
     return gulp.src(['app/main/bower_components/highlightjs/styles/paraiso.dark.css'])
-        .pipe(gulp.dest('dist/main/bower_components/highlightjs/styles/'))
+        .pipe(gulp.dest('pages/main/bower_components/highlightjs/styles/'))
 });
 
 
