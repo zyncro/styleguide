@@ -144,10 +144,24 @@ margin:0;
 }
 
 .modal-dialog {
-    width: 100%;
+    width: auto;
 }
+
 .avatar-icon {display:inline-block;}
 
 hr{
     border-top: 1px solid $gray;
 }
+
+@media (max-width: $screen-xs-max) {
+   .styleguide {
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    }
+}
+
+
+
+

@@ -42,14 +42,13 @@ gulp.task('pages', function () {
 
 gulp.task('deploy-pages', function(done) {
     runSequence('default', 'pages', function() {
-        console.log('Run something else');
         done();
     });
 });
 
 // Build Production Files, the Default Task
 gulp.task('deploy-src', ['clean'], function(cb) {
-    runSequence(['stylesSrc', 'fontsSrc'], cb);
+    runSequence(['concatSrc','stylesSrc', 'fontsSrc'], cb);
 });
 
 
@@ -128,10 +127,15 @@ gulp.task('concat', function() {
     return scssStream;
 });
 
+gulp.task('concatSrc', function(concatSrc) {
+    var scssStream = gulp.src(['app/patternStyles/main.scss'])
+        .pipe(concat('zyncro-styleguide.scss'))
+        .pipe(gulp.dest('app/patternStyles'));
+    return scssStream;
+});
 
 // Compile and Automatically Prefix Stylesheets
 gulp.task('styles', function() {
-
     // For best performance, don't add Sass partials to `gulp.src`
     return gulp.src([
             'app/patternStyles/zyncro-styleguide.scss'
@@ -248,15 +252,11 @@ gulp.task('inject', function() {
 // Clean Output Directory
 gulp.task('clean', del.bind(null, ['dev', 'pages', 'src', '.publish']));
 
-
-
 // hjs to pages
 gulp.task('hjs2pages', function() {
     return gulp.src(['app/main/bower_components/highlightjs/styles/paraiso.dark.css'])
         .pipe(gulp.dest('pages/main/bower_components/highlightjs/styles/'))
 });
-
-
 
 // Watch Files For Changes & Reload
 gulp.task('serve', ['inject', 'concat', 'fontsTemp', 'styles'], function() {

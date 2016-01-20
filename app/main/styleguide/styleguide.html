@@ -1,6 +1,7 @@
 <!-- NO TOCAR! AUTO BUILD -->
 <div class="container-breakpoints">
-<div class="container-fluid">
+<!-- <div class="container-fluid"> -->
+<div class="container">
     <div class="row">
         <div class="col-xs-12">
             <!-- inject:head:html -->
@@ -451,22 +452,7 @@
     <h1>Box-summary</h1>
     <div class="code-sample">
         <div class="row">
-            <div class="col-xs-6">
-                <div class="box box-white">
-                    <div class="clearfix">
-                        <h4 class="pull-left">Usuarios Añadir</h4>
-                        <h4 class="pull-right">Usuarios</h4>
-                    </div>
-                    <div class="clearfix">
-                        <h4 class="pull-right">2000</h4>
-                    </div>
-                    <div class="progress progress-striped">
-                        <div class="progress-bar progress-bar-info" style="width: 20%">40</div>
-                    </div>
-                    <h4>Tienes asignados 4 de 2000 usuarios</h4>
-                </div>
-            </div>
-            <div class="col-xs-6">
+            <div class="col-xs-12">
                 <div class="box box-white">
                     <div class="clearfix">
                         <h4 class="pull-left">Usuarios Añadir</h4>
@@ -3156,7 +3142,6 @@
 <section id="Typeahead" class="styleguide">
     <h1>Typeahead</h1>
     <div class="code-sample">
-        <div class='container-fluid'>
             <h4>Static arrays</h4>
             <pre>Model: {{selected | json}}</pre>
             <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
@@ -3167,7 +3152,6 @@
             <h4>Custom templates for results</h4>
             <pre>Model: {{customSelected | json}}</pre>
             <input type="text" ng-model="customSelected" placeholder="Custom template" typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control">
-        </div>
     </div>
 </section>
 
