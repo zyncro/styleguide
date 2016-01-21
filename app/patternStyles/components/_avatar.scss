@@ -129,3 +129,19 @@
 .avatar-header-cell.avatar {
     margin: 0 10px;
 }
+
+// .avatar-info-buttons
+.avatar-info{
+  .btn:nth-last-child(n+2) { 
+    display:none;
+    }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+    .avatar-info{
+      .btn:nth-last-child(n+2) { 
+        display:block;
+    }
+}
+
+}
