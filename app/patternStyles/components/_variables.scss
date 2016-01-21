@@ -18,17 +18,27 @@ $gray:                   lighten(#000, 33.5%) !default; // #555
 $gray-light:             lighten(#000, 46.7%) !default; // #777
 $gray-lighter:           lighten(#000, 93.5%) !default; // #eee
 
-$brand-primary: #0493e4 !default;
-$brand-success: #31b66d !default;
-$brand-info:    #5bc0de !default;
-$brand-warning: #f0ad4e !default;
-$brand-danger: #c0163e !default;
 
-// $brand-primary:         #428bca !default;
-// $brand-success:         #5cb85c !default;
-// $brand-info:            #5bc0de !default;
-// $brand-warning:         #f0ad4e !default;
-// $brand-danger:          #d9534f !default;
+$brand-primary: 		#0493e4 !default;
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+
+// TODO: rename
+$brand-gray-blue: #181f2a !default;
+$brand-gray-blue-light: mix(#fff, $brand-gray-blue, 5%) !default;
+$brand-gray-blue-dark: mix(#fff, $brand-gray-blue, 13%) !default;
+$brand-gray-blue-xdark: mix(#000, $brand-gray-blue, 40%) !default;
+
+
+
+
+$brand-primary-light: mix(#fff, $brand-primary, 13%);
+$brand-primary-light2: mix(#fff, $brand-primary, 15%);
+$brand-primary-light3: mix(#fff, $brand-primary, 20%);
+$brand-primary-dark: mix(#000, $brand-primary, 13%);
+
 
 
 //== Scaffolding
@@ -938,12 +948,12 @@ $gray-light: #D8D8D8;
 $gray-lighter: #fbfbfb;
 
 
-// Brand Colors
-$brand-primary: #0493e4;
-$brand-success: #31b66d;
-$brand-warning: #ffba00;
-$brand-danger: #c1163e;
-$brand-info: #5fabdc;
+// // Brand Colors
+// $brand-primary: #0493e4;
+// $brand-success: #31b66d;
+// $brand-warning: #ffba00;
+// $brand-danger: #c1163e;
+// $brand-info: #5fabdc;
 
 
 // Scaffolding
@@ -1383,19 +1393,7 @@ $default-border-size: 1px solid;
 
 
 
-// TODO: rename
-$brand-gray-blue: #181f2a !default;
-$brand-gray-blue-light: mix(#fff, $brand-gray-blue, 5%) !default;
-$brand-gray-blue-dark: mix(#fff, $brand-gray-blue, 13%) !default;
-$brand-gray-blue-xdark: mix(#000, $brand-gray-blue, 40%) !default;
 
-
-
-$brand-primary: #0493e4 !default;
-$brand-primary-light: mix(#fff, $brand-primary, 13%);
-$brand-primary-light2: mix(#fff, $brand-primary, 15%);
-$brand-primary-light3: mix(#fff, $brand-primary, 20%);
-$brand-primary-dark: mix(#000, $brand-primary, 13%);
 
 
 //postbox
