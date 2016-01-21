@@ -187,8 +187,15 @@
                 </div>
 
                 <div class="activity-footer">
-                    <input type="text" class="form-control" />
-                </div>                
+                    <input type="text" placeholder="Escribe un comentario ..." class="form-control" />
+                </div>    
+
+                <div class="footer-buttons">
+                    <button type="button" class="btn btn-link btn-link-icon pull-left"> <i class="icon icon-attachment"></i></button>
+                    <button type="button" class="btn btn-default">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Publicar</button>
+                </div>
+
             </div>
         </div>
     </div>
@@ -2530,20 +2537,20 @@
                 <div class="post-box-head box">
                     <div class="share-select">
                         <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled" style="width: 100%">
-                            <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
-                            <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
-                                <div ng-bind-html="person.name | highlight: $select.search"></div>
-                                <small>
-                                email: {{person.email}}
-                                age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
-                              </small>
-                            </ui-select-choices>
+                        <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
+                        <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
+                        <div ng-bind-html="person.name | highlight: $select.search"></div>
+                        <small>
+                        email: {{person.email}}
+                        age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+                        </small>
+                        </ui-select-choices>
                         </ui-select>
                     </div>
                     <div class="contenteditable" contenteditable='true' placeholder="Lorem">
                         He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say.
-                                    <input type="text" value="Pedro Aspiazu" class="label-primary mention" zy-elastic-input="" disabled="" size="13">
-            <input type="text" value="#Feature" class="label-primary hastag" size="8">
+                        <input type="text" value="Pedro Aspiazu" class="label-primary mention" zy-elastic-input="" disabled="" size="13">
+                        <input type="text" value="#Feature" class="label-primary hastag" size="8">
                     </div>
                 </div>
                 <div class="footer-buttons">
@@ -2567,20 +2574,20 @@
                 <div class="post-box-head box">
                     <div class="share-select">
                         <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled" style="width: 100%">
-                            <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
-                            <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
-                                <div ng-bind-html="person.name | highlight: $select.search"></div>
-                                <small>
-                                    email: {{person.email}}
-                                    age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
-                                </small>
-                            </ui-select-choices>
+                        <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
+                        <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
+                        <div ng-bind-html="person.name | highlight: $select.search"></div>
+                        <small>
+                        email: {{person.email}}
+                        age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+                        </small>
+                        </ui-select-choices>
                         </ui-select>
                     </div>
                     <div class="contenteditable" contenteditable='true' placeholder="Lorem">
                         He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say.
-                                    <input type="text" value="Pedro Aspiazu" class="label-primary mention" zy-elastic-input="" disabled="" size="13">
-            <input type="text" value="#Feature" class="label-primary hastag" size="8">
+                        <input type="text" value="Pedro Aspiazu" class="label-primary mention" zy-elastic-input="" disabled="" size="13">
+                        <input type="text" value="#Feature" class="label-primary hastag" size="8">
                     </div>
                     <ul class="thumbnail-box-list clearfix">
                         <li class="thumbnail-box">
@@ -2617,7 +2624,6 @@
         </div>
     </div>
 </section>
-
             
 
 <section id="Profile-block" class="styleguide">

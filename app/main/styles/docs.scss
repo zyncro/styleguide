@@ -154,6 +154,13 @@ hr{
 }
 
 @media (max-width: $screen-xs-max) {
+	body{
+		background: white;
+	}
+	.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+    max-height: 100%;
+}
+
    .styleguide {
     padding: 0;
     background: none;
@@ -163,5 +170,6 @@ hr{
 }
 
 
-
-
+.navbar-nav > li > a{
+	pointer: cursor;
+}
