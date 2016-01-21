@@ -7,6 +7,9 @@
 
 'use strict';
 
+//TODO: Optimize tasks
+
+
 // Include Gulp & Tools We'll Use
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
