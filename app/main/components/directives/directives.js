@@ -7,6 +7,11 @@ angular.module('myApp.directives', [])
         restrict: 'EA',
         link: function(scope, element, attrs) {
 
+
+
+window.moveTo(0,0);
+window.resizeTo(screen.width,screen.height-30);
+
             element.on('mousedown', function(event) {
                 resize(attrs.w);
             });

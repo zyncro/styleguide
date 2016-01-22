@@ -2,6 +2,7 @@
 # [Zyncro Styleguide](http://zyncro.github.io/styleguide/#/styleguide)
 [Preview](http://zyncro.github.io/styleguide/#/styleguide)
 [logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+
 ## Prerequisites
 
 
@@ -27,7 +28,7 @@ Behind the scenes this will also call `bower install`.  You should find that you
 folders in your project.
 
 * `node_modules` - contains the npm packages for the tools we need
-* `app/scripts/bower_components` - contains the angular framework files
+* `app/main/bower_components` - contains the angular framework files
 
 *Note that the `bower_components` folder would normally be installed in the root folder but
 angular-web-starter changes this location through the `.bowerrc` file.  Putting it in the app folder makes
@@ -44,17 +45,20 @@ npm start
 
 ---
 
-##Dev
+
+## Tasks
+
+###Dev
 ```
  gulp serv
 ```
 
-##Publish to git pages gulp gh-pages (Wait for DNS propagation on github)
+###Publish to git pages gulp gh-pages (Wait for DNS propagation on github)
 ```
  gulp deploy-pages
 ```
-
-## Publish Dist
+[Preview](http://zyncro.github.io/styleguide/#/styleguide)
+### Publish Dist
 ```
 TODO: gulp task
 gulp deploy-src && git add . && git commit -am"message" && git push origin master
@@ -64,28 +68,32 @@ gulp deploy-src && git add . && git commit -am"message" && git push origin maste
 
 ## Components
 Just add a new html file to the path and the gulp task will do everything for you
+
 - Automatic generated menu
 - Automatic code snippets
 - Automatic Inject Templates
 
 
 
+#### TEMPLATES (patternTemplates):
+
 ```
 zyncro-styleguide/
   |- app/
-  |  |- patternStyles (SASS)
-  |  |- patternTemplate (HTML)
+  |  |- patternTemplates (HTML)
 ```
 
+##### Requires
 
-#### patternTemplate Requires:
+
 ```
-<section id="" class="">
+<section id="Box" class="styleguide">
 <h1>
 <div class="code-sample">
 ```
 
-#### Example:
+
+##### Example:
 
 ```
 <section id="Box" class="styleguide">
@@ -105,7 +113,8 @@ zyncro-styleguide/
 ```
 
 
-#### patternStyles Requires:
+#### Styles (patternStyles):
+
 ```
 zyncro-styleguide/
   |- app/
@@ -113,5 +122,8 @@ zyncro-styleguide/
   |  |	|- mains.scss
 ```
 
-@import "components/componentName";
+#### Add new component to app/patternStyles/mains.scss:
 
+```
+@import "components/componentName";
+```
