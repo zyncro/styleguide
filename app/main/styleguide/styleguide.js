@@ -52,6 +52,16 @@ angular.module('myApp.styleguide', ['ngRoute','ngSanitize', 'ui.select'])
     function($scope, $log, $http, $timeout, $interval) {
 
     /**
+    * POPOVER
+    */
+
+
+  $scope.dynamicPopover = 'Hello, World!';
+  $scope.dynamicPopoverTitle = 'Title';
+
+
+
+    /**
     * TOOLTIPS
     */
 

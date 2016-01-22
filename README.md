@@ -209,3 +209,15 @@ zyncro-styleguide/
 ```
 @import "components/componentName";
 ```
+
+
+## Ui-boostrap controller functions for dics are inside  styleguide.js:
+
+```
+zyncro-styleguide/
+  |- app/
+  |  |- main/
+  |  |  |- styleguide/
+  |  |  |  |- styleguide.js
+```
+
