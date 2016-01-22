@@ -60,6 +60,13 @@ npm start
 [Preview](http://zyncro.github.io/styleguide/#/styleguide)
 
 ### Publish Dist
+#### Everything will be compiled to src/ folder
+  
+  - Fonts
+  - Icons
+  - Images
+  - CSS
+
 ```
 TODO: gulp task
 gulp deploy-src && git add . && git commit -am"message" && git push origin master
@@ -72,8 +79,6 @@ zyncro-styleguide/
   |- app/
   |  |- main/
 ```
-
-
 
 ## Vendors
 
