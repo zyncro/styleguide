@@ -52,7 +52,7 @@ gulp-inject adds every tpl from patternTemplates to styles.html
 
 
 
-## Match Proejct dependencies width styleguide ;)
+## Matched Proejct dependencies width styleguide ;)
 
 ```
 {
