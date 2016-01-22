@@ -46,6 +46,10 @@ npm start
 ---
 
 
+## Automatic TPL includes width gulp-inject
+gulp-inject adds every tpl from patternTemplates to styles.html
+
+
 ## Tasks
 
 ###Dev
