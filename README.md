@@ -58,13 +58,63 @@ npm start
  gulp deploy-pages
 ```
 [Preview](http://zyncro.github.io/styleguide/#/styleguide)
+
 ### Publish Dist
 ```
 TODO: gulp task
 gulp deploy-src && git add . && git commit -am"message" && git push origin master
 ```
 
----
+## Main App
+
+```
+zyncro-styleguide/
+  |- app/
+  |  |- main/
+```
+
+
+
+## Vendors
+
+```
+zyncro-styleguide/
+  |- app/
+  |  |- main/
+  |  |  |- bower_components/
+```
+
+## Directives
+
+```
+zyncro-styleguide/
+  |- app/
+  |  |- main/
+  |  |  |- components/
+```
+
+## Pages (sections/states)
+
+```
+zyncro-styleguide/
+  |- app/
+  |  |- main/
+  |  |  |- styleguide/
+  |  |  |- layout/
+  |  |  |- icons/
+```
+
+## Document CSS (Just for github-pages)
+
+```
+zyncro-styleguide/
+  |- app/
+  |  |- main/
+  |  |  |- styles/
+  |  |  |  |- doc.scss/
+```
+
+
 
 ## Components
 Just add a new html file to the path and the gulp task will do everything for you
@@ -122,7 +172,7 @@ zyncro-styleguide/
   |  |	|- mains.scss
 ```
 
-#### Add new component to app/patternStyles/mains.scss:
+##### Add new component to app/patternStyles/mains.scss:
 
 ```
 @import "components/componentName";
