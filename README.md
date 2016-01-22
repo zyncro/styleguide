@@ -3,6 +3,7 @@
 [Preview](http://zyncro.github.io/styleguide/#/styleguide)
 [logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
 
+
 ## Prerequisites
 
 
@@ -48,6 +49,28 @@ npm start
 
 ## Automatic TPL includes width gulp-inject
 gulp-inject adds every tpl from patternTemplates to styles.html
+
+
+
+## Match Proejct dependencies width styleguide ;)
+
+```
+{
+  "dependencies": {
+    "angular": "1.2.28",
+    "angular-animate": "~1.2.0",
+    "angular-route": "1.2.28",
+    "angular-loader": "1.2.28",
+    "angular-mocks": "1.2.28",
+    "angular-sanitize": "1.2.28",
+    "angular-bootstrap": "~0.12.0",
+    "angular-bootstrap-colorpicker": "~3.0.17",
+    "angular-bootstrap-toggle-switch": "~0.5.2",
+    "angular-ui-select": "0.13.0",
+  }
+}
+```
+
 
 
 ## Tasks
