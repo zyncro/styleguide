@@ -275,10 +275,10 @@ gulp.task('serve', ['inject', 'concat', 'fontsTemp', 'styles'], function() {
 
 
 
-// Build Production Files, the Default Task
-gulp.task('default', ['clean'], function(cb) {
-    runSequence('styles', ['jshint','inject', 'concat', 'hjs2pages', 'html', 'images', 'fonts', 'copy' ], cb);
-});
+// // Build Production Files, the Default Task
+// gulp.task('default', ['clean'], function(cb) {
+//     runSequence('styles', ['jshint','inject', 'concat', 'hjs2pages', 'html', 'images', 'fonts', 'copy' ], cb);
+// });
 
 
 
@@ -301,7 +301,7 @@ gulp.task('deploy-pages', function(cb) {
             'copy',
             'inject', 
             'concat',
-            'fontsTemp', 
+            'fonts', 
             'pages',
               cb);
 });
