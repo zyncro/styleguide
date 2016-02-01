@@ -65,13 +65,10 @@ gulp.task('includePattenrs', function() {
 
 
 gulp.task('deploy-pages', function(done) {
-    runSequence('includePattenrs','default', 'pages', function() {
-
+    runSequence('includePattenrs','inject', 'concat', 'fontsTemp', 'styles', 'pages', function() {
         done();
     });
 });
-
-
 
 
 
