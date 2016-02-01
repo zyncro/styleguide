@@ -44,10 +44,25 @@ gulp.task('pages', function () {
 });
 
 
-// gulp.task('deploy-pages', ['default', 'pages']);
 
-gulp.task('deploy-pages', ['default'], function(done) {
-    runSequence( 'pages');
+// This will run in this order: 
+// * build-clean 
+// * build-scripts and build-styles in parallel 
+// * build-html 
+// * Finally call the callback function 
+gulp.task('deploy-pages', function(callback) {
+  runSequence('clean',
+              ['build-scripts', 'build-styles'],
+              'inject', 'concat', 'fontsTemp', 'styles','pages',
+              callback);
+});
+
+
+
+gulp.task('deploy-pages', function(done) {
+    runSequence('default', 'pages', function() {
+        done();
+    });
 });
 
 // Build Production Files, the Default Task
