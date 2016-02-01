@@ -134,12 +134,12 @@
     margin: 0 10px;
 }
 
-// .avatar-info-buttons
-.avatar-info {
-    .btn:nth-last-child(n+2) {
-        display: none;
-    }
-}
+// // .avatar-info-buttons
+// .avatar-info {
+//     .btn:nth-last-child(n+2) {
+//         display: none;
+//     }
+// }
 
 //
 // Avatar-paragraph-indent
@@ -157,10 +157,10 @@
     }
 }
 
-@media screen and (min-width: $screen-sm-min) {
-    .avatar-info {
-        .btn:nth-last-child(n+2) {
-            display: block;
-        }
-    }
-}
+// @media screen and (min-width: $screen-sm-min) {
+//     .avatar-info {
+//         .btn:nth-last-child(n+2) {
+//             display: block;
+//         }
+//     }
+// }

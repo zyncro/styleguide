@@ -1,7 +1,7 @@
 <section id="Avatar-info" name="Avatar" class="styleguide">
     <h1>Avatar-info</h1>
     <div class="code-sample">
-         <div class="avatar-info">
+        <div class="avatar-info">
             <div class="clearfix">
                 <img class="avatar pull-left" src="http://placehold.it/40x40" />
                 <div class="pull-left">
@@ -20,19 +20,26 @@
                     <p class="list-group-item-text"><a href="#">Maecenas sed diam - 14m</a></p>
                 </div>
                 <!-- buttons -->
-                <div class="btn-group pull-right" role="group" aria-label="...">
-                    <a role="button" href="#" class="btn btn-link btn-link-icon">
+                <div class="dropdown btn-group pull-right" role="group" aria-label="..." dropdown on-toggle="toggled(open)">
+                    <a role="button" href="#" class="btn btn-link btn-link-icon visible-md visible-lg">
                         <i tooltip="Add like" class="icon-like-off"></i>
                     </a>
-                    <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
+                    <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-md visible-lg">
                         <i class="icon-comment"></i>
                     </a>
-                    <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
+                    <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-md visible-lg">
                         <i class="icon-star-off " tooltip="Marcar como..."></i>
                     </a>
-                    <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
+                    <!-- Trigger -->
+                    <a role="button" href="" class="dropdown-toggle btn btn-link btn-link-icon nav-temp" dropdown-toggle>
                         <i class="icon icon-more"></i>
                     </a>
+                    <!-- Menu -->
+                    <ul class="dropdown-menu">
+                        <li><a href><i tooltip="Add like" class="icon-like-off"></i> choice</a></li>
+                        <li><a href><i class="icon-comment"></i>choice</a></li>
+                        <li><a href><i class="icon-star-off " tooltip="Marcar como..."></i>choice</a></li>
+                    </ul>
                 </div>
             </div>
         </div>

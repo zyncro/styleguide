@@ -73,19 +73,26 @@
                                 <p class="list-group-item-text"><a href="#">Maecenas sed diam - 14m</a></p>
                             </div>
                             <!-- buttons -->
-                            <div class="btn-group pull-right" role="group" aria-label="...">
-                                <a role="button" href="#" class="btn btn-link btn-link-icon">
+                            <div class="dropdown btn-group pull-right" role="group" aria-label="..." dropdown on-toggle="toggled(open)">
+                                <a role="button" href="#" class="btn btn-link btn-link-icon visible-md visible-lg">
                                     <i tooltip="Add like" class="icon-like-off"></i>
                                 </a>
-                                <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
+                                <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-md visible-lg">
                                     <i class="icon-comment"></i>
                                 </a>
-                                <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
+                                <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-md visible-lg">
                                     <i class="icon-star-off " tooltip="Marcar como..."></i>
                                 </a>
-                                <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
+                                <!-- Trigger -->
+                                <a role="button" href="" class="dropdown-toggle btn btn-link btn-link-icon nav-temp" dropdown-toggle>
                                     <i class="icon icon-more"></i>
                                 </a>
+                                <!-- Menu -->
+                                <ul class="dropdown-menu">
+                                    <li><a href><i tooltip="Add like" class="icon-like-off"></i> choice</a></li>
+                                    <li><a href><i class="icon-comment"></i>choice</a></li>
+                                    <li><a href><i class="icon-star-off " tooltip="Marcar como..."></i>choice</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -131,66 +138,92 @@
                     <a href="#" class="alert-link">VER 3</a> <em>COMENTARIOS MÁS.</em>
                 </div>
                 <div class="activity-comments">
-        <div class="avatar-paragraph avatar-paragraph-indent">
-            <div class="avatar-info">
-                <div class="avatar-info-left">
-                    <img class="avatar avatar-sm" src="http://placehold.it/40x40" />
-                </div>
-                <div class="avatar-info-right">
-                    <div class="clearfix">
-                        <div class="pull-left">
-                            <h4 class="list-group-item-heading"><a href="#">Donec idelit</a></h4>
-                            <p class="list-group-item-text"><a href="#">Maecenas sed diam - 14m</a></p>
-                        </div>
-                        <div class="pull-right">
-                            <!-- buttons -->
-                            <div class="btn-group pull-right" role="group" aria-label="...">
-                                <a role="button" href="#" class="btn btn-link btn-link-icon">
-                                    <i tooltip="Add like" class="icon-like-off"></i>
-                                </a>
-                                <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
-                                    <i class="icon icon-more"></i>
-                                </a>
+                    <div class="avatar-paragraph avatar-paragraph-indent">
+                        <div class="avatar-info">
+                            <div class="avatar-info-left">
+                                <img class="avatar avatar-sm" src="http://placehold.it/40x40" />
+                            </div>
+                            <div class="avatar-info-right">
+                                <div class="clearfix">
+                                    <div class="pull-left">
+                                        <h4 class="list-group-item-heading"><a href="#">Donec idelit</a></h4>
+                                        <p class="list-group-item-text"><a href="#">Maecenas sed diam - 14m</a></p>
+                                    </div>
+                                    <div class="pull-right">
+                                        <!-- buttons -->
+                                        <div class="dropdown btn-group pull-right" role="group" aria-label="..." dropdown on-toggle="toggled(open)">
+                                            <a role="button" href="#" class="btn btn-link btn-link-icon visible-md visible-lg">
+                                                <i tooltip="Add like" class="icon-like-off"></i>
+                                            </a>
+                                            <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-md visible-lg">
+                                                <i class="icon-comment"></i>
+                                            </a>
+                                            <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-md visible-lg">
+                                                <i class="icon-star-off " tooltip="Marcar como..."></i>
+                                            </a>
+                                            <!-- Trigger -->
+                                            <a role="button" href="" class="dropdown-toggle btn btn-link btn-link-icon nav-temp" dropdown-toggle>
+                                                <i class="icon icon-more"></i>
+                                            </a>
+                                            <!-- Menu -->
+                                            <ul class="dropdown-menu">
+                                                <li><a href><i tooltip="Add like" class="icon-like-off"></i> choice</a></li>
+                                                <li><a href><i class="icon-comment"></i>choice</a></li>
+                                                <li><a href><i class="icon-star-off " tooltip="Marcar como..."></i>choice</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="list-group-item-parragraph">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <p class="list-group-item-parragraph">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </div>
-            </div>
-        </div>
                 </div>
                 <div class="activity-comments">
-        <div class="avatar-paragraph avatar-paragraph-indent">
-            <div class="avatar-info">
-                <div class="avatar-info-left">
-                    <img class="avatar avatar-sm" src="http://placehold.it/40x40" />
-                </div>
-                <div class="avatar-info-right">
-                    <div class="clearfix">
-                        <div class="pull-left">
-                            <h4 class="list-group-item-heading"><a href="#">Donec idelit</a></h4>
-                            <p class="list-group-item-text"><a href="#">Maecenas sed diam - 14m</a></p>
-                        </div>
-                        <div class="pull-right">
-                            <!-- buttons -->
-                            <div class="btn-group pull-right" role="group" aria-label="...">
-                                <a role="button" href="#" class="btn btn-link btn-link-icon">
-                                    <i tooltip="Add like" class="icon-like-off"></i>
-                                </a>
-                                <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
-                                    <i class="icon icon-more"></i>
-                                </a>
+                    <div class="avatar-paragraph avatar-paragraph-indent">
+                        <div class="avatar-info">
+                            <div class="avatar-info-left">
+                                <img class="avatar avatar-sm" src="http://placehold.it/40x40" />
+                            </div>
+                            <div class="avatar-info-right">
+                                <div class="clearfix">
+                                    <div class="pull-left">
+                                        <h4 class="list-group-item-heading"><a href="#">Donec idelit</a></h4>
+                                        <p class="list-group-item-text"><a href="#">Maecenas sed diam - 14m</a></p>
+                                    </div>
+                                    <div class="pull-right">
+                                        <!-- buttons -->
+                                        <div class="dropdown btn-group pull-right" role="group" aria-label="..." dropdown on-toggle="toggled(open)">
+                                            <a role="button" href="#" class="btn btn-link btn-link-icon visible-md visible-lg">
+                                                <i tooltip="Add like" class="icon-like-off"></i>
+                                            </a>
+                                            <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-md visible-lg">
+                                                <i class="icon-comment"></i>
+                                            </a>
+                                            <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-md visible-lg">
+                                                <i class="icon-star-off " tooltip="Marcar como..."></i>
+                                            </a>
+                                            <!-- Trigger -->
+                                            <a role="button" href="" class="dropdown-toggle btn btn-link btn-link-icon nav-temp" dropdown-toggle>
+                                                <i class="icon icon-more"></i>
+                                            </a>
+                                            <!-- Menu -->
+                                            <ul class="dropdown-menu">
+                                                <li><a href><i tooltip="Add like" class="icon-like-off"></i> choice</a></li>
+                                                <li><a href><i class="icon-comment"></i>choice</a></li>
+                                                <li><a href><i class="icon-star-off " tooltip="Marcar como..."></i>choice</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="list-group-item-parragraph">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <p class="list-group-item-parragraph">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </div>
-            </div>
-        </div>
                 </div>
                 <div class="alert alert-success">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -393,7 +426,7 @@
 <section id="Avatar-info" name="Avatar" class="styleguide">
     <h1>Avatar-info</h1>
     <div class="code-sample">
-         <div class="avatar-info">
+        <div class="avatar-info">
             <div class="clearfix">
                 <img class="avatar pull-left" src="http://placehold.it/40x40" />
                 <div class="pull-left">
@@ -412,19 +445,26 @@
                     <p class="list-group-item-text"><a href="#">Maecenas sed diam - 14m</a></p>
                 </div>
                 <!-- buttons -->
-                <div class="btn-group pull-right" role="group" aria-label="...">
-                    <a role="button" href="#" class="btn btn-link btn-link-icon">
+                <div class="dropdown btn-group pull-right" role="group" aria-label="..." dropdown on-toggle="toggled(open)">
+                    <a role="button" href="#" class="btn btn-link btn-link-icon visible-md visible-lg">
                         <i tooltip="Add like" class="icon-like-off"></i>
                     </a>
-                    <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
+                    <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-md visible-lg">
                         <i class="icon-comment"></i>
                     </a>
-                    <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
+                    <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-md visible-lg">
                         <i class="icon-star-off " tooltip="Marcar como..."></i>
                     </a>
-                    <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
+                    <!-- Trigger -->
+                    <a role="button" href="" class="dropdown-toggle btn btn-link btn-link-icon nav-temp" dropdown-toggle>
                         <i class="icon icon-more"></i>
                     </a>
+                    <!-- Menu -->
+                    <ul class="dropdown-menu">
+                        <li><a href><i tooltip="Add like" class="icon-like-off"></i> choice</a></li>
+                        <li><a href><i class="icon-comment"></i>choice</a></li>
+                        <li><a href><i class="icon-star-off " tooltip="Marcar como..."></i>choice</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -463,14 +503,27 @@
                             <p class="list-group-item-text"><a href="#">Maecenas sed diam - 14m</a></p>
                         </div>
                         <div class="pull-right">
-                                <!-- buttons -->
-                            <div class="btn-group pull-right" role="group" aria-label="...">
-                                <a role="button" href="#" class="btn btn-link btn-link-icon">
+                            <!-- buttons -->
+                            <div class="dropdown btn-group pull-right" role="group" aria-label="..." dropdown on-toggle="toggled(open)">
+                                <a role="button" href="#" class="btn btn-link btn-link-icon visible-md visible-lg">
                                     <i tooltip="Add like" class="icon-like-off"></i>
                                 </a>
-                                <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
+                                <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-md visible-lg">
+                                    <i class="icon-comment"></i>
+                                </a>
+                                <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-md visible-lg">
+                                    <i class="icon-star-off " tooltip="Marcar como..."></i>
+                                </a>
+                                <!-- Trigger -->
+                                <a role="button" href="" class="dropdown-toggle btn btn-link btn-link-icon nav-temp" dropdown-toggle>
                                     <i class="icon icon-more"></i>
                                 </a>
+                                <!-- Menu -->
+                                <ul class="dropdown-menu">
+                                    <li><a href><i tooltip="Add like" class="icon-like-off"></i> choice</a></li>
+                                    <li><a href><i class="icon-comment"></i>choice</a></li>
+                                    <li><a href><i class="icon-star-off " tooltip="Marcar como..."></i>choice</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -496,21 +549,28 @@
                         <h4 class="list-group-item-heading"><a href="#">Donec idelit</a></h4>
                         <p class="list-group-item-text"><a href="#">Maecenas sed diam - 14m</a></p>
                     </div>
-               <!-- buttons -->
-                <div class="btn-group pull-right" role="group" aria-label="...">
-                    <a role="button" href="#" class="btn btn-link btn-link-icon">
-                        <i tooltip="Add like" class="icon-like-off"></i>
-                    </a>
-                    <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
-                        <i class="icon-comment"></i>
-                    </a>
-                    <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
-                        <i class="icon-star-off " tooltip="Marcar como..."></i>
-                    </a>
-                    <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp">
-                        <i class="icon icon-more"></i>
-                    </a>
-                </div>
+                    <!-- buttons -->
+                    <div class="dropdown btn-group pull-right" role="group" aria-label="..." dropdown on-toggle="toggled(open)">
+                        <a role="button" href="#" class="btn btn-link btn-link-icon visible-md visible-lg">
+                            <i tooltip="Add like" class="icon-like-off"></i>
+                        </a>
+                        <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-md visible-lg">
+                            <i class="icon-comment"></i>
+                        </a>
+                        <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-md visible-lg">
+                            <i class="icon-star-off " tooltip="Marcar como..."></i>
+                        </a>
+                        <!-- Trigger -->
+                        <a role="button" href="" class="dropdown-toggle btn btn-link btn-link-icon nav-temp" dropdown-toggle>
+                            <i class="icon icon-more"></i>
+                        </a>
+                        <!-- Menu -->
+                        <ul class="dropdown-menu">
+                            <li><a href><i tooltip="Add like" class="icon-like-off"></i> choice</a></li>
+                            <li><a href><i class="icon-comment"></i>choice</a></li>
+                            <li><a href><i class="icon-star-off " tooltip="Marcar como..."></i>choice</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <p>
@@ -519,6 +579,7 @@
         </div>
     </div>
 </section>
+
             
 
 <section id="Avatar" name="Avatar" class="styleguide">
