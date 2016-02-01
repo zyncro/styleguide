@@ -35,41 +35,6 @@ var AUTOPREFIXER_BROWSERS = [
     'bb >= 10'
 ];
 
-/**
- * Push build to gh-pages
- */
-gulp.task('pages', function () {
-  return gulp.src("pages/**/*")
-    .pipe(deploy())
-});
-
-
-
-// This will run in this order: 
-// * build-clean 
-// * build-scripts and build-styles in parallel 
-// * build-html 
-// * Finally call the callback function 
-gulp.task('deploy-pages', function(callback) {
-  runSequence('clean',
-              ['build-scripts', 'build-styles'],
-              'inject', 'concat', 'fontsTemp', 'styles','pages',
-              callback);
-});
-
-
-
-gulp.task('deploy-pages', function(done) {
-    runSequence('default', 'pages', function() {
-        done();
-    });
-});
-
-// Build Production Files, the Default Task
-gulp.task('deploy-src', ['clean'], function(cb) {
-    runSequence(['concatSrc','stylesSrc', 'fontsSrc'], cb);
-});
-
 
 // Lint JavaScript
 gulp.task('jshint', function() {
@@ -315,6 +280,39 @@ gulp.task('default', ['clean'], function(cb) {
     runSequence('styles', ['jshint','inject', 'concat', 'hjs2pages', 'html', 'images', 'fonts', 'copy' ], cb);
 });
 
+
+
+
+/**
+ * Push build to gh-pages
+ */
+gulp.task('pages', function () {
+  return gulp.src("pages/**/*")
+    .pipe(deploy())
+});
+
+
+gulp.task('deploy-pages', function(cb) {
+  runSequence('clean',
+            'styles', 
+            'hjs2pages', 
+            'html', 
+            'images', 
+            'copy',
+            'inject', 
+            'concat',
+            'fontsTemp', 
+            'pages',
+              cb);
+});
+
+
+// Build Production Files, the Default Task
+gulp.task('deploy-src', ['clean'], function(cb) {
+    runSequence(['concatSrc','stylesSrc', 'fontsSrc'], cb);
+});
+
+
 // Run PageSpeed Insights
 // Update `url` below to the public URL for your site
 gulp.task('pagespeed', pagespeed.bind(null, {
@@ -325,8 +323,6 @@ gulp.task('pagespeed', pagespeed.bind(null, {
     url: 'https://example.com',
     strategy: 'mobile'
 }));
-
-
 
 // Load custom tasks from the `tasks` directory
 try {
