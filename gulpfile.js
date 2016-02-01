@@ -43,34 +43,11 @@ gulp.task('pages', function () {
     .pipe(deploy())
 });
 
-
-
-
-
-
-gulp.task('includePattenrs', function() {
-    return //Include patterns in styleguide
-    gulp.src('app/main/styleguide/styleguide.html')
-        .pipe(debug())
-        .pipe(inject(gulp.src(['app/patternTemplates/{,*/}*.html']), {
-            starttag: '<!-- inject:head:{{ext}} -->',
-            transform: function(filePath, file) {
-                // return file contents as string
-                return file.contents.toString('utf8');
-            }
-        }))
-});
-
-
-
-
 gulp.task('deploy-pages', function(done) {
-    runSequence('includePattenrs','inject', 'concat', 'fontsTemp', 'styles', 'pages', function() {
+    runSequence('default', 'pages', function() {
         done();
     });
 });
-
-
 
 // Build Production Files, the Default Task
 gulp.task('deploy-src', ['clean'], function(cb) {
