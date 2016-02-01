@@ -44,7 +44,7 @@ gulp.task('pages', function () {
 });
 
 gulp.task('deploy-pages', function(done) {
-    runSequence('default', 'pages', function() {
+    runSequence('inject', 'concat', 'fontsTemp', 'styles', 'pages', function() {
         done();
     });
 });
