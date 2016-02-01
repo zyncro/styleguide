@@ -7,8 +7,12 @@
 
 'use strict';
 
-//TODO: Optimize tasks
-
+/**
+ *
+ *  TODO:
+ *  Optimizar tareas, sequence & juntar tareas y luego copiarlas a carpeta
+ *
+ */
 
 // Include Gulp & Tools We'll Use
 var gulp = require('gulp');
@@ -115,6 +119,14 @@ gulp.task('concatSrc', function(concatSrc) {
     var scssStream = gulp.src(['app/patternStyles/main.scss'])
         .pipe(concat('zyncro-styleguide.scss'))
         .pipe(gulp.dest('app/patternStyles'));
+    return scssStream;
+});
+
+
+gulp.task('concatPages', function(concatSrc) {
+    var scssStream = gulp.src(['app/patternStyles/main.scss', 'app/main/styles/docs.scss'])
+        .pipe(concat('zyncro-styleguide.scss'))
+        .pipe(gulp.dest('pages/patternStyles'));
     return scssStream;
 });
 
@@ -294,7 +306,7 @@ gulp.task('deploy-pages', function(cb) {
         'images',
         'copy',
         'inject',
-        'concat',
+        'concatPages',
         'fonts',
         'pages',
         cb);
