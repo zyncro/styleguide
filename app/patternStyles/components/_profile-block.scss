@@ -2,38 +2,25 @@
 // Box
 // --------------------------------------------------
 $avatar-lg: 126px;
+
 // Base class
 .profile-block {
     .profile-block-right {
         margin-left: $avatar-lg;
         padding-left: 20px;
     }
-    .profile-block-header{
+    .profile-block-header {
         margin-top: 0;
     }
-    // .profile-block-left-inputs,
-    // .profile-block-right-inputs
-    // {
-    //     float: left;
-    // }
-    // .profile-block-left-inputs{
-    //     margin-right: 20px; 
-    // }
-    .profile-block-bar{
-    background-color: $brand-primary;
-        // background-color: #d3e1e8;
+    .profile-block-bar {
+        background-color: $brand-primary;
         margin-top: -15px;
         padding: 0;
         min-height: 45px;
         padding-top: 10px;
+        padding-left: 148px;
     }
-    .profile-block-follow{
-        font-weight: bold;
-        margin-left: $avatar-lg;
-        padding-left: 20px;
-        .profile-block-following{
-            margin-right: 30px;
-        }
+    .profile-block-following {
+        margin-right: 30px;
     }
-
 }
