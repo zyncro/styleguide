@@ -38,10 +38,11 @@ var AUTOPREFIXER_BROWSERS = [
 /**
  * Push build to gh-pages
  */
-gulp.task('pages', function() {
-    return gulp.src("pages/**/*")
-        .pipe(deploy())
+gulp.task('pages', function () {
+  return gulp.src("pages/**/*")
+    .pipe(deploy())
 });
+
 
 
 
@@ -70,9 +71,13 @@ gulp.task('deploy-pages', function(done) {
     });
 });
 
+
+
+
+
 // Build Production Files, the Default Task
 gulp.task('deploy-src', ['clean'], function(cb) {
-    runSequence(['concatSrc', 'stylesSrc', 'fontsSrc'], cb);
+    runSequence(['concatSrc','stylesSrc', 'fontsSrc'], cb);
 });
 
 
@@ -145,7 +150,7 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('concat', function() {
-    var scssStream = gulp.src(['app/patternStyles/main.scss', 'app/main/styles/docs.scss'])
+    var scssStream = gulp.src(['app/patternStyles/main.scss','app/main/styles/docs.scss'])
         .pipe(concat('zyncro-styleguide.scss'))
         .pipe(gulp.dest('app/patternStyles'));
     return scssStream;
@@ -220,37 +225,39 @@ gulp.task('html', function() {
     return gulp.src('app/**/*.html')
         .pipe(assets)
         // Concatenate And Minify JavaScript
-        .pipe($.if('*.js', $.uglify({
+        .pipe($.if('*.js', $.uglify(
+        {
             preserveComments: 'some',
             mangle: false,
             compress: true
-        })))
+        }
+        )))
 
-    // Remove Any Unused CSS
-    // Note: If not using the Style Guide, you can delete it from
-    // the next line to only include styles your project uses.
-    .pipe($.if('*.css', $.uncss({
-        html: [
-            'app/index.html',
-            'app/styleguide.html'
-        ],
-        // CSS Selectors for UnCSS to ignore
-        ignore: [
-            /.navdrawer-container.open/,
-            /.app-bar.open/
-        ]
-    })))
-    // Concatenate And Minify Styles
-    // In case you are still using useref build blocks
-    .pipe($.if('*.css', $.csso()))
+        // Remove Any Unused CSS
+        // Note: If not using the Style Guide, you can delete it from
+        // the next line to only include styles your project uses.
+        .pipe($.if('*.css', $.uncss({
+            html: [
+                'app/index.html',
+                'app/styleguide.html'
+            ],
+            // CSS Selectors for UnCSS to ignore
+            ignore: [
+                /.navdrawer-container.open/,
+                /.app-bar.open/
+            ]
+        })))
+        // Concatenate And Minify Styles
+        // In case you are still using useref build blocks
+        .pipe($.if('*.css', $.csso()))
         .pipe(assets.restore())
         .pipe($.useref())
-    // // Update Production Style Guide Paths
-    // .pipe($.replace('components/components.css', 'components/main.min.css'))
-    // Minify Any HTML
-    .pipe($.if('*.html', $.minifyHtml()))
-    // Output Files
-    .pipe(gulp.dest('pages'))
+        // // Update Production Style Guide Paths
+        // .pipe($.replace('components/components.css', 'components/main.min.css'))
+        // Minify Any HTML
+        .pipe($.if('*.html', $.minifyHtml()))
+        // Output Files
+        .pipe(gulp.dest('pages'))
         .pipe($.size({
             title: 'html'
         }));
@@ -306,7 +313,7 @@ gulp.task('serve', ['inject', 'concat', 'fontsTemp', 'styles'], function() {
             }))
             .pipe(gulp.dest('app/main/styleguide/'));
     });
-    gulp.watch(['app/patternStyles/**/*.{scss,css}', 'app/main/styles/docs.scss'], ['concat', 'styles', reload]);
+    gulp.watch(['app/patternStyles/**/*.{scss,css}','app/main/styles/docs.scss'], ['concat', 'styles', reload]);
     gulp.watch(['app/main/**/*.js'], ['jshint']);
     gulp.watch(['app/images/**/*'], reload);
 });
@@ -315,7 +322,7 @@ gulp.task('serve', ['inject', 'concat', 'fontsTemp', 'styles'], function() {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function(cb) {
-    runSequence('styles', ['jshint', 'inject', 'concat', 'hjs2pages', 'html', 'images', 'fonts', 'copy'], cb);
+    runSequence('styles', ['jshint','inject', 'concat', 'hjs2pages', 'html', 'images', 'fonts', 'copy' ], cb);
 });
 
 // Run PageSpeed Insights
