@@ -43,10 +43,11 @@ gulp.task('pages', function () {
     .pipe(deploy())
 });
 
-gulp.task('deploy-pages', function(done) {
-    runSequence('default', 'pages', function() {
-        done();
-    });
+
+// gulp.task('deploy-pages', ['default', 'pages']);
+
+gulp.task('deploy-pages', ['default'], function(done) {
+    runSequence( 'pages');
 });
 
 // Build Production Files, the Default Task
