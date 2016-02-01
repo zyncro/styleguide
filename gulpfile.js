@@ -43,13 +43,19 @@ var AUTOPREFIXER_BROWSERS = [
  */
 gulp.task('add', function(){
   return gulp.src('./*')
-    .pipe(git.add());
+    .pipe(git.add({args: '-A'}));
 });
+
+
 
 gulp.task('commit', function(){
   return gulp.src('./*')
-    .pipe(git.commit('initial commit'));
+    .pipe(git.commit(undefined, {
+      args: '-am "initial commit"',
+      disableMessageRequirement: true
+    }));
 });
+
  gulp.task('push', function(){
   git.push('origin', 'master', {args: " -f"}, function (err) {
     if (err) throw err;
@@ -59,7 +65,7 @@ gulp.task('commit', function(){
 
 // Build Production Files, the Default Task
 gulp.task('git', function(cb) {
-    runSequence(['add','commit', 'push'], cb);
+    runSequence(['clean', 'add','commit', 'push'], cb);
 });
 
 
