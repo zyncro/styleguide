@@ -1,0 +1,65 @@
+
+//
+// Avatar-actions
+// --------------------------------------------------
+
+.avatar-actions {
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-block;
+    @extend .avatar;
+    i {
+        display: none;
+    }
+}
+
+.avatar-actions-hover {
+    &:hover {
+        background: $brand_primary;
+        padding: 10px;
+        img {
+            display: none;
+        }
+        .icon-checkbox {
+            display: block;
+        }
+    }
+}
+
+.avatar-actions-active {
+    background: $brand_primary;
+    padding: 10px;
+    img {
+        display: none;
+    }
+    .icon-check {
+        display: block;
+    }
+}
+
+// SIZES
+.avatar-actions-sm {
+    @extend .avatar-sm;
+    i {
+        font-size: 10px;
+    }
+    &.avatar-actions-active {
+        padding: 10px;
+    }
+    &:hover {
+        padding: 10px;
+    }
+}
+
+.avatar-actions-lg {
+    @extend .avatar-lg;
+    i {
+        font-size: 60px;
+    }
+    &.avatar-actions-active {
+        padding: 30px;
+    }
+    &:hover {
+        padding: 30px;
+    }
+}
