@@ -23,7 +23,6 @@ var inject = require('gulp-inject');
 var ngannotate = require('gulp-ng-annotate')
 var concat = require('gulp-concat');
 var deploy = require('gulp-gh-pages');
-var git = require('gulp-git');
 var AUTOPREFIXER_BROWSERS = [
     'ie >= 10',
     'ie_mob >= 10',
@@ -36,56 +35,44 @@ var AUTOPREFIXER_BROWSERS = [
     'bb >= 10'
 ];
 
-
-/**
- * GIT
- * 
- */
-gulp.task('add', function(){
-  return gulp.src('./*')
-    .pipe(git.add({args: '-A'}));
-});
-
-
-
-gulp.task('commit', function(){
-  return gulp.src('./*')
-    .pipe(git.commit(undefined, {
-      args: '-am "initial commit"',
-      disableMessageRequirement: true
-    }));
-});
-
- gulp.task('push', function(){
-  git.push('origin', 'master', {args: " -f"}, function (err) {
-    if (err) throw err;
-  });
-});
-
-
-// Build Production Files, the Default Task
-gulp.task('git', function(cb) {
-    runSequence(['clean', 'add','commit', 'push'], cb);
-});
-
-
 /**
  * Push build to gh-pages
  */
-gulp.task('pages', function () {
-  return gulp.src("pages/**/*")
-    .pipe(deploy())
+gulp.task('pages', function() {
+    return gulp.src("pages/**/*")
+        .pipe(deploy())
 });
 
+
+
+
+
+gulp.task('includePattenrs', function() {
+    return //Include patterns in styleguide
+    gulp.src('app/main/styleguide/styleguide.html')
+        .pipe(debug())
+        .pipe(inject(gulp.src(['app/patternTemplates/{,*/}*.html']), {
+            starttag: '<!-- inject:head:{{ext}} -->',
+            transform: function(filePath, file) {
+                // return file contents as string
+                return file.contents.toString('utf8');
+            }
+        }))
+});
+
+
+
+
 gulp.task('deploy-pages', function(done) {
-    runSequence('default', 'pages', function() {
+    runSequence('includePattenrs','default', 'pages', function() {
+
         done();
     });
 });
 
 // Build Production Files, the Default Task
 gulp.task('deploy-src', ['clean'], function(cb) {
-    runSequence(['concatSrc','stylesSrc', 'fontsSrc'], cb);
+    runSequence(['concatSrc', 'stylesSrc', 'fontsSrc'], cb);
 });
 
 
@@ -158,7 +145,7 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('concat', function() {
-    var scssStream = gulp.src(['app/patternStyles/main.scss','app/main/styles/docs.scss'])
+    var scssStream = gulp.src(['app/patternStyles/main.scss', 'app/main/styles/docs.scss'])
         .pipe(concat('zyncro-styleguide.scss'))
         .pipe(gulp.dest('app/patternStyles'));
     return scssStream;
@@ -233,39 +220,37 @@ gulp.task('html', function() {
     return gulp.src('app/**/*.html')
         .pipe(assets)
         // Concatenate And Minify JavaScript
-        .pipe($.if('*.js', $.uglify(
-        {
+        .pipe($.if('*.js', $.uglify({
             preserveComments: 'some',
             mangle: false,
             compress: true
-        }
-        )))
-
-        // Remove Any Unused CSS
-        // Note: If not using the Style Guide, you can delete it from
-        // the next line to only include styles your project uses.
-        .pipe($.if('*.css', $.uncss({
-            html: [
-                'app/index.html',
-                'app/styleguide.html'
-            ],
-            // CSS Selectors for UnCSS to ignore
-            ignore: [
-                /.navdrawer-container.open/,
-                /.app-bar.open/
-            ]
         })))
-        // Concatenate And Minify Styles
-        // In case you are still using useref build blocks
-        .pipe($.if('*.css', $.csso()))
+
+    // Remove Any Unused CSS
+    // Note: If not using the Style Guide, you can delete it from
+    // the next line to only include styles your project uses.
+    .pipe($.if('*.css', $.uncss({
+        html: [
+            'app/index.html',
+            'app/styleguide.html'
+        ],
+        // CSS Selectors for UnCSS to ignore
+        ignore: [
+            /.navdrawer-container.open/,
+            /.app-bar.open/
+        ]
+    })))
+    // Concatenate And Minify Styles
+    // In case you are still using useref build blocks
+    .pipe($.if('*.css', $.csso()))
         .pipe(assets.restore())
         .pipe($.useref())
-        // // Update Production Style Guide Paths
-        // .pipe($.replace('components/components.css', 'components/main.min.css'))
-        // Minify Any HTML
-        .pipe($.if('*.html', $.minifyHtml()))
-        // Output Files
-        .pipe(gulp.dest('pages'))
+    // // Update Production Style Guide Paths
+    // .pipe($.replace('components/components.css', 'components/main.min.css'))
+    // Minify Any HTML
+    .pipe($.if('*.html', $.minifyHtml()))
+    // Output Files
+    .pipe(gulp.dest('pages'))
         .pipe($.size({
             title: 'html'
         }));
@@ -321,7 +306,7 @@ gulp.task('serve', ['inject', 'concat', 'fontsTemp', 'styles'], function() {
             }))
             .pipe(gulp.dest('app/main/styleguide/'));
     });
-    gulp.watch(['app/patternStyles/**/*.{scss,css}','app/main/styles/docs.scss'], ['concat', 'styles', reload]);
+    gulp.watch(['app/patternStyles/**/*.{scss,css}', 'app/main/styles/docs.scss'], ['concat', 'styles', reload]);
     gulp.watch(['app/main/**/*.js'], ['jshint']);
     gulp.watch(['app/images/**/*'], reload);
 });
@@ -330,7 +315,7 @@ gulp.task('serve', ['inject', 'concat', 'fontsTemp', 'styles'], function() {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function(cb) {
-    runSequence('styles', ['jshint','inject', 'concat', 'hjs2pages', 'html', 'images', 'fonts', 'copy' ], cb);
+    runSequence('styles', ['jshint', 'inject', 'concat', 'hjs2pages', 'html', 'images', 'fonts', 'copy'], cb);
 });
 
 // Run PageSpeed Insights
