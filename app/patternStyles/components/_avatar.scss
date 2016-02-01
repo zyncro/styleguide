@@ -134,12 +134,12 @@
     margin: 0 10px;
 }
 
-// // .avatar-info-buttons
-// .avatar-info {
-//     .btn:nth-last-child(n+2) {
-//         display: none;
-//     }
-// }
+// .avatar-info-buttons
+.avatar-info {
+    .btn-group > .btn:nth-last-child(2){
+        padding-right: 0px;
+    }
+}
 
 //
 // Avatar-paragraph-indent

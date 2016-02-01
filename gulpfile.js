@@ -122,14 +122,6 @@ gulp.task('concatSrc', function(concatSrc) {
     return scssStream;
 });
 
-
-gulp.task('concatPages', function(concatSrc) {
-    var scssStream = gulp.src(['app/patternStyles/main.scss', 'app/main/styles/docs.scss'])
-        .pipe(concat('zyncro-styleguide.scss'))
-        .pipe(gulp.dest('pages/patternStyles'));
-    return scssStream;
-});
-
 // Compile and Automatically Prefix Stylesheets
 gulp.task('styles', function() {
     // For best performance, don't add Sass partials to `gulp.src`
@@ -300,13 +292,13 @@ gulp.task('pages', function() {
 gulp.task('deploy-pages', function(cb) {
     runSequence(
         'clean',
+        'concat',
         'styles',
         'hjs2pages',
         'html',
         'images',
         'copy',
         'inject',
-        'concatPages',
         'fonts',
         'pages',
         cb);
