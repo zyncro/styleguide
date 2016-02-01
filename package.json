@@ -41,7 +41,6 @@
     "merge-stream": "^1.0.0",
     "merge2": "^0.3.6",
     "opn": "^1.0.0",
-    "protractor": "^1.1.1",
     "psi": "^0.1.2",
     "require-dir": "^0.1.0",
     "run-sequence": "^0.3.6",
@@ -64,6 +63,6 @@
     "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + sed(/sourceMappingURL=angular-loader.min.js.map/,'sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map','app/bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
   },
   "dependencies": {
-   
+    "gulp-git": "^1.7.0"
   }
 }

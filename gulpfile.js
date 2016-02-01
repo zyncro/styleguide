@@ -23,6 +23,7 @@ var inject = require('gulp-inject');
 var ngannotate = require('gulp-ng-annotate')
 var concat = require('gulp-concat');
 var deploy = require('gulp-gh-pages');
+var git = require('gulp-git');
 var AUTOPREFIXER_BROWSERS = [
     'ie >= 10',
     'ie_mob >= 10',
@@ -35,6 +36,33 @@ var AUTOPREFIXER_BROWSERS = [
     'bb >= 10'
 ];
 
+
+/**
+ * GIT
+ * 
+ */
+gulp.task('add', function(){
+  return gulp.src('./*')
+    .pipe(git.add());
+});
+
+gulp.task('commit', function(){
+  return gulp.src('./*')
+    .pipe(git.commit('initial commit'));
+});
+ gulp.task('push', function(){
+  git.push('origin', 'master', {args: " -f"}, function (err) {
+    if (err) throw err;
+  });
+});
+
+
+// Build Production Files, the Default Task
+gulp.task('git', function(cb) {
+    runSequence(['add','commit', 'push'], cb);
+});
+
+
 /**
  * Push build to gh-pages
  */
@@ -44,7 +72,7 @@ gulp.task('pages', function () {
 });
 
 gulp.task('deploy-pages', function(done) {
-    runSequence('inject', 'concat', 'fontsTemp', 'styles', 'pages', function() {
+    runSequence('default', 'pages', function() {
         done();
     });
 });
