@@ -156,9 +156,6 @@
                                                 <i tooltip="Add like" class="icon-like-off"></i>
                                             </a>
                                             <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-md visible-lg">
-                                                <i class="icon-comment"></i>
-                                            </a>
-                                            <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-md visible-lg">
                                                 <i class="icon-star-off " tooltip="Marcar como..."></i>
                                             </a>
                                             <!-- Trigger -->
@@ -198,9 +195,6 @@
                                         <div class="dropdown btn-group pull-right" role="group" aria-label="..." dropdown on-toggle="toggled(open)">
                                             <a role="button" href="#" class="btn btn-link btn-link-icon visible-md visible-lg">
                                                 <i tooltip="Add like" class="icon-like-off"></i>
-                                            </a>
-                                            <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-md visible-lg">
-                                                <i class="icon-comment"></i>
                                             </a>
                                             <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-md visible-lg">
                                                 <i class="icon-star-off " tooltip="Marcar como..."></i>
@@ -264,17 +258,16 @@
     <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
 </div>
 
-<em>EJ: Eliminar comentario</em>
 <div class="alert alert-gray">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <em>Mensaje borrado</em> <a href="#" class="alert-link">deshacer.</a>
 </div>
 
-<div class="alert">
+<!-- <div class="alert">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <h4>Warning!</h4>
     <p>This is a block style alert.</p>
-</div>
+</div> -->
 
 </div>
 </section>
@@ -723,7 +716,10 @@
                 </ul>
             </div>
         </div>
-        <h2>Group Buttons Justified</h2>
+
+
+        
+<!--         <h2>Group Buttons Justified</h2>
         <hr />
         <div class="btn-group btn-group-justified" role="group" aria-label="...">
             <div class="btn-group" role="group">
@@ -746,7 +742,11 @@
             <button type="button" class="btn btn-default">Left</button>
             <button type="button" class="btn btn-default">Middle</button>
             <button type="button" class="btn btn-default">Right</button>
-        </div>
+        </div> -->
+
+
+
+
         <h2>Spinner Button</h2>
         <hr />
         <a role="button" href="#" class="btn btn-default">
@@ -864,36 +864,33 @@
 
             
 
-<section id="Carousel" class="styleguide">
+<!-- <section id="Carousel" class="styleguide">
     <h1>Carousel</h1>
     <div class="code-sample">
-       
-  <div style="height: 305px">
-    <carousel interval="myInterval">
-      <slide ng-repeat="slide in slides" active="slide.active">
-        <img ng-src="{{slide.image}}" style="margin:auto;">
-        <div class="carousel-caption">
-          <h4>Slide {{$index}}</h4>
-          <p>{{slide.text}}</p>
+        <div style="height: 305px">
+            <carousel interval="myInterval">
+                <slide ng-repeat="slide in slides" active="slide.active">
+                    <img ng-src="{{slide.image}}" style="margin:auto;">
+                    <div class="carousel-caption">
+                        <h4>Slide {{$index}}</h4>
+                        <p>{{slide.text}}</p>
+                    </div>
+                </slide>
+            </carousel>
         </div>
-      </slide>
-    </carousel>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <button type="button" class="btn btn-info" ng-click="addSlide()">Add Slide</button>
-    </div>
-    <div class="col-md-6">
-      Interval, in milliseconds: <input type="number" class="form-control" ng-model="myInterval">
-      <br />Enter a negative number or 0 to stop the interval.
-    </div>
-  </div>
-
-
-
+        <div class="row">
+            <div class="col-md-6">
+                <button type="button" class="btn btn-info" ng-click="addSlide()">Add Slide</button>
+            </div>
+            <div class="col-md-6">
+                Interval, in milliseconds:
+                <input type="number" class="form-control" ng-model="myInterval">
+                <br />Enter a negative number or 0 to stop the interval.
+            </div>
+        </div>
     </div>
 </section>
-
+ -->
             
 
 <section id="cloud-tag" class="styleguide">
@@ -996,18 +993,19 @@
             </p>
         </div>
     </div>
+<!--   
     <div class="row">
         <div class="col-md-6">
             <label>Format:</label> <select class="form-control" ng-model="format" ng-options="f for f in formats"><option></option></select>
         </div>
     </div>
 
-    <hr />
+  <hr />
     <button type="button" class="btn btn-sm btn-info" ng-click="today()">Today</button>
     <button type="button" class="btn btn-sm btn-default" ng-click="dt = '2009-08-24'">2009-08-24</button>
     <button type="button" class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
     <button type="button" class="btn btn-sm btn-default" ng-click="toggleMin()" tooltip="After today restriction">Min date</button>
-
+ -->
     </div>
 </section>
 
@@ -1873,14 +1871,14 @@
 <section id="Images" class="styleguide">
 <h1>Images</h1>
 <div class="code-sample">
-<img src="http://placehold.it/120x100" class="img-rounded">
-<img src="http://placehold.it/120x100" class="img-circle">
-<img src="http://placehold.it/120x100" class="img-thumbnail">
+<img src="http://placehold.it/80x80" class="img-rounded">
+<img src="http://placehold.it/80x80" class="img-circle">
+<img src="http://placehold.it/80x80" class="img-thumbnail">
 </div>
 </section>
             
 
-<section id="Input-group" class="styleguide">
+<!-- <section id="Input-group" class="styleguide">
 <h1>Input-group</h1>
 <div class="code-sample">
 
@@ -1902,10 +1900,10 @@
     <span class="input-group-addon">.00</span>
 </div>
 </div>
-</section>
+</section> -->
             
 
-<section id="Jumbotron" class="styleguide">
+<!-- <section id="Jumbotron" class="styleguide">
 <h1>Jumbotron</h1>
 <div class="code-sample">
 <div class="jumbotron">
@@ -1914,7 +1912,7 @@
     <p><a class="btn btn-primary btn-large">Learn more</a></p>
 </div>
 </div>
-</section>
+</section> -->
             
 
 <section id="List-group" class="styleguide">
@@ -2156,7 +2154,7 @@
     </tab>
 
   </tabset>
-
+<!-- 
   <hr />
 
   <tabset vertical="true" type="pills">
@@ -2173,7 +2171,7 @@
   </tabset>
 
 
-
+ -->
     </div>
 </section>
 
@@ -2766,7 +2764,7 @@
                 <div class="progress-bar" style="width: 100%"></div>
             </div>
         </div>
-        <h3 id="progress-basic">Basic</h3>
+<!--         <h3 id="progress-basic">Basic</h3>
         <div class="bs-component">
             <div class="progress">
                 <div class="progress-bar" style="width: 60%;"></div>
@@ -2787,7 +2785,7 @@
             <div class="progress">
                 <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
             </div>
-        </div>
+        </div> -->
         <h3 id="progress-striped">Striped</h3>
         <div class="bs-component">
             <div class="progress progress-striped">
@@ -2809,14 +2807,15 @@
                 <div class="progress-bar" style="width: 45%"></div>
             </div>
         </div>
-        <h3 id="progress-stacked">Stacked</h3>
+<!--         <h3 id="progress-stacked">Stacked</h3>
         <div class="bs-component">
             <div class="progress">
                 <div class="progress-bar progress-bar-success" style="width: 35%"></div>
                 <div class="progress-bar progress-bar-warning" style="width: 20%"></div>
                 <div class="progress-bar progress-bar-danger" style="width: 10%"></div>
             </div>
-        </div>
+        </div> -->
+        
     </div>
 </section>
 
@@ -3049,7 +3048,7 @@
 </section>
             
 
-<section id="Table" class="styleguide">
+<!-- <section id="Table" class="styleguide">
 <h1>Table</h1>
 <div class="code-sample">
 <table class="table table-hover">
@@ -3115,7 +3114,7 @@
     </tbody>
 </table>
 </div>
-</section>
+</section> -->
             
 
 <section id="Thumbnail-box" class="styleguide">
@@ -3160,7 +3159,7 @@
 
             
 
-<section id="Thumbnails" class="styleguide">
+<!-- <section id="Thumbnails" class="styleguide">
 <h1>Thumbnails</h1>
 <div class="code-sample">
 <div class="row">
@@ -3196,10 +3195,10 @@
     </div>
 </div>
 </div>
-</section>
+</section> -->
             
 
-<section id="Timepicker" class="styleguide">
+<!-- <section id="Timepicker" class="styleguide">
     <h1>Timepicker</h1>
     <div class="code-sample">
        
@@ -3227,7 +3226,7 @@
 
     </div>
 </section>
-
+ -->
             
 
 <section id="Tooltip" class="styleguide">
