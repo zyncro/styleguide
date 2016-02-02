@@ -15,6 +15,7 @@ img.fit_cover {
 }
 
 .mosaic {
+    max-width: 500px;
     .fade {
         opacity: 0;
         @include transition(all 1s ease);

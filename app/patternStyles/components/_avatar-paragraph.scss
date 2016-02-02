@@ -1,11 +1,12 @@
-
 //
 // Avatar-paragraph
 // --------------------------------------------------
 
 .avatar-paragraph {
     margin-bottom: 20px;
-    p{margin: 6px 0;}
+    .list-group-item-parragraph {
+        margin: 10px 0;
+    }
     .avatar {
         margin-right: 10px;
     }
