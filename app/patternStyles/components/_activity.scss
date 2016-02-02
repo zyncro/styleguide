@@ -1,8 +1,9 @@
 //
-// Box
+// activity
 // --------------------------------------------------
 
-// Base class
 .activity {
-    @include box-shadow(0px -1px 0px #bebebe inset);
+    .activity-comments {
+        margin-bottom: 10px;
+    }
 }
