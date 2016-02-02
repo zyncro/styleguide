@@ -3,14 +3,8 @@
 // Avatar-paragraph-indent
 // --------------------------------------------------
 .avatar-paragraph-indent {
-    .avatar-info-left,
-    .avatar-info-right {
-        display: table-cell;
-    }
-    .avatar-info-right {
-        vertical-align: top;
-    }
-    .list-group-item-parragraph {
-        margin-top: 10px;
-    }
+.list-group-item-parragraph{
+    padding-left: 40px;
+
+}
 }
