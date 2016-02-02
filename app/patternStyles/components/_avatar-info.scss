@@ -9,7 +9,7 @@
     padding: 0;
     @include aligner;
     .avatar {
-        flex: initial;
+        flex: none;
     }
     .avatar-info-title {
         flex: 1;
