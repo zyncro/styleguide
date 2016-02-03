@@ -7,16 +7,16 @@
     position: relative;
     padding: 0;
     @include aligner;
-    .avatar {
+    > .avatar {
         flex: none;
     }
-    .avatar-info-title {
+    > .avatar-info-title {
         flex: 1;
+        > h4, > p {
+            margin: 0;
+        }
     }
-    .avatar {
+    > .avatar {
         margin-right: 10px;
-    }
-    h4, p {
-        margin: 0;
     }
 }

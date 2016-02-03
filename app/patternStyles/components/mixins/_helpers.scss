@@ -33,3 +33,11 @@
             transform: rotate(359deg);
         }
 }
+
+// Ellipsis
+.ellipsis {
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

@@ -3,10 +3,10 @@
 // --------------------------------------------------
 
 .activity {
-    .activity-comments {
-        margin-bottom: 10px;
-    }
-    > .box{
+    > .box {
         padding: 20px;
+        > .activity-comments {
+            margin-bottom: 10px;
+        }
     }
 }
