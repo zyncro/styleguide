@@ -12,9 +12,10 @@
 }
 
 .sidemenu-item {
-    height: 60px;
     border-bottom: 1px solid #131922;
     box-shadow: 0 2px 2px -3px #aaa;
+    display: flex;
+    align-items: center;
     &.selected {
         background: #0f131a;
         a {
@@ -22,11 +23,12 @@
         }
     }
     a {
-        height: $navbar-height;
-        padding: 20px 20px 20px;
         display: block;
+        width: 100%;
         text-decoration: none;
         color: $gray;
+        height: $navbar-height;
+        padding-left: 20px;
         i {
             width: 30px;
         }
@@ -38,4 +40,11 @@
             background: $brand-gray-blue-dark;
         }
     }
+}
+
+.sidemenu-item,
+.sidemenu-item a,
+.sidemenu-item i {
+    display: flex;
+    align-items: center;
 }
