@@ -1,12 +1,11 @@
 //
-// Box
+// Profile Block
 // --------------------------------------------------
-$avatar-lg: 126px;
-
+//TODO: use avatar component
 // Base class
 .profile-block {
     .profile-block-top {
-        margin-left: $avatar-lg;
+        margin-left: 126px;
         padding-left: 20px;
     }
     .profile-block-header {

@@ -1,5 +1,6 @@
 //
-// Box
+// 
+// Date picker
 // --------------------------------------------------
 
 // Base class
@@ -18,14 +19,11 @@
     }
 }
 
-
-
 .zy-datepicker .btn-default.active,
- .zy-datepicker + ul .btn-default.active{
-    background:$brand-primary;
-    color:white;
+.zy-datepicker + ul .btn-default.active {
+    background: $brand-primary;
+    color: white;
 }
-
 
 .zy-datepicker + ul {
     @extend .zy-datepicker;
