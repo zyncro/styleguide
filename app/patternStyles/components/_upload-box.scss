@@ -9,6 +9,7 @@
     // background-color: $gray;
     // border: 1px solid $gray;
     margin-bottom: 10px;
+    @extend .clearfix;
     > .row {
         margin: 0;
         margin-top: 10px;

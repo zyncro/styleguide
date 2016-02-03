@@ -2,20 +2,26 @@
 // Mosaic
 // --------------------------------------------------
 
-// Base class
-img.fit_cover {
-    width: 100%;
-    height: 100%;
-}
-
-.imageX {
-    background-color: transparent;
-    position: relative;
-    cursor: pointer;
-}
-
 .mosaic {
     max-width: 500px;
+    margin-top: 10px;
+    $box-width: 216px;
+    $box-height: 216px;
+    @extend .clearfix;
+    img.fit_cover {
+        width: 100%;
+        height: 100%;
+    }
+    .imageX {
+        background-color: transparent;
+        position: relative;
+        cursor: pointer;
+    }
+    .mosaic-left,
+    .mosaic-right {
+        float: left;
+        width: 50%;
+    }
     .fade {
         opacity: 0;
         @include transition(all 1s ease);
@@ -30,12 +36,6 @@ img.fit_cover {
         margin: 0;
         background-position: center center;
         background-size: cover;
-    }
-    margin-top: 10px;
-    $box-width: 216px;
-    $box-height: 216px;
-    .pull-left {
-        width: 50%;
     }
     .box-m4 {
         height: $box-height;
@@ -66,11 +66,10 @@ img.fit_cover {
         width: 100%;
         text-align: center;
         border: none;
-        text-shadow: 0px 1px 2px rgba(0,0,0,0.7);
+        text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.7);
         line-height: 1;
-        color:white;
+        color: white;
         .mosaic-number {
-
             font-size: 2em;
             font-weight: bold;
         }

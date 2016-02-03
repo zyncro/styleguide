@@ -5,7 +5,7 @@ $avatar-lg: 126px;
 
 // Base class
 .profile-block {
-    .profile-block-right {
+    .profile-block-top {
         margin-left: $avatar-lg;
         padding-left: 20px;
     }
@@ -14,7 +14,7 @@ $avatar-lg: 126px;
     }
     .profile-block-bar {
         background-color: $brand-primary;
-        margin-top: -15px;
+        margin-top: -32px;
         padding: 0;
         min-height: 45px;
         padding-top: 10px;
@@ -23,4 +23,24 @@ $avatar-lg: 126px;
     .profile-block-following {
         margin-right: 30px;
     }
+}
+
+.profile-block {
+    > .avatar {
+        @extend .pull-left;
+    }
+}
+
+.profile-block-top {
+    @extend .clearfix;
+    > .inner-left {
+        @extend .pull-left;
+    }
+    > .inner-right {
+        @extend .pull-right;
+    }
+}
+
+.profile-block-follow {
+    margin-top: 20px;
 }

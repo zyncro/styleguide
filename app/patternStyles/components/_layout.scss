@@ -21,6 +21,12 @@
             width: $main-sidebar-right-widget-width;
         }
     }
+    .table-layout-left {
+        @extend .pull-left;
+    }
+    .table-layout-right {
+        @extend .pull-right;
+    }
 }
 
 $collape-button-size: 60px;
@@ -37,12 +43,14 @@ $collape-button-size: 60px;
     padding-left: $collape-button-size;
     padding-right: 0;
 }
+
 .main-body {
     .table-layout-content {
         padding-left: 0;
         padding-right: 0;
     }
 }
+
 /**
 * Main Body
 */
@@ -58,12 +66,10 @@ $collape-button-size: 60px;
         bottom: 0;
         background: $brand-gray-blue;
     }
-
-
-.table-layout-content {
-  /* margin-top: 20px; */
-      padding-bottom: 20px;
-  }
+    .table-layout-content {
+        /* margin-top: 20px; */
+        padding-bottom: 20px;
+    }
     .table-layout-right {
         position: fixed;
         right: 10px;
@@ -71,10 +77,10 @@ $collape-button-size: 60px;
         top: 81px;
     }
     .table-layout-content {
-      >.container-fluid {
-        // border-right: 1px solid $gray-zyncro-4;
-        padding-top: 20px;
-      }
+        > .container-fluid {
+            // border-right: 1px solid $gray-zyncro-4;
+            padding-top: 20px;
+        }
     }
 }
 
@@ -138,7 +144,6 @@ $collape-button-size: 60px;
         padding-left: $collape-button-size;
         padding-right: $main-sidebar-right-width;
     }
-
 }
 
 /* Large devices (large desktops, 1200px and up) */
@@ -157,5 +162,3 @@ $collape-button-size: 60px;
         }
     }
 }
-
-

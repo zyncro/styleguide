@@ -542,31 +542,12 @@ input[type="checkbox"] {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
-* Toggle switch
+* Toggle switch tal cual en zyncro base
 */
 .switch {
     margin-bottom: 23px;
+    @extend .clearfix;
     input.toggle-switch {
         max-height: 0;
         max-width: 0;
@@ -580,7 +561,7 @@ input[type="checkbox"] {
         width: 50px;
         border-radius: 150px;
         cursor: pointer;
-          margin-top: 8px;
+        margin-top: 8px;
     }
     input.toggle-switch + label:before {
         content: "\f00c";
@@ -594,8 +575,6 @@ input[type="checkbox"] {
         left: 0;
         border-radius: 150px;
         background: rgba(19, 191, 17, 0);
-        -moz-transition: .25s ease-in-out;
-        -webkit-transition: .25s ease-in-out;
         transition: .25s ease-in-out;
         line-height: 4px;
     }
@@ -609,8 +588,6 @@ input[type="checkbox"] {
         left: 3px;
         border-radius: 150px;
         background: white;
-        -moz-transition: .25s ease-in-out;
-        -webkit-transition: .25s ease-in-out;
         transition: .25s ease-in-out;
     }
     input.toggle-switch:checked + label:before {

@@ -51,6 +51,7 @@
 .thumbnail-box-list {
     padding: 0;
     list-style: none;
+    @extend .clearfix;
     > .thumbnail-box{
       float: left;
     }

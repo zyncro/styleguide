@@ -81,6 +81,11 @@
   background: $modal-header-bg;
   border-bottom: 1px solid $modal-header-border-color;
   min-height: ($modal-title-padding + $modal-title-line-height);
+   @extend .clearfix;
+  > a{
+      @extend .pull-right;
+  }
+
 }
 // Close icon
 .modal-header .close {
@@ -92,6 +97,7 @@
   margin: 0;
   line-height: $modal-title-line-height;
   color: white;
+  @extend .pull-left;
 }
 
 // Modal body
@@ -131,6 +137,7 @@
   height: 50px;
   overflow: scroll;
 }
+
 
 // Scale up the modal
 @media (min-width: $screen-sm-min) {
