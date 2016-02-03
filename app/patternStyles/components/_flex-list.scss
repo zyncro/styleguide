@@ -2,6 +2,9 @@
 // Flex List
 // --------------------------------------------------
 
+// Base class
+
+
 // TODO: Clean this when Ux decides what to do
 
 // TODO CENTER VERTICAL ALL ITEM
@@ -10,20 +13,18 @@
     //     align-items: center;
     //     justify-content: center;
     // }
-// Base class
-//
-.list-flex {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
 
+
+.list-flex{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
 .list-flex-row {
     display: flex;
     background-color: $list-group-bg;
     position: relative;
     margin-bottom: -1px;
-    padding: 10px 0;
     @extend .vertical-container;
     &:first-child {
         @include border-top-radius($list-group-border-radius);
@@ -65,17 +66,13 @@
     text-align: center;
 }
 
-.list-flex-item {
-    padding: 0 14px 0 0;
-    display: flex;
-    align-items: center;
+// HARDOCODED TODO variables!!!
+.list-flex-level {
+    padding-left: 20px;
+}
 
-    &:first-child {
-        padding-left: 14px;
-    }
-    > .dropdown > .dropdown-toggle {
-        padding: 0;
-    }
+.list-flex-item {
+    padding: 10px;
 }
 
 .list-flex-item-heading {
@@ -100,18 +97,31 @@
     flex: 2;
 }
 
+
+// TODO: move to helpers
+.ellipsis {
+    // text-align: left;
+    padding: 0 5px;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .vertical-container {
     display: flex;
     align-list-flex-items: center;
     justify-content: center;
     align-items: center;
 }
-
 // END TODO: move to helpers
 
+
+
 .list-flex-title,
-.list-flex-title:hover {
-    color: white;
+.list-flex-title:hover
+{
+    color:white;
     background: $brand-primary;
 }
 
@@ -121,7 +131,17 @@
         border: 1px solid $list-group-border;
     }
 }
+.list-flex-sm{
+    .list-flex-item{
+           // padding: 4px 5px;
+    }
+}
 
 .list-flex-mobile {
     background: $gray-lighter;
+    .list-flex-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
 }
