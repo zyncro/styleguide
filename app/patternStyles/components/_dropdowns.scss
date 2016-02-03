@@ -32,7 +32,7 @@
 .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: 0;
+    right: 0;
     z-index: $zindex-dropdown;
     display: none;
     // none by default, but block on "open" of the menu
@@ -76,7 +76,9 @@
    
     }
 }
-
+.dropdown-menu-right {
+    left: 0;
+}
 // Hover/Focus state
 .dropdown-menu > li > a {
     &:hover,
