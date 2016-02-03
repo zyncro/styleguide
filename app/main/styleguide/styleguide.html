@@ -294,9 +294,9 @@
     <div class="code-sample">
         <div class="avatar-header">
             <div class="avatar-header-row">
-                <i class="avatar-header-cell icon icon-back back" tooltip="tooltip" style="display: table-cell;vertical-align: middle;"></i>
-                <img class="avatar-header-cell avatar" src="http://placehold.it/40x40" style="display: table-cell;vertical-align: middle;" />
-                <h2 class="avatar-header-cell list-group-item-heading" style="display: table-cell;vertical-align: middle;"><a href="#">Donec idelit</a></h2>
+                <i class="avatar-header-cell icon icon-back back" tooltip="tooltip"></i>
+                <img class="avatar-header-cell avatar" src="http://placehold.it/40x40"/>
+                <h2 class="avatar-header-cell list-group-item-heading"><a href="#">Donec idelit</a></h2>
                 <a href="" class="avatar-header-cell btn btn-link" role="button">
                     <i class="icon-star-off " tooltip="Marcar como..."></i>
                 </a>
@@ -851,10 +851,10 @@
 <!-- <section id="Carousel" class="styleguide">
     <h1>Carousel</h1>
     <div class="code-sample">
-        <div style="height: 305px">
+        <div>
             <carousel interval="myInterval">
                 <slide ng-repeat="slide in slides" active="slide.active">
-                    <img ng-src="{{slide.image}}" style="margin:auto;">
+                    <img ng-src="{{slide.image}}">
                     <div class="carousel-caption">
                         <h4>Slide {{$index}}</h4>
                         <p>{{slide.text}}</p>
@@ -1000,7 +1000,7 @@
     <div class="code-sample">
         <div class="dropdown">
             <!-- Link or button to toggle dropdown -->
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="display: block; position: static;">
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
                 <li class="dropdown-header">Dropdown header</li>
                 <li class="disabled">
                     <a tabindex="-1" href="#">Action</a>
@@ -1017,7 +1017,7 @@
                 </li>
             </ul>
             <!-- flex List dropdown -->
-            <ul class="dropdown-menu list-flex list-flex-sm" role="menu" aria-labelledby="dropdownMenu" style="display: block; position: static;">
+            <ul class="dropdown-menu list-flex list-flex-sm" role="menu" aria-labelledby="dropdownMenu">
                 <!-- TITLE -->
                 <li class="list-flex-row list-flex-title">
                     <div class="list-flex-item flex-initial">
@@ -2031,8 +2031,8 @@
                         </div>
                         <div class="post-box-content">
                             <div class="post-box-head box">
-                                <div class="share-select">
-                                    <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled" style="width: 100%">
+                                <div class="share-select">                               
+                                    <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled">
                                         <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
                                         <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
                                             <div ng-bind-html="person.name | highlight: $select.search"></div>
@@ -2232,7 +2232,7 @@
                                                         <div class="post-box-content">
                                                             <div class="post-box-head box">
                                                                 <div class="share-select">
-                                                                    <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled" style="width: 100%">
+                                                                    <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled">
                                                                         <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
                                                                         <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
                                                                             <div ng-bind-html="person.name | highlight: $select.search"></div>
@@ -2379,7 +2379,7 @@
 <section id="Pagination" class="styleguide">
 <h1>Pagination</h1>
 <div class="code-sample">
-<ul class="pagination" style="margin-right: 10px;">
+<ul class="pagination">
     <li><a href="#">Prev</a></li>
     <li><a href="#">1</a></li>
     <li><a href="#">2</a></li>
@@ -2460,7 +2460,7 @@
                                         <div class="post-box-content">
                                             <div class="post-box-head box">
                                                 <div class="share-select">
-                                                    <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled" style="width: 100%">
+                                                    <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled">
                                                         <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
                                                         <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
                                                             <div ng-bind-html="person.name | highlight: $select.search"></div>
@@ -2599,7 +2599,7 @@
             <div class="post-box-content">
                 <div class="post-box-head box">
                     <div class="share-select">
-                        <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled" style="width: 100%">
+                        <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled">
                         <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
                         <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
                         <div ng-bind-html="person.name | highlight: $select.search"></div>
@@ -2636,7 +2636,7 @@
             <div class="post-box-content">
                 <div class="post-box-head box">
                     <div class="share-select">
-                        <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled" style="width: 100%">
+                        <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled">
                         <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
                         <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
                         <div ng-bind-html="person.name | highlight: $select.search"></div>
@@ -2989,7 +2989,7 @@
 <div class="code-sample">
 
 <div class="share-select">
-  <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled" style="width: 100%">
+  <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled">
     <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
     <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
       <div ng-bind-html="person.name | highlight: $select.search"></div>

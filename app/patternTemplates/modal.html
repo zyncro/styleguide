@@ -76,8 +76,8 @@
                         </div>
                         <div class="post-box-content">
                             <div class="post-box-head box">
-                                <div class="share-select">
-                                    <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled" style="width: 100%">
+                                <div class="share-select">                               
+                                    <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled">
                                         <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
                                         <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
                                             <div ng-bind-html="person.name | highlight: $select.search"></div>
