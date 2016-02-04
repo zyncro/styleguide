@@ -399,6 +399,19 @@
                     <p><a href="#">Maecenas sed diam - 14m</a></p>
                 </div>
         </div>
+
+        <h2>Avatar-info-icon-label</h2>
+        <hr/>
+        <div class="avatar-info avatar-info-icon-label">
+            <img class="avatar" src="http://placehold.it/40x40" />
+            <div class="avatar-info-title">
+                <p class="icon-label"><b>Dirección</b><a href=""><i class="icon icon-down-big icon-link"></i></a></p>
+            </div>
+        </div>
+
+
+
+
         <h2>Avatar-info-buttons</h2>
         <hr/>
         <div class="avatar-info avatar-info-buttons">
@@ -1836,21 +1849,11 @@
             
 
 <section id="Icon-label" class="styleguide">
-<h1>Icon-Label</h1>
-<div class="code-sample">
- 
-   <span class="icon-label"><i class="icon-like-off"></i> Label</span>
-   <span class="icon-label"><i class="icon-like-off"></i> Phone  <i class="icon icon-down-big"></i></span>
-
-</div>
+	<h1>Icon-Label</h1>
+	<div class="code-sample">		
+		<p class="icon-label"><b>Dirección</b><a href=""><i class="icon icon-down-big icon-link"></i></a></p>
+	</div>
 </section>
-
-
-
-
-
-
-
             
 
 <section id="Images" class="styleguide">
@@ -2025,24 +2028,27 @@
                 <div class="modal-body">
                     <div class="post-box-active post-box clearfix">
                         <div class="post-box-top">
-                            <!-- Avatar component -->
-                            <a href="#">
+                            
+                            <div class="avatar-info avatar-info-icon-label">
                                 <img class="avatar" src="http://placehold.it/40x40" />
-                            </a>
-                            <div class="ellipsis"> <span class="icon-label">He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say.  <a href=""><i class="icon icon-down-big icon-link"></i></a></span></div>
+                                <div class="avatar-info-title">
+                                    <p class="icon-label"><b>Dirección</b><a href=""><i class="icon icon-down-big icon-link"></i></a></p>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="post-box-content">
                             <div class="post-box-head box">
-                                <div class="share-select">                               
+                                <div class="share-select">
                                     <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled">
-                                        <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
-                                        <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
-                                            <div ng-bind-html="person.name | highlight: $select.search"></div>
-                                            <small>
-                                                        email: {{person.email}}
-                                                        age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
-                                                      </small>
-                                        </ui-select-choices>
+                                    <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
+                                    <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
+                                    <div ng-bind-html="person.name | highlight: $select.search"></div>
+                                    <small>
+                                    email: {{person.email}}
+                                    age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+                                    </small>
+                                    </ui-select-choices>
                                     </ui-select>
                                 </div>
                                 <div class="contenteditable" contenteditable='true' placeholder="Lorem">
@@ -2062,7 +2068,6 @@
         </div>
     </div>
 </section>
-
             
 
 <section id="Mosaic" class="styleguide">
@@ -2173,9 +2178,9 @@
                     <div class="table-layout-left">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle visible-xs visible-sm visible-md">
-                                <span class="sr-only">Toggle navigation</span>
-                                <div class="badge badge-danger badge-absolute">10</div>
-                                <span class="icon icon-menu"></span>
+                            <span class="sr-only">Toggle navigation</span>
+                            <div class="badge badge-danger badge-absolute">10</div>
+                            <span class="icon icon-menu"></span>
                             </button>
                             <a class="navbar-brand hidden-xs hidden-sm hidden-md" id="organization-avatar">
                                 <img src="https://app.zyncro.com/assets/images/logo.png" />
@@ -2219,110 +2224,111 @@
                                     <li>
                                         <div class="plus-content">
                                             <tabset>
-                                                <tab>
-                                                    <tab-heading>
-                                                        Message
-                                                    </tab-heading>
-                                                    <div class="post-box-active post-box clearfix">
-                                                        <div class="post-box-top">
-                                                            <!-- Avatar component -->
-                                                            <a href="#">
-                                                                <img class="avatar" src="http://placehold.it/40x40" />
-                                                            </a>
-                                                            <div class="ellipsis"> <span class="icon-label">He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say.  <a href=""><i class="icon icon-down-big icon-link"></i></a></span></div>
-                                                        </div>
-                                                        <div class="post-box-content">
-                                                            <div class="post-box-head box">
-                                                                <div class="share-select">
-                                                                    <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled">
-                                                                        <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
-                                                                        <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
-                                                                            <div ng-bind-html="person.name | highlight: $select.search"></div>
-                                                                            <small>
-                                                    email: {{person.email}}
-                                                    age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
-                                                    </small>
-                                                                        </ui-select-choices>
-                                                                    </ui-select>
-                                                                </div>
-                                                                <div class="contenteditable" contenteditable='true' placeholder="Lorem">
-                                                                    He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say.
-                                                                    <input type="text" value="Pedro Aspiazu" class="label-primary mention" zy-elastic-input="" disabled="" size="13">
-                                                                    <input type="text" value="#Feature" class="label-primary hastag" disabled size="8">
-                                                                </div>
-                                                            </div>
-                                                            <div class="footer-buttons">
-                                                                <button type="button" class="btn btn-link btn-link-icon"> <i class="icon icon-attachment"></i></button>
-                                                                <button type="button" class="btn btn-default">Cancelar</button>
-                                                                <button type="button" class="btn btn-primary">Publicar</button>
-                                                            </div>
+                                            <tab>
+                                            <tab-heading>
+                                            Message
+                                            </tab-heading>
+                                            <div class="post-box-active post-box clearfix">
+                                                <div class="post-box-top">
+                                                    <div class="avatar-info avatar-info-icon-label">
+                                                        <img class="avatar avatar-sm" src="http://placehold.it/40x40" />
+                                                        <div class="avatar-info-title">
+                                                            <p class="icon-label"><b>Dirección</b><a href=""><i class="icon icon-down-big icon-link"></i></a></p>
                                                         </div>
                                                     </div>
-                                                </tab>
-                                                <tab>
-                                                    <tab-heading>
-                                                        Archivo
-                                                    </tab-heading>
-                                                    <form class="upload-box" name="uploadBoxForm" role="form">
-                                                        <div class="drop-area">
-                                                            <span class="drop-label">droparea</span>
-                                                            <ul class="thumbnail-box-list clearfix">
-                                                                <li class="thumbnail-box">
-                                                                    <div class="thumbnail-box-image"></div>
-                                                                    <div class="thumbnail-box-label" tooltip="thumbnail-box">thumbnail.jpg</div>
-                                                                    <i class="thumbnail-box-close icon icon-close" tooltip="thumbnail-box" tooltip-placement="top"></i>
-                                                                </li>
-                                                                <li class="thumbnail-box">
-                                                                    <div class="thumbnail-box-image"></div>
-                                                                    <div class="thumbnail-box-label" tooltip="thumbnail-box">thumbnail.jpg</div>
-                                                                    <i class="thumbnail-box-close icon icon-close" tooltip="thumbnail-box" tooltip-placement="top"></i>
-                                                                </li>
-                                                                <li class="thumbnail-box">
-                                                                    <div class="thumbnail-box-image"></div>
-                                                                    <div class="thumbnail-box-label" tooltip="thumbnail-box">thumbnail.jpg</div>
-                                                                    <i class="thumbnail-box-close icon icon-close" tooltip="thumbnail-box" tooltip-placement="top"></i>
-                                                                </li>
-                                                                <li class="thumbnail-box">
-                                                                    <div class="thumbnail-box-image"></div>
-                                                                    <div class="thumbnail-box-label" tooltip="thumbnail-box">thumbnail.jpg</div>
-                                                                    <i class="thumbnail-box-close icon icon-close" tooltip="thumbnail-box" tooltip-placement="top"></i>
-                                                                </li>
-                                                                <li class="thumbnail-box thumbnail-box-add">
-                                                                    <i class="icon icon-add"></i>
-                                                                </li>
-                                                            </ul>
+                                                </div>
+                                                <div class="post-box-content">
+                                                    <div class="post-box-head box">
+                                                        <div class="share-select">
+                                                            <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled">
+                                                            <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
+                                                            <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
+                                                            <div ng-bind-html="person.name | highlight: $select.search"></div>
+                                                            <small>
+                                                            email: {{person.email}}
+                                                            age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+                                                            </small>
+                                                            </ui-select-choices>
+                                                            </ui-select>
                                                         </div>
-                                                        <input type="text" class="form-control" />
-                                                        <div class="footer-buttons">
-                                                            <button type="button" class="btn btn-link btn-link-icon"> <i class="icon icon-attachment"></i></button>
-                                                            <button type="button" class="btn btn-default">Cancelar</button>
-                                                            <button type="button" class="btn btn-primary">Publicar</button>
+                                                        <div class="contenteditable" contenteditable='true' placeholder="Lorem">
+                                                            He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say.
+                                                            <input type="text" value="Pedro Aspiazu" class="label-primary mention" zy-elastic-input="" disabled="" size="13">
+                                                            <input type="text" value="#Feature" class="label-primary hastag" disabled size="8">
                                                         </div>
-                                                    </form>
-                                                </tab>
-                                                <tab>
-                                                    <tab-heading>
-                                                        Grupos
-                                                    </tab-heading>
-                                                    <form class="plus-form">
-                                                        <div class="form-group">
-                                                            <input type="email" class="form-control" placeholder="Email">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="password" class="form-control" placeholder="Password">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder="text">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder="text">
-                                                        </div>
-                                                        <div class="footer-buttons">
-                                                            <button type="button" class="btn btn-default">Cancelar</button>
-                                                            <button type="button" class="btn btn-primary">Publicar</button>
-                                                        </div>
-                                                    </form>
-                                                </tab>
+                                                    </div>
+                                                    <div class="footer-buttons">
+                                                        <button type="button" class="btn btn-link btn-link-icon"> <i class="icon icon-attachment"></i></button>
+                                                        <button type="button" class="btn btn-default">Cancelar</button>
+                                                        <button type="button" class="btn btn-primary">Publicar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </tab>
+                                            <tab>
+                                            <tab-heading>
+                                            Archivo
+                                            </tab-heading>
+                                            <form class="upload-box" name="uploadBoxForm" role="form">
+                                                <div class="drop-area">
+                                                    <span class="drop-label">droparea</span>
+                                                    <ul class="thumbnail-box-list clearfix">
+                                                        <li class="thumbnail-box">
+                                                            <div class="thumbnail-box-image"></div>
+                                                            <div class="thumbnail-box-label" tooltip="thumbnail-box">thumbnail.jpg</div>
+                                                            <i class="thumbnail-box-close icon icon-close" tooltip="thumbnail-box" tooltip-placement="top"></i>
+                                                        </li>
+                                                        <li class="thumbnail-box">
+                                                            <div class="thumbnail-box-image"></div>
+                                                            <div class="thumbnail-box-label" tooltip="thumbnail-box">thumbnail.jpg</div>
+                                                            <i class="thumbnail-box-close icon icon-close" tooltip="thumbnail-box" tooltip-placement="top"></i>
+                                                        </li>
+                                                        <li class="thumbnail-box">
+                                                            <div class="thumbnail-box-image"></div>
+                                                            <div class="thumbnail-box-label" tooltip="thumbnail-box">thumbnail.jpg</div>
+                                                            <i class="thumbnail-box-close icon icon-close" tooltip="thumbnail-box" tooltip-placement="top"></i>
+                                                        </li>
+                                                        <li class="thumbnail-box">
+                                                            <div class="thumbnail-box-image"></div>
+                                                            <div class="thumbnail-box-label" tooltip="thumbnail-box">thumbnail.jpg</div>
+                                                            <i class="thumbnail-box-close icon icon-close" tooltip="thumbnail-box" tooltip-placement="top"></i>
+                                                        </li>
+                                                        <li class="thumbnail-box thumbnail-box-add">
+                                                            <i class="icon icon-add"></i>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <input type="text" class="form-control" />
+                                                <div class="footer-buttons">
+                                                    <button type="button" class="btn btn-link btn-link-icon"> <i class="icon icon-attachment"></i></button>
+                                                    <button type="button" class="btn btn-default">Cancelar</button>
+                                                    <button type="button" class="btn btn-primary">Publicar</button>
+                                                </div>
+                                            </form>
+                                            </tab>
+                                            <tab>
+                                            <tab-heading>
+                                            Grupos
+                                            </tab-heading>
+                                            <form class="plus-form">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control" placeholder="Email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" class="form-control" placeholder="Password">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="text">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="text">
+                                                </div>
+                                                <div class="footer-buttons">
+                                                    <button type="button" class="btn btn-default">Cancelar</button>
+                                                    <button type="button" class="btn btn-primary">Publicar</button>
+                                                </div>
+                                            </form>
+                                            </tab>
                                             </tabset>
                                         </div>
                                     </li>
@@ -2338,44 +2344,43 @@
                                     <div class="icon icon-find"></div>
                                 </div>
                                 <span class="input-group-btn">
-                    <div class="btn-group" dropdown is-open="status.isopenSearch">
-                        <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
-                            TODO <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Actividad</a></li>
-                                    <li><a href="#">Archivos</a></li>
-                                    <li><a href="#">Grupos</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Personas</a></li>
-                                </ul>
+                                    <div class="btn-group" dropdown is-open="status.isopenSearch">
+                                        <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+                                        TODO <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Actividad</a></li>
+                                            <li><a href="#">Archivos</a></li>
+                                            <li><a href="#">Grupos</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">Personas</a></li>
+                                        </ul>
+                                    </div>
+                                </span>
                             </div>
-                            </span>
                         </div>
                     </div>
-                </div>
-                <div class="table-layout">
-                    <div class="table-layout-left">
-                    </div>
-                    <div class="table-layout-collapsed visible-xs visible-sm visible-md">
-                        <!-- TODO: this is from zyncro-base repeated in line 210 -->
-                        <ul class="sidemenu">
-                            <li class="sidemenu-item"><a href="#" title=""><i class="icon-user-details"></i>Item 01</a></li>
-                            <li class="sidemenu-item"><a href="#" title=""><i class="icon-user-details"></i>Item 02</a></li>
-                            <li class="sidemenu-item"><a href="#" title=""><i class="icon-user-details"></i>Item 03</a></li>
-                            <li class="sidemenu-item"><a href="#" title=""><i class="icon-user-details"></i>Item 04</a></li>
-                            <li class="sidemenu-item"><a href="#" title=""><i class="icon-user-details"></i>Item 05</a></li>
-                        </ul>
-                    </div>
-                    <div class="table-layout-right hidden-xs">
+                    <div class="table-layout">
+                        <div class="table-layout-left">
+                        </div>
+                        <div class="table-layout-collapsed visible-xs visible-sm visible-md">
+                            <!-- TODO: this is from zyncro-base repeated in line 210 -->
+                            <ul class="sidemenu">
+                                <li class="sidemenu-item"><a href="#" title=""><i class="icon-user-details"></i>Item 01</a></li>
+                                <li class="sidemenu-item"><a href="#" title=""><i class="icon-user-details"></i>Item 02</a></li>
+                                <li class="sidemenu-item"><a href="#" title=""><i class="icon-user-details"></i>Item 03</a></li>
+                                <li class="sidemenu-item"><a href="#" title=""><i class="icon-user-details"></i>Item 04</a></li>
+                                <li class="sidemenu-item"><a href="#" title=""><i class="icon-user-details"></i>Item 05</a></li>
+                            </ul>
+                        </div>
+                        <div class="table-layout-right hidden-xs">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
 </section>
-
             
 
 <section id="Pagination" class="styleguide">
@@ -2441,116 +2446,117 @@
             <!-- Split button -->
             <div class="btn-group" dropdown>
                 <button role="button" href="#" class="btn btn-primary dropdown-toggle" dropdown-toggle>
-                    <i tooltip="Add like" class="icon-add"></i>
+                <i tooltip="Add like" class="icon-add"></i>
                 </button>
                 <ul class="dropdown-menu box" role="menu">
                     <li>
                         <div class="plus-content">
                             <tabset>
-                                <tab>
-                                    <tab-heading>
-                                        Message
-                                    </tab-heading>
-                                    <div class="post-box-active post-box clearfix">
-                                        <div class="post-box-top">
-                                            <!-- Avatar component -->
-                                            <a href="#">
-                                                <img class="avatar" src="http://placehold.it/40x40" />
-                                            </a>
-                                            <div class="ellipsis"> <span class="icon-label">He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say.  <a href=""><i class="icon icon-down-big icon-link"></i></a></span></div>
-                                        </div>
-                                        <div class="post-box-content">
-                                            <div class="post-box-head box">
-                                                <div class="share-select">
-                                                    <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled">
-                                                        <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
-                                                        <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
-                                                            <div ng-bind-html="person.name | highlight: $select.search"></div>
-                                                            <small>
-                                                        email: {{person.email}}
-                                                        age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
-                                                      </small>
-                                                        </ui-select-choices>
-                                                    </ui-select>
-                                                </div>
-                                                <div class="contenteditable" contenteditable='true' placeholder="Lorem">
-                                                    He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say.
-                                                    <input type="text" value="Pedro Aspiazu" class="label-primary mention" zy-elastic-input="" disabled="" size="13">
-                                                    <input type="text" value="#Feature" class="label-primary hastag" disabled size="8">
-                                                </div>
-                                            </div>
-                                            <div class="footer-buttons">
-                                                <button type="button" class="btn btn-link btn-link-icon"> <i class="icon icon-attachment"></i></button>
-                                                <button type="button" class="btn btn-default">Cancelar</button>
-                                                <button type="button" class="btn btn-primary">Publicar</button>
-                                            </div>
+                            <tab>
+                            <tab-heading>
+                            Message
+                            </tab-heading>
+                            <div class="post-box-active post-box clearfix">
+                                <div class="post-box-top">
+                                    <div class="avatar-info avatar-info-icon-label">
+                                        <img class="avatar avatar-sm" src="http://placehold.it/40x40" />
+                                        <div class="avatar-info-title">
+                                            <p class="icon-label"><b>Dirección</b><a href=""><i class="icon icon-down-big icon-link"></i></a></p>
                                         </div>
                                     </div>
-                                </tab>
-                                <tab>
-                                    <tab-heading>
-                                        Archivo
-                                    </tab-heading>
-                                    <form class="upload-box" name="uploadBoxForm" role="form">
-                                        <div class="drop-area">
-                                            <span class="drop-label">droparea</span>
-                                            <ul class="thumbnail-box-list clearfix">
-                                                <li class="thumbnail-box">
-                                                    <div class="thumbnail-box-image"></div>
-                                                    <div class="thumbnail-box-label" tooltip="thumbnail-box">thumbnail.jpg</div>
-                                                    <i class="thumbnail-box-close icon icon-close" tooltip="thumbnail-box" tooltip-placement="top"></i>
-                                                </li>
-                                                <li class="thumbnail-box">
-                                                    <div class="thumbnail-box-image"></div>
-                                                    <div class="thumbnail-box-label" tooltip="thumbnail-box">thumbnail.jpg</div>
-                                                    <i class="thumbnail-box-close icon icon-close" tooltip="thumbnail-box" tooltip-placement="top"></i>
-                                                </li>
-                                                <li class="thumbnail-box">
-                                                    <div class="thumbnail-box-image"></div>
-                                                    <div class="thumbnail-box-label" tooltip="thumbnail-box">thumbnail.jpg</div>
-                                                    <i class="thumbnail-box-close icon icon-close" tooltip="thumbnail-box" tooltip-placement="top"></i>
-                                                </li>
-                                                <li class="thumbnail-box">
-                                                    <div class="thumbnail-box-image"></div>
-                                                    <div class="thumbnail-box-label" tooltip="thumbnail-box">thumbnail.jpg</div>
-                                                    <i class="thumbnail-box-close icon icon-close" tooltip="thumbnail-box" tooltip-placement="top"></i>
-                                                </li>
-                                                <li class="thumbnail-box thumbnail-box-add">
-                                                    <i class="icon icon-add"></i>
-                                                </li>
-                                            </ul>
+                                </div>
+                                <div class="post-box-content">
+                                    <div class="post-box-head box">
+                                        <div class="share-select">
+                                            <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled">
+                                            <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
+                                            <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
+                                            <div ng-bind-html="person.name | highlight: $select.search"></div>
+                                            <small>
+                                            email: {{person.email}}
+                                            age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+                                            </small>
+                                            </ui-select-choices>
+                                            </ui-select>
                                         </div>
-                                        <input type="text" class="form-control" />
-                                        <div class="footer-buttons">
-                                            <button type="button" class="btn btn-link btn-link-icon"> <i class="icon icon-attachment"></i></button>
-                                            <button type="button" class="btn btn-default">Cancelar</button>
-                                            <button type="button" class="btn btn-primary">Publicar</button>
+                                        <div class="contenteditable" contenteditable='true' placeholder="Lorem">
+                                            He says he's found the main computer to power the tractor beam that's holding the ship here. He'll try to make the precise location appear on the monitor. The tractor beam is coupled to the main reactor in seven locations. A power loss at one of the terminals will allow the ship to leave. I don't think you boys can help. I must go alone. Whatever you say.
+                                            <input type="text" value="Pedro Aspiazu" class="label-primary mention" zy-elastic-input="" disabled="" size="13">
+                                            <input type="text" value="#Feature" class="label-primary hastag" disabled size="8">
                                         </div>
-                                    </form>
-                                </tab>
-                                <tab>
-                                    <tab-heading>
-                                        Grupos
-                                    </tab-heading>
-                                    <form class="plus-form">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="text">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="text">
-                                        </div>
-                                        <div class="footer-buttons">
-                                            <button type="button" class="btn btn-default">Cancelar</button>
-                                            <button type="button" class="btn btn-primary">Publicar</button>
-                                        </div>
-                                    </form>
-                                </tab>
+                                    </div>
+                                    <div class="footer-buttons">
+                                        <button type="button" class="btn btn-link btn-link-icon"> <i class="icon icon-attachment"></i></button>
+                                        <button type="button" class="btn btn-default">Cancelar</button>
+                                        <button type="button" class="btn btn-primary">Publicar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            </tab>
+                            <tab>
+                            <tab-heading>
+                            Archivo
+                            </tab-heading>
+                            <form class="upload-box" name="uploadBoxForm" role="form">
+                                <div class="drop-area">
+                                    <span class="drop-label">droparea</span>
+                                    <ul class="thumbnail-box-list clearfix">
+                                        <li class="thumbnail-box">
+                                            <div class="thumbnail-box-image"></div>
+                                            <div class="thumbnail-box-label" tooltip="thumbnail-box">thumbnail.jpg</div>
+                                            <i class="thumbnail-box-close icon icon-close" tooltip="thumbnail-box" tooltip-placement="top"></i>
+                                        </li>
+                                        <li class="thumbnail-box">
+                                            <div class="thumbnail-box-image"></div>
+                                            <div class="thumbnail-box-label" tooltip="thumbnail-box">thumbnail.jpg</div>
+                                            <i class="thumbnail-box-close icon icon-close" tooltip="thumbnail-box" tooltip-placement="top"></i>
+                                        </li>
+                                        <li class="thumbnail-box">
+                                            <div class="thumbnail-box-image"></div>
+                                            <div class="thumbnail-box-label" tooltip="thumbnail-box">thumbnail.jpg</div>
+                                            <i class="thumbnail-box-close icon icon-close" tooltip="thumbnail-box" tooltip-placement="top"></i>
+                                        </li>
+                                        <li class="thumbnail-box">
+                                            <div class="thumbnail-box-image"></div>
+                                            <div class="thumbnail-box-label" tooltip="thumbnail-box">thumbnail.jpg</div>
+                                            <i class="thumbnail-box-close icon icon-close" tooltip="thumbnail-box" tooltip-placement="top"></i>
+                                        </li>
+                                        <li class="thumbnail-box thumbnail-box-add">
+                                            <i class="icon icon-add"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <input type="text" class="form-control" />
+                                <div class="footer-buttons">
+                                    <button type="button" class="btn btn-link btn-link-icon"> <i class="icon icon-attachment"></i></button>
+                                    <button type="button" class="btn btn-default">Cancelar</button>
+                                    <button type="button" class="btn btn-primary">Publicar</button>
+                                </div>
+                            </form>
+                            </tab>
+                            <tab>
+                            <tab-heading>
+                            Grupos
+                            </tab-heading>
+                            <form class="plus-form">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="text">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="text">
+                                </div>
+                                <div class="footer-buttons">
+                                    <button type="button" class="btn btn-default">Cancelar</button>
+                                    <button type="button" class="btn btn-primary">Publicar</button>
+                                </div>
+                            </form>
+                            </tab>
                             </tabset>
                         </div>
                     </li>
@@ -2559,7 +2565,6 @@
         </div>
     </div>
 </section>
-
             
 
 <section id="Popover" class="styleguide">
@@ -2578,9 +2583,8 @@
 <section id="Post-Box" class="styleguide">
     <h1>Post-Box</h1>
     <div class="code-sample">
-        <div class="post-box box">
-            <div class="post-box-top">
-          
+        <div class="post-box">
+            <div class="post-box-top">          
                 <!-- Avatar component -->
                 <a href="#">
                     <img class="avatar" src="http://placehold.it/40x40" />
@@ -2590,16 +2594,24 @@
         </div>
         <h2>Post-Box-Active</h2>
         <hr/>
-        <div class="post-box-active post-box box">
+        <div class="post-box-active post-box">
             <div class="post-box-top">
-                <!-- Avatar component -->
-                <a href="#">
-                    <img class="avatar" src="http://placehold.it/40x40" />
-                </a>
-                <div class="ellipsis"> <span class="icon-label"><b>Dirección</b> <a href=""><i class="icon icon-down-big icon-link"></i></a></span></div>
+
+
+
+        <div class="avatar-info avatar-info-icon-label">
+            <img class="avatar" src="http://placehold.it/40x40" />
+            <div class="avatar-info-title">
+                <p class="icon-label"><b>Dirección</b><a href=""><i class="icon icon-down-big icon-link"></i></a></p>
+            </div>
+        </div>
+
+
+
+
             </div>
             <div class="post-box-content">
-                <div class="post-box-head box">
+                <div class="post-box-head">
                     <div class="share-select">
                         <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled">
                         <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
@@ -2627,16 +2639,19 @@
         </div>
         <h2>Post-Box-Active-thumbs</h2>
         <hr/>
-        <div class="post-box-active post-box box">
+        <div class="post-box-active post-box">
             <div class="post-box-top">
-                <!-- Avatar component -->
-                <a href="#">
-                    <img class="avatar" src="http://placehold.it/40x40" />
-                </a>
-                <div class="ellipsis"> <span class="icon-label"><b>Dirección</b> <a href=""><i class="icon icon-down-big icon-link"></i></a></span></div>
+                        <div class="avatar-info avatar-info-icon-label">
+            <img class="avatar" src="http://placehold.it/40x40" />
+            <div class="avatar-info-title">
+                <p class="icon-label"><b>Dirección</b><a href=""><i class="icon icon-down-big icon-link"></i></a></p>
+            </div>
+        </div>
+
+
             </div>
             <div class="post-box-content">
-                <div class="post-box-head box">
+                <div class="post-box-head">
                     <div class="share-select">
                         <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="select2" ng-disabled="disabled">
                         <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
@@ -2701,10 +2716,19 @@
                     <h2 class="profile-block-header">HEADER</h2>
                     <h4 class="profile-block-subheader">Sub HEADER</h4>
                     <div class="row">
-                        <span class="col-xs-12 col-md-6 icon-label"><i class="icon icon-locate"></i> <b>Dirección</b> <a href=""><i class="icon icon-down-big icon-link"></i></a></span>
-                        <span class="col-xs-12 col-md-6 icon-label"><i class="icon icon-skype"></i> Skype <a href=""><i class="icon icon-edit icon-link"></i></a></span>
-                        <span class="col-xs-12 col-md-6 icon-label"><i class="icon icon-mail"></i> Mail <a href=""><i class="icon icon-edit icon-link"></i></a></span>
-                        <span class="col-xs-12 col-md-6 icon-label"><i class="icon icon-telephone"></i> Phone <a href=""><i class="icon icon-down-big icon-link"></i></a></span>
+                        <span class="col-xs-12 col-md-6">
+                            <p class="icon-label"><b>Dirección</b><a href=""><i class="icon icon-down-big icon-link"></i></a></p>
+                        </span>
+                        <span class="col-xs-12 col-md-6">                            
+                            <p class="icon-label"><i class="icon icon-skype"></i> Skype<b>Dirección</b><a href=""><i class="icon icon-down-big icon-link"></i></a></p>
+                        </span>
+                        <span class="col-xs-12 col-md-6">
+                     
+                         <p class="icon-label"><i class="icon icon-mail"></i> Mail<b>Dirección</b><a href=""><i class="icon icon-down-big icon-link"></i></a></p>
+                        </span>
+                        <span class="col-xs-12 col-md-6">
+                         <p class="icon-label"><i class="icon icon-telephone"></i> Phone<b>Dirección</b><a href=""><i class="icon icon-down-big icon-link"></i></a></p>
+                        </span>
                     </div>
                     <div class="row profile-block-follow">
                         <span class="col-xs-12 col-md-6"> <span class="profile-block-following">Seguidos  <span class="badge badge-danger">10</span></span></span>
@@ -2722,7 +2746,6 @@
         </div>
     </div>
 </section>
-
             
 
 <section id="Progress" class="styleguide">

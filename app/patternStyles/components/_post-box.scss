@@ -5,7 +5,11 @@
 // Base class
 .post-box {
     @include box-shadow(0px -1px 0px #bebebe inset);
-     @extend .clearfix;
+    @extend .clearfix;
+    @extend .box;
+    input.select2-input.ui-select-search{
+    width: 100%
+    }
 }
 
 .post-box-top {
@@ -27,6 +31,7 @@
     padding: 14px;
     .post-box-top {
         margin-bottom: 10px;
+        display: block;
     }
     > .post-box-content {
         margin-top: 4px;
@@ -36,4 +41,7 @@
 .post-box-head {
     background: white;
     padding: 14px;
+    @extend .box;
 }
+
+
