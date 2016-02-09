@@ -52,10 +52,6 @@
 }
 
 .search-bg {
-    .search-input-close {
-        color: white;
-        cursor: pointer;
-    }
     input {
         background: $brand-primary-light;
         border: none;
@@ -70,5 +66,12 @@
         background: white;
         color: $gray-dark;
         @include placeholder($gray-dark);
+    }
+    input:active ~ .search-input-close i,
+    input:focus ~ .search-input-close i {
+        color: $gray-dark;
+    }
+    .search-input-close {
+        color: white;
     }
 }
