@@ -92,6 +92,11 @@
 }
 
 //Variants
+
+.list-flex-sm {
+    @extend .list-flex;
+}
+
 .list-flex-bordered {
     .list-flex-row {
         border: 1px solid $list-group-border;
