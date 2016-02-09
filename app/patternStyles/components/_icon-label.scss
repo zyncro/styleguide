@@ -5,12 +5,11 @@
 // Base class
 .icon-label{
     color: $gray-dark;
-    font-size: 12px;
-    >i{
-    font-size: 12px;
-    display: inline-block;
-    padding: 3px 0px;
-    line-height: 1;
+    font-size: $font-size-base;
+    margin: 0;
+    .icon{
     text-align: center;
+    display: inline-flex;
+    vertical-align: middle;
     }
 }
