@@ -25,7 +25,7 @@
                 Cool! The <b>nsPopover</b> could be used as a tooptip.
             </div>
         </script>
-        <section viewport-width>
+
             <h3> Menus </h3>
             <article>
                 <p>
@@ -34,9 +34,7 @@
                 <button ns-popover ns-popover-template="menu" ns-popover-trigger="click" ns-popover-theme="ns-popover-list-theme" ns-popover-timeout="5">
                     Click me
                 </button>
-                <a ns-popover ns-popover-template="menu" ns-popover-trigger="mouseenter" ns-popover-theme="ns-popover-list-theme">
-      Hover me
-    </a>
+                <a ns-popover ns-popover-template="menu" ns-popover-trigger="mouseenter" ns-popover-theme="ns-popover-list-theme"> Hover me </a>
             </article>
             <h3> Tooltip </h3>
             <article>
@@ -46,9 +44,7 @@
                 <button ns-popover ns-popover-template="tooltip" ns-popover-trigger="click" ns-popover-theme="ns-popover-tooltip-theme" ns-popover-timeout="1">
                     Click Me
                 </button>
-                <a ns-popover ns-popover-template="tooltip" ns-popover-trigger="mouseenter" ns-popover-theme="ns-popover-tooltip-theme">
-      Hover me
-    </a>
+                <a ns-popover ns-popover-template="tooltip" ns-popover-trigger="mouseenter" ns-popover-theme="ns-popover-tooltip-theme">Hover me</a>
             </article>
             <h3> Hide on click </h3>
             <article>
@@ -64,15 +60,9 @@
                 <p>
                     <b>nsPopover</b> hide other popover instances when the current one is open. Can be optionally grouped.
                 </p>
-                <a ns-popover ns-popover-template="tooltip" ns-popover-trigger="mouseenter" ns-popover-theme="ns-popover-tooltip-theme">
-       Hover me
-    </a>
-                <a ns-popover ns-popover-template="tooltip" ns-popover-trigger="mouseenter" ns-popover-theme="ns-popover-tooltip-theme" ns-popover-group="my-group-name">
-      Hover me (Group)
-    </a>
-                <a ns-popover ns-popover-template="tooltip" ns-popover-trigger="mouseenter" ns-popover-theme="ns-popover-tooltip-theme" ns-popover-group="my-group-name">
-      Hover me (Group)
-    </a>
+                <a ns-popover ns-popover-template="tooltip" ns-popover-trigger="mouseenter" ns-popover-theme="ns-popover-tooltip-theme"> Hover me</a>
+                <a ns-popover ns-popover-template="tooltip" ns-popover-trigger="mouseenter" ns-popover-theme="ns-popover-tooltip-theme" ns-popover-group="my-group-name">Hover me (Group)</a>
+                <a ns-popover ns-popover-template="tooltip" ns-popover-trigger="mouseenter" ns-popover-theme="ns-popover-tooltip-theme" ns-popover-group="my-group-name">Hover me (Group)</a>
             </article>
             <h3> Track mouse position </h3>
             <article>
@@ -100,13 +90,11 @@
             <br>
             <h3>Disable/Enable Popover</h3>
             <article ng-init="displayPopover = true">
-                <a ns-popover="shouldDisplayPopover()" ns-popover-placement="top" ns-popover-template="menu" ns-popover-trigger="mouseenter" ns-popover-theme="ns-popover-list-theme" ns-popover-timeout="0">
-      Hover me
-    </a>
+                <a ns-popover="shouldDisplayPopover()" ns-popover-placement="top" ns-popover-template="menu" ns-popover-trigger="mouseenter" ns-popover-theme="ns-popover-list-theme" ns-popover-timeout="0">Hover me</a>
                 <button ng-click="displayPopover = !displayPopover" ng-bind="displayPopover ? 'Turn off popover' : 'Turn on popover'">
                 </button>
             </article>
             <br>
-        </section>
+    
     </div>
 </section>

@@ -24,6 +24,7 @@ $brand-success:         #5cb85c !default;
 $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
+$brand-complementary: purple !default;
 
 // TODO: rename
 $brand-gray-blue: #181f2a !default;
@@ -31,15 +32,10 @@ $brand-gray-blue-light: mix(#fff, $brand-gray-blue, 5%) !default;
 $brand-gray-blue-dark: mix(#fff, $brand-gray-blue, 13%) !default;
 $brand-gray-blue-xdark: mix(#000, $brand-gray-blue, 40%) !default;
 
-
-
-
 $brand-primary-light: mix(#fff, $brand-primary, 13%);
 $brand-primary-light2: mix(#fff, $brand-primary, 15%);
 $brand-primary-light3: mix(#fff, $brand-primary, 20%);
 $brand-primary-dark: mix(#000, $brand-primary, 13%);
-
-
 
 //== Scaffolding
 //

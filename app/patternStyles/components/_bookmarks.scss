@@ -1,0 +1,50 @@
+//
+// Bookmarks
+// --------------------------------------------------
+
+    // $bookmark-star-red: red;
+    // $bookmark-star-yellow: yellow;
+    // $bookmark-star-blue: blue;
+    // $bookmark-wait: green;
+    // $bookmark-reminder: purple;
+    // $bookmark-important: orange;
+
+
+
+
+  .star-danger-color {
+    color: $brand-danger;
+  }
+  .favorite-color {
+    color: $brand-warning;
+  }
+  .star-info-color {
+    color: $brand-info;
+  }
+  .wait-color {
+    color: $brand-success;
+  }
+  .reminder-color {
+    color: $brand-complementary;
+  }
+  .important-color {
+    color: $brand-danger;
+  }
+
+  // .in-profile {
+  //   position: absolute;
+  //   background: white;
+  //   padding-top: 5px;
+  //   margin: 5px -190px;
+  //   @include box-shadow( $gray 0px 0px 2px  inset);
+  //   a {
+  //     margin-left: 0 !important;
+  //     padding: 0 5px;
+  //   }
+  // }
+
+
+// Move to pop over?
+.ns-popover-tooltip-theme .ns-popover-tooltip {
+    max-width: 100%;
+}

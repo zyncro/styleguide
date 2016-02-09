@@ -1,7 +1,6 @@
 <section id="Activity" class="styleguide">
     <h1>Activity</h1>
     <div class="code-sample">
-
         <div class="activity box-compound">
             <div class="box box-compound-top box-white">
                 <div class="avatar-paragraph">
@@ -13,17 +12,29 @@
                         </div>
                         <!-- buttons -->
                         <div class="dropdown btn-group" role="group" aria-label="..." dropdown on-toggle="toggled(open)">
+                            <a role="button" href="#" class="btn btn-link btn-link-icon visible-desktop"
+                                ns-popover
+                                ns-popover-template="bookmarks"
+                                ns-popover-trigger="click"
+                                ns-popover-theme="ns-popover-tooltip-theme"
+                                ns-popover-timeout="1000"
+                                ns-popover-hide-on-inside-click="false"
+                                ns-popover-hide-on-outside-click="true"
+                                ns-popover-hide-on-button-click="true"
+                                ns-popover-placement="left"
+                                >
+                                <i class="icon-star-off " tooltip="Marcar como..."></i>
+                            </a>
+
                             <a role="button" href="#" class="btn btn-link btn-link-icon visible-desktop">
                                 <i tooltip="Add like" class="icon-like-off"></i>
                             </a>
-                            <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-desktop">
+                            <a role="button" href="#" class="btn btn-link btn-link-icon visible-desktop">
                                 <i class="icon-comment"></i>
                             </a>
-                            <a role="button" href="#" class="btn btn-link btn-link-icon nav-temp visible-desktop">
-                                <i class="icon-star-off " tooltip="Marcar como..."></i>
-                            </a>
+                            
                             <!-- Trigger -->
-                            <a role="button" href="" class="dropdown-toggle btn btn-link btn-link-icon nav-temp" dropdown-toggle>
+                            <a role="button" href="" class="dropdown-toggle btn btn-link btn-link-icon" dropdown-toggle>
                                 <i class="icon icon-more"></i>
                             </a>
                             <!-- Menu -->
@@ -40,9 +51,6 @@
                 </div>
             </div>
         </div>
-
-
-
         <!-- Compound box -->
         <div class="activity box-compound">
             <div class="box-compound-top">
@@ -55,17 +63,29 @@
                         </div>
                         <!-- buttons -->
                         <div class="dropdown btn-group" role="group" aria-label="..." dropdown on-toggle="toggled(open)">
+                            <a role="button" href="#" class="btn btn-link btn-link-icon visible-desktop"
+                                ns-popover
+                                ns-popover-template="bookmarks"
+                                ns-popover-trigger="click"
+                                ns-popover-theme="ns-popover-tooltip-theme"
+                                ns-popover-timeout="1000"
+                                ns-popover-hide-on-inside-click="false"
+                                ns-popover-hide-on-outside-click="true"
+                                ns-popover-hide-on-button-click="true"
+                                ns-popover-placement="left"
+                                >
+                                <i class="icon-star-off " tooltip="Marcar como..."></i>
+                            </a>
+
                             <a role="button" href="#" class="btn btn-link btn-link-icon visible-desktop">
                                 <i tooltip="Add like" class="icon-like-off"></i>
                             </a>
-                            <a role="button" href="#" class="btn btn-link btn-link-icon  visible-desktop">
+                            <a role="button" href="#" class="btn btn-link btn-link-icon visible-desktop">
                                 <i class="icon-comment"></i>
                             </a>
-                            <a role="button" href="#" class="btn btn-link btn-link-icon  visible-desktop">
-                                <i class="icon-star-off " tooltip="Marcar como..."></i>
-                            </a>
+                            
                             <!-- Trigger -->
-                            <a role="button" href class="dropdown-toggle btn btn-link btn-link-icon " dropdown-toggle>
+                            <a role="button" href="" class="dropdown-toggle btn btn-link btn-link-icon" dropdown-toggle>
                                 <i class="icon icon-more"></i>
                             </a>
                             <!-- Menu -->

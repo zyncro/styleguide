@@ -8,28 +8,40 @@
                     <h4><a href="#">Donec idelit</a></h4>
                     <p><a href="#">Maecenas sed diam - 14m</a></p>
                 </div>
-                <!-- buttons -->
-                <div class="dropdown btn-group" role="group" aria-label="..." dropdown on-toggle="toggled(open)">
-                    <a role="button" href="#" class="btn btn-link btn-link-icon visible-desktop">
-                        <i tooltip="Add like" class="icon-like-off"></i>
-                    </a>
-                    <a role="button" href="#" class="btn btn-link btn-link-icon  visible-desktop">
-                        <i class="icon-comment"></i>
-                    </a>
-                    <a role="button" href="#" class="btn btn-link btn-link-icon  visible-desktop">
-                        <i class="icon-star-off " tooltip="Marcar como..."></i>
-                    </a>
-                    <!-- Trigger -->
-                    <a role="button" href class="dropdown-toggle btn btn-link btn-link-icon " dropdown-toggle>
-                        <i class="icon icon-more"></i>
-                    </a>
-                    <!-- Menu -->
-                    <ul class="dropdown-menu">
-                        <li><a href><i tooltip="Add like" class="icon-like-off"></i> choice</a></li>
-                        <li><a href><i class="icon-comment"></i>choice</a></li>
-                        <li><a href><i class="icon-star-off " tooltip="Marcar como..."></i>choice</a></li>
-                    </ul>
-                </div>
+                        <!-- buttons -->
+                        <div class="dropdown btn-group" role="group" aria-label="..." dropdown on-toggle="toggled(open)">
+                            <a role="button" href="#" class="btn btn-link btn-link-icon visible-desktop"
+                                ns-popover
+                                ns-popover-template="bookmarks"
+                                ns-popover-trigger="click"
+                                ns-popover-theme="ns-popover-tooltip-theme"
+                                ns-popover-timeout="1000"
+                                ns-popover-hide-on-inside-click="false"
+                                ns-popover-hide-on-outside-click="true"
+                                ns-popover-hide-on-button-click="true"
+                                ns-popover-placement="left"
+                                >
+                                <i class="icon-star-off " tooltip="Marcar como..."></i>
+                            </a>
+
+                            <a role="button" href="#" class="btn btn-link btn-link-icon visible-desktop">
+                                <i tooltip="Add like" class="icon-like-off"></i>
+                            </a>
+                            <a role="button" href="#" class="btn btn-link btn-link-icon visible-desktop">
+                                <i class="icon-comment"></i>
+                            </a>
+                            
+                            <!-- Trigger -->
+                            <a role="button" href="" class="dropdown-toggle btn btn-link btn-link-icon" dropdown-toggle>
+                                <i class="icon icon-more"></i>
+                            </a>
+                            <!-- Menu -->
+                            <ul class="dropdown-menu">
+                                <li><a href><i tooltip="Add like" class="icon-like-off"></i> choice</a></li>
+                                <li><a href><i class="icon-comment"></i>choice</a></li>
+                                <li><a href><i class="icon-star-off " tooltip="Marcar como..."></i>choice</a></li>
+                            </ul>
+                        </div>
             </div>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
