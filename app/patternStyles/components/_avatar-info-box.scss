@@ -3,5 +3,6 @@
 // Avatar-info-box
 // --------------------------------------------------
 .avatar-info-box {
+    @extend .box;
     margin: 10px 0;
 }

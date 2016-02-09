@@ -1,3 +1,7 @@
 //
 // Avatar-info-buttons-indent
 // --------------------------------------------------
+.avatar-info-buttons-indent{
+@extend .avatar-info;
+@extend .avatar-info-buttons;
+}

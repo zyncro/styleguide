@@ -2,7 +2,8 @@
 // Avatar-info-buttons
 // --------------------------------------------------
 .avatar-info-buttons {
-    >.btn-group {
+    @extend .avatar-info;
+    > .btn-group {
         flex: none;
     }
 }

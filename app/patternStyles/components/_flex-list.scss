@@ -4,22 +4,21 @@
 
 // Base class
 
-
 // TODO: Clean this when Ux decides what to do
 
 // TODO CENTER VERTICAL ALL ITEM
-    //   [class*="icon-"] {
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: center;
-    // }
+//   [class*="icon-"] {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
 
-
-.list-flex{
+.list-flex {
     list-style: none;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
+
 .list-flex-row {
     display: flex;
     background-color: $list-group-bg;
@@ -52,6 +51,12 @@
         }
         //DROPDOWN STYLE
         .list-flex-btn {
+            @extend .btn;
+            @extend .btn-link;
+            @extend .btn-link-icon;
+            @extend .hidden-xs;
+            @extend .hidden-sm;
+            @extend .hidden-md;
             > a {
                 color: $list-group-active-color;
                 text-decoration: none;
@@ -66,11 +71,6 @@
     text-align: center;
 }
 
-// HARDOCODED TODO variables!!!
-.list-flex-level {
-    padding-left: 20px;
-}
-
 .list-flex-item {
     padding: 10px;
 }
@@ -79,49 +79,15 @@
     font-weight: bold;
 }
 
-//*** TODO: Move to mixins
-// Helpers
-.flex-initial {
-    flex: initial;
+.list-flex-item,
+.list-flex-item-heading,
+.list-flex-item-text {
+    @extend .ellipsis;
 }
-
-.flex-none {
-    flex: none;
-}
-
-.flex1 {
-    flex: 1;
-}
-
-.flex2 {
-    flex: 2;
-}
-
-
-// TODO: move to helpers
-.ellipsis {
-    // text-align: left;
-    padding: 0 5px;
-    box-sizing: border-box;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.vertical-container {
-    display: flex;
-    align-list-flex-items: center;
-    justify-content: center;
-    align-items: center;
-}
-// END TODO: move to helpers
-
-
 
 .list-flex-title,
-.list-flex-title:hover
-{
-    color:white;
+.list-flex-title:hover {
+    color: white;
     background: $brand-primary;
 }
 
@@ -129,11 +95,6 @@
 .list-flex-bordered {
     .list-flex-row {
         border: 1px solid $list-group-border;
-    }
-}
-.list-flex-sm{
-    .list-flex-item{
-           // padding: 4px 5px;
     }
 }
 

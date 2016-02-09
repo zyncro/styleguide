@@ -2,11 +2,12 @@
 // Avatar-paragraph-indent
 // --------------------------------------------------
 .avatar-paragraph-indent {
-    >p {
+    @extend .avatar-paragraph;
+    > p {
         padding-left: 40px;
         margin: 0;
     }
-    >.avatar-info-buttons {
+    > .avatar-info-buttons {
         margin-bottom: 0;
     }
 }

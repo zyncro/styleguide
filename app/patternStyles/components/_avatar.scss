@@ -11,11 +11,13 @@
 // --------------------------------------------------
 
 .avatar-lg {
+    @extend .avatar;
     //$radius, $size, $borderColor, $borderSize
     @include avatar-variant(90px, 126px, white, 2px);
 }
 
 .avatar-sm {
+     @extend .avatar;
     //$radius, $size, $borderColor, $borderSize
     @include avatar-variant(90px, 30px, white, 2px);
 }

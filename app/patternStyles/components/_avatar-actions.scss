@@ -38,6 +38,7 @@
 
 // SIZES
 .avatar-actions-sm {
+    @extend .avatar-actions;
     @extend .avatar-sm;
     > i {
         font-size: 10px;
@@ -51,6 +52,7 @@
 }
 
 .avatar-actions-lg {
+    @extend .avatar-actions;
     @extend .avatar-lg;
     > i {
         font-size: 60px;

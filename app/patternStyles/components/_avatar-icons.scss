@@ -74,6 +74,8 @@
 }
 
 .avatar-icon {
+@extend .avatar;
+
     [class*="icon-"] {
         font-size: 24px;
     }

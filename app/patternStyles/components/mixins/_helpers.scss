@@ -2,42 +2,88 @@
 // HELPERS
 // --------------------------------------------------
 
-
 // @import "compass/css3";
 // Aligner
 // --------------------------------------------------
 
-@mixin aligner() {
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-// .aligner-item--top {
-//   align-self: flex-start;
-// }
-
-// .aligner-item--bottom {
-//   align-self: flex-end;
-// }
+@mixin aligner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // .aligner-item--top {
+    //   align-self: flex-start;
+    // }
+    // .aligner-item--bottom {
+    //   align-self: flex-end;
+    // }
 }
-
 
 // Spin
 // --------------------------------------------------
 @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(359deg);
-        }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
 }
 
+
 // Ellipsis
+// --------------------------------------------------
 .ellipsis {
     box-sizing: border-box;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+}
+
+// Flex
+// --------------------------------------------------
+.flex-initial {
+    flex: initial;
+}
+
+.flex-none {
+    flex: none;
+}
+
+.flex1 {
+    flex: 1;
+}
+
+.flex2 {
+    flex: 2;
+}
+
+// Vertical container
+// --------------------------------------------------
+.vertical-container {
+    display: flex;
+    align-list-flex-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+// Responsive utils
+// --------------------------------------------------
+.hidden-mobile {
+    @extend .hidden-xs;
+    @extend .hidden-sm;
+}
+
+.hidden-desktop {
+    @extend .hidden-md;
+    @extend .hidden-lg;
+}
+
+.visible-mobile {
+    @extend .visible-xs;
+    @extend .visible-sm;
+}
+
+.visible-desktop {
+    @extend .visible-md;
+    @extend .visible-lg;
 }
