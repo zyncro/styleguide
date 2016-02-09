@@ -30,8 +30,8 @@
     @include box-shadow(0px -1px 0px #bebebe inset);
     padding: 14px;
     .post-box-top {
+        @extend .clearfix;
         margin-bottom: 10px;
-        display: block;
     }
     > .post-box-content {
         margin-top: 4px;
