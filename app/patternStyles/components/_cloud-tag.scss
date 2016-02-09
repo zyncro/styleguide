@@ -5,6 +5,8 @@
     width: $table-layout-right-width;
 }
 .cloud-tag-item {
+    @extend .btn;
+    @extend .btn-default;
     padding: 4px 7px;
     margin: 0 5px 5px 0;
 }
