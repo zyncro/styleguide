@@ -44,7 +44,18 @@
     }
 }
 
+.search-input-close {
+    position: absolute;
+    z-index: 9;
+    right: 10px;
+    top: 10px;
+}
+
 .search-bg {
+    .search-input-close {
+        color: white;
+        cursor: pointer;
+    }
     input {
         background: $brand-primary-light;
         border: none;
@@ -52,15 +63,12 @@
         color: white;
         @include placeholder(white);
     }
-
     input:active,
     input:focus,
     input:active ~ .icon,
-    input:focus ~ .icon
-     {
+    input:focus ~ .icon {
         background: white;
         color: $gray-dark;
         @include placeholder($gray-dark);
     }
- 
 }

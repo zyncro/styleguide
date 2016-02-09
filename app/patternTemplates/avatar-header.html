@@ -6,9 +6,24 @@
                 <i class="avatar-header-cell icon icon-back back" tooltip="tooltip"></i>
                 <img class="avatar-header-cell avatar" src="http://placehold.it/40x40"/>
                 <h2 class="avatar-header-cell"><a href="#">Donec idelit</a></h2>
-                <a href class="avatar-header-cell btn btn-link" role="button">
-                    <i class="icon-star-off " tooltip="Marcar como..."></i>
-                </a>
+      
+       <a role="button"
+            href
+            class="avatar-header-cell btn btn-link btn-link-icon"
+            ns-popover
+            ns-popover-template="bookmarks"
+            ns-popover-trigger="click"
+            ns-popover-theme="ns-popover-tooltip-theme"
+            ns-popover-timeout="1000"
+            ns-popover-hide-on-inside-click="false"
+            ns-popover-hide-on-outside-click="true"
+            ns-popover-hide-on-button-click="true"
+            ns-popover-placement="right"
+            tooltip="Bookmarks"
+            >
+            <i class="icon-star-off"></i>
+        </a>
+               
             </div>
         </div>
     </div>

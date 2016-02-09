@@ -4,12 +4,15 @@
         <div class="search">
             <div class="input-group">
                 <div class="search-input">
-                    <input type="text" ng-model="customSelected" placeholder="Custom template" typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control">
+                    <input type="text" ng-model="customSelected" placeholder="Custom template" typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control" />
+                    <span class="search-input-close">
+                        <i class="clear-input-icon icon-delete"></i>
+                    </span>
                 </div>
                 <span class="input-group-btn">
                     <div class="btn-group" dropdown is-open="status.isopenSearch1">
                         <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
-                            TODO <span class="caret"></span>
+                        TODO <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#">Actividad</a></li>
@@ -23,20 +26,22 @@
             </div>
         </div>
     </div>
-
-<h3 id="progress-alternatives">Contextual alternatives (Search Background + Icon)</h3>
+    <h3 id="progress-alternatives">Contextual alternatives (Search Background + Icon)</h3>
     <div class="code-sample">
         <div class="search search-icon
- search-bg">
+            search-bg">
             <div class="input-group">
-                <div class="search-input">                    
+                <div class="search-input">
                     <input type="text" ng-model="customSelected" placeholder="Custom template" typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control">
+                    <span class="search-input-close">
+                        <i class="clear-input-icon icon-delete"></i>
+                    </span>
                     <div class="icon icon-find"></div>
                 </div>
                 <span class="input-group-btn">
                     <div class="btn-group" dropdown is-open="status.isopenSearch2">
                         <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
-                            TODO <span class="caret"></span>
+                        TODO <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#">Actividad</a></li>
@@ -50,7 +55,4 @@
             </div>
         </div>
     </div>
-
-
-
 </section>
