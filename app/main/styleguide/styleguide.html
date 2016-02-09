@@ -1717,12 +1717,27 @@
                     <button class="btn btn-default btn-xs">SOLICITAR ACCESO</button>
                 </div>
                 <div class="list-flex-item flex-none">
-                    <a role="button" href="#" class="list-flex-btn">
-                        <i class="icon-star-off " tooltip="Marcar como..."></i>
+                    
+                    <a role="button"
+                        href
+                        class="list-flex-btn"
+                        class="btn btn-link btn-link-icon"
+                        ns-popover
+                        ns-popover-template="bookmarks"
+                        ns-popover-trigger="click"
+                        ns-popover-theme="ns-popover-tooltip-theme"
+                        ns-popover-timeout="1000"
+                        ns-popover-hide-on-inside-click="false"
+                        ns-popover-hide-on-outside-click="true"
+                        ns-popover-hide-on-button-click="true"
+                        ns-popover-placement="left"
+                        tooltip="Bookmarks"
+                        >
+                        <i class="icon-star-off"></i>
                     </a>
                     <span class="dropdown" dropdown on-toggle="toggled(open)">
                         <a href dropdown-toggle role="button" href="#" class="dropdown-toggle list-flex-btn btn btn-link btn-link-icon">
-                             <i class="icon icon-more"></i>
+                            <i class="icon icon-more"></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li ng-repeat="choice in items">
@@ -1751,18 +1766,31 @@
                 <div class="list-flex-item flex-none hidden-mobile">
                     <button class="btn btn-default btn-xs">SOLICITAR ACCESO</button>
                 </div>
-
                 <div class="list-flex-item flex-initial">
                     <i class="icon-pag-next" tooltip="tooltip"></i>
                 </div>
                 
                 <div class="list-flex-item flex-none">
-                    <a role="button" href="#" class="list-flex-btn">
-                        <i class="icon-star-off " tooltip="Marcar como..."></i>
+                    <a role="button"
+                        href
+                        class="list-flex-btn"
+                        class="btn btn-link btn-link-icon"
+                        ns-popover
+                        ns-popover-template="bookmarks"
+                        ns-popover-trigger="click"
+                        ns-popover-theme="ns-popover-tooltip-theme"
+                        ns-popover-timeout="1000"
+                        ns-popover-hide-on-inside-click="false"
+                        ns-popover-hide-on-outside-click="true"
+                        ns-popover-hide-on-button-click="true"
+                        ns-popover-placement="left"
+                        tooltip="Bookmarks"
+                        >
+                        <i class="icon-star-off"></i>
                     </a>
                     <span class="dropdown" dropdown on-toggle="toggled(open)">
                         <a href dropdown-toggle role="button" href="#" class="dropdown-toggle list-flex-btn btn btn-link btn-link-icon">
-                             <i class="icon icon-more"></i>
+                            <i class="icon icon-more"></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li ng-repeat="choice in items">
@@ -1793,12 +1821,26 @@
                     <button class="btn btn-default btn-xs">SOLICITAR ACCESO</button>
                 </div>
                 <div class="list-flex-item flex-none">
-                    <a role="button" href="#" class="list-flex-btn">
-                        <i class="icon-star-off " tooltip="Marcar como..."></i>
+                    <a role="button"
+                        href
+                        class="list-flex-btn"
+                        class="btn btn-link btn-link-icon"
+                        ns-popover
+                        ns-popover-template="bookmarks"
+                        ns-popover-trigger="click"
+                        ns-popover-theme="ns-popover-tooltip-theme"
+                        ns-popover-timeout="1000"
+                        ns-popover-hide-on-inside-click="false"
+                        ns-popover-hide-on-outside-click="true"
+                        ns-popover-hide-on-button-click="true"
+                        ns-popover-placement="left"
+                        tooltip="Bookmarks"
+                        >
+                        <i class="icon-star-off"></i>
                     </a>
                     <span class="dropdown" dropdown on-toggle="toggled(open)">
                         <a href dropdown-toggle role="button" href="#" class="dropdown-toggle list-flex-btn btn btn-link btn-link-icon">
-                             <i class="icon icon-more"></i>
+                            <i class="icon icon-more"></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li ng-repeat="choice in items">
@@ -1819,16 +1861,27 @@
                         <a role="button" href="#" class="btn btn-link btn-link-icon ">
                             <i class="icon-comment"></i>
                         </a>
-                        <a role="button" href="#" class="btn btn-link btn-link-icon ">
-                            <i class="icon-star-off " tooltip="Marcar como..."></i>
+                        <a role="button"
+                            href
+                            class="list-flex-btn"
+                            class="btn btn-link btn-link-icon"
+                            ns-popover
+                            ns-popover-template="bookmarks"
+                            ns-popover-trigger="click"
+                            ns-popover-theme="ns-popover-tooltip-theme"
+                            ns-popover-timeout="1000"
+                            ns-popover-hide-on-inside-click="false"
+                            ns-popover-hide-on-outside-click="true"
+                            ns-popover-hide-on-button-click="true"
+                            ns-popover-placement="left"
+                            tooltip="Bookmarks"
+                            >
+                            <i class="icon-star-off"></i>
                         </a>
                     </div>
                 </div>
             </div>
             <!-- END ROW -->
-
-
-
             <!-- ROW-Footer -->
             <div class="list-flex-row list-flex-row-footer">
                 <div class="list-flex-item flex1">
@@ -1838,7 +1891,6 @@
         </div>
     </div>
 </section>
-
             
 
 <section id="Footer-buttons" class="styleguide">
@@ -2038,7 +2090,7 @@
 </section>
             
 
-<section id="Icon-group" class="styleguide">
+<!-- <section id="Icon-group" class="styleguide">
     <h1>Icon-group</h1>
     <div class="code-sample">
         <div class="dropdown btn-group" role="group" aria-label="...">
@@ -2061,12 +2113,11 @@
             <a role="button" href="#" class="btn btn-link btn-link-icon visible-desktop">
                 <i class="icon-comment"></i>
             </a>
-            
-            <!-- Trigger -->
+
             <a role="button" href="" class="dropdown-toggle btn btn-link btn-link-icon" dropdown-toggle>
                 <i class="icon icon-more"></i>
             </a>
-            <!-- Menu -->
+         
             <ul class="dropdown-menu">
                 <li><a href><i tooltip="Add like" class="icon-like-off"></i> choice</a></li>
                 <li><a href><i class="icon-comment"></i>choice</a></li>
@@ -2074,7 +2125,7 @@
             </ul>
         </div>
     </div>
-</section>
+</section> -->
             
 
 <section id="Icon-label" class="styleguide">
