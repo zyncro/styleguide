@@ -33,6 +33,10 @@ $collape-button-size: 60px;
 
 .table-layout-collapsed {
     width: $main-sidebar-left-width;
+    .sidemenu {
+        margin: 0;
+        width: 100%;
+    }
 }
 
 .table-layout-left {
