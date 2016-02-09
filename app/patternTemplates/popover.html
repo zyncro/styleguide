@@ -1,11 +1,53 @@
 <section id="Popover" class="styleguide">
 <h1>Popover</h1>
 <div class="code-sample">
-<div class="bs-popover-example">
-    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">Popover on left</button>
-    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">Popover on top</button>
-    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">Popover on bottom</button>
-    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">Popover on right</button>
-</div>
+
+
+    <h4>Dynamic</h4>
+    <div class="form-group">
+      <label>Popup Text:</label>
+      <input type="text" ng-model="dynamicPopover" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Popup Title:</label>
+      <input type="text" ng-model="dynamicPopoverTitle" class="form-control">
+    </div>
+    <button popover="{{dynamicPopover}}" popover-title="{{dynamicPopoverTitle}}" class="btn btn-default">Dynamic Popover</button>
+
+    <hr />
+    <h4>Positional</h4>
+    <button popover-placement="top" popover="On the Top!" class="btn btn-default">Top</button>
+    <button popover-placement="left" popover="On the Left!" class="btn btn-default">Left</button>
+    <button popover-placement="right" popover="On the Right!" class="btn btn-default">Right</button>
+    <button popover-placement="bottom" popover="On the Bottom!" class="btn btn-default">Bottom</button>
+
+    <hr />
+    <h4>Triggers</h4>
+    <p>
+      <button popover="I appeared on mouse enter!" popover-trigger="mouseenter" class="btn btn-default">Mouseenter</button>
+    </p>
+    <input type="text" value="Click me!" popover="I appeared on focus! Click away and I'll vanish..."  popover-trigger="focus" class="form-control">
+
+    <hr />
+    <h4>Other</h4>
+    <button Popover-animation="true" popover="I fade in and out!" class="btn btn-default">fading</button>
+    <button popover="I have a title!" popover-title="The title." class="btn btn-default">title</button>
+
+  <p class="form-group">
+    <input class="form-control" type="text" ng-model="text">
+  </p>
+  
+  <p>
+    <button popover-placement="bottom" popover-template="calendar.html" popover-trigger="click" class="btn btn-default">Date Picker</button>
+  </p>
+  
+  <script id="calendar.html" type="text/ng-template">
+    <div id="tip">
+      <datepicker ng-model="date" show-weeks="false"></datepicker>
+      <hr />
+      <div class="alert alert-success">{{ text }}</div>
+    </div>
+  </script>
+
 </div>
 </section>

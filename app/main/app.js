@@ -11,7 +11,8 @@ angular.module('myApp', [
   'myApp.version',
   'myApp.directives',
   'ngAnimate',
-  'hljs'
+  'hljs',
+  'nsPopover'
 ]).
 config(['$routeProvider','hljsServiceProvider', function($routeProvider, hljsServiceProvider) {
   $routeProvider.otherwise({redirectTo: '/styleguide'});

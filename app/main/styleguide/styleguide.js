@@ -51,6 +51,24 @@ angular.module('myApp.styleguide', ['ngRoute','ngSanitize', 'ui.select'])
 .controller('styleguideCtrl', ['$scope','$log', '$http', '$timeout', '$interval',
     function($scope, $log, $http, $timeout, $interval) {
 
+
+
+    /**
+    * NS-POPOVER
+    */
+
+
+
+    $scope.items = [{
+      name: "Action"
+    }, {
+      name: "Another action"
+    }, {
+      name: "Something else here"
+    }];
+
+
+
     /**
     * POPOVER
     */
