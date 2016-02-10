@@ -79,7 +79,12 @@
     font-weight: bold;
 }
 
-.list-flex-item,
+
+.list-flex-item-ellipsis{
+    @extend .flex1;
+    overflow: hidden;
+}
+
 .list-flex-item-heading,
 .list-flex-item-text {
     @extend .ellipsis;
