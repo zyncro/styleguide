@@ -32,19 +32,12 @@
             search-bg">
             <div class="input-group">
                 <div class="search-input">
-
-
-
-
                     <input type="text" ng-model="customSelected" placeholder="Custom template" typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control">
                     <a href class="search-input-close">
                         <i class="clear-input-icon icon-delete"></i>
                     </a>
 
                     <i class="icon icon-find"></i>
-
-
-
                 </div>
                 <span class="input-group-btn">
                     <div class="btn-group" dropdown is-open="status.isopenSearch2">

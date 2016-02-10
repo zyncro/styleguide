@@ -743,6 +743,20 @@
 
             
 
+<section id="BadgeButton" class="styleguide">
+    <h1>BadgeButton</h1>
+    <div class="code-sample">
+        <a href class="btn">
+            <span class="btn-badge">
+                <div class="badge badge-danger">10</div>
+                <i class="icon icon-alert"></i>
+            </span>
+        </a>
+    </div>
+</section>
+
+            
+
 <section id="Badges" class="styleguide">
     <h1>Badges</h1>
     <div class="code-sample">
@@ -2466,28 +2480,43 @@
     <div class="code-sample">
         <div class="zy-navbar">
             <div class="navbar-primary">
-                <!-- navbar-fixed-top -->
                 <div class='head-nav navbar navbar-default table-layout'>
+                    <!-- Logo -->
                     <div class="table-layout-left">
                         <div class="navbar-header">
+
+
+
+
                             <button type="button" class="navbar-toggle visible-mobile">
-                            <span class="sr-only">Toggle navigation</span>
-                            <div class="badge badge-danger badge-absolute">10</div>
-                            <span class="icon icon-menu"></span>
+                                <span class="sr-only">Toggle navigation</span>
+                                <div class="badge badge-danger badge-absolute">10</div>
+                                <span class="icon icon-menu"></span>
                             </button>
+
+
+
                             <a class="navbar-brand hidden-mobile" id="organization-avatar">
                                 <img src="https://app.zyncro.com/assets/images/logo.png" />
                             </a>
                         </div>
                     </div>
-                    <div class="table-layout-collapsed visible-mobile">main-sidebarLeft MOBILE</div>
                     <div class="table-layout-right hidden-mobile">
                         <ul class="nav navbar-nav">
                             <li class="dropdown" dropdown>
-                                <a href class="dropdown-toggle" dropdown-toggle aria-haspopup="true" aria-expanded="false">
-                                    <div class="badge badge-danger badge-absolute">10</div>
-                                    <i class="navbar-avatar icon icon-alert"></i>
+
+
+                                <a href class="dropdown-toggle btn-badge-navbar" dropdown-toggle aria-haspopup="true" aria-expanded="false">
+                                        <span class="btn-badge">
+                <div class="badge badge-danger">10</div>
+                <i class="icon icon-alert"></i>
+            </span>
                                 </a>
+
+
+
+
+
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="#">Actividad</a></li>
                                     <li><a href="#">Archivos</a></li>
@@ -2653,10 +2682,8 @@
                         </div>
                     </div>
                     <div class="table-layout">
-                        <div class="table-layout-left">
-                        </div>
                         <div class="table-layout-collapsed visible-mobile">
-                            <!-- TODO: this is from zyncro-base repeated in line 210 -->
+                            <!--Mobile sidemenu -->
                             <ul class="sidemenu">
                                 <li class="sidemenu-item"><a href="#" title=""><i class="icon-user-details"></i>Item 01</a></li>
                                 <li class="sidemenu-item"><a href="#" title=""><i class="icon-user-details"></i>Item 02</a></li>
@@ -2665,7 +2692,6 @@
                                 <li class="sidemenu-item"><a href="#" title=""><i class="icon-user-details"></i>Item 05</a></li>
                             </ul>
                         </div>
-                        <div class="table-layout-right hidden-mobile"></div>
                     </div>
                 </div>
             </div>
@@ -3325,19 +3351,12 @@
             search-bg">
             <div class="input-group">
                 <div class="search-input">
-
-
-
-
                     <input type="text" ng-model="customSelected" placeholder="Custom template" typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control">
                     <a href class="search-input-close">
                         <i class="clear-input-icon icon-delete"></i>
                     </a>
 
                     <i class="icon icon-find"></i>
-
-
-
                 </div>
                 <span class="input-group-btn">
                     <div class="btn-group" dropdown is-open="status.isopenSearch2">
@@ -3461,6 +3480,18 @@
 <h1>SideMenu</h1>
 <div class="code-sample">
 <ul class="sidemenu">
+    <li class="sidemenu-item sidemenu-item-top">
+        <a href class="pull-left">
+            <img class="avatar-sm" src="http://placehold.it/20x20" />
+        </a>
+   
+        <a href class="pull-left">
+            <span class="btn-badge">
+                <div class="badge badge-danger">10</div>
+                <i class="icon icon-alert"></i>
+            </span>
+        </a>
+    </li>
     <li class="sidemenu-item"><a href="#" title=""><i class="icon-user-details"></i>Item 01</a></li>
     <li class="sidemenu-item"><a href="#" title=""><i class="icon-user-details"></i>Item 02</a></li>
     <li class="sidemenu-item"><a href="#" title=""><i class="icon-user-details"></i>Item 03</a></li>
