@@ -224,18 +224,21 @@ zyncro-styleguide/
 
 #### Good practices:
 
-
+- Follow Boostrap guidelines
+- No Id for styling
+- Avoid double DOM versions for mobile
+- Keep HTML as clean as posible, less DOM elements
 - Most direct selectors, less is better.
 - Use less classes names, less combinations
 - Use @extend and @mixins
 - Always take care of Key selector (Performance ordered)
-  - ID, e.g. #header 
+  - AVOID -> ID, e.g. #header 
   - Class, e.g. .promo 
   - Type, e.g. div 
   - Adjacent sibling, e.g. h2 + p 
   - Child, e.g. li > ul 
-  - Descendant, e.g. ul a 
-  - Universal, i.e. * 
-  - Attribute, e.g. [type="text"] 
+  - AVOID -> Descendant, e.g. ul a 
+  - AVOID -> Universal, i.e. * 
+  - AVOID -> Attribute, e.g. [type="text"] 
   - Pseudo-classes/-elements, e.g. a:hover
 
