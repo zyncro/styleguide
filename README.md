@@ -222,6 +222,13 @@ zyncro-styleguide/
 ```
 
 
+
+## update styleguide in zbase
+
+```
+ bower update zyncro-styleguide
+```
+
 #### Good practices:
 
 - Follow Boostrap guidelines
