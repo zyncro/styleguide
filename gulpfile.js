@@ -59,7 +59,7 @@ gulp.task('images', function() {
             progressive: true,
             interlaced: true
         })))
-        .pipe(gulp.dest('pages/images'))
+        .pipe(gulp.dest('dev/images'))
         .pipe($.size({
             title: 'images'
         }));
@@ -73,15 +73,15 @@ gulp.task('copy', function() {
             'node_modules/apache-server-configs/pages/.htaccess'
         ], {
             dot: true
-        }).pipe(gulp.dest('pages'))
+        }).pipe(gulp.dest('dev'))
         .pipe($.size({
             title: 'copy'
         }));
 });
 
 
-// Copy Web Fonts To dev
-gulp.task('fontsTemp', function() {
+// Copy Web Fonts
+gulp.task('fonts', function() {
     return gulp.src(['app/fonts/**'])
         .pipe(gulp.dest('dev/fonts'))
         .pipe($.size({
@@ -89,7 +89,18 @@ gulp.task('fontsTemp', function() {
         }));
 });
 
-// Copy Web Fonts To src
+
+
+
+/**
+ *
+ * SRC
+ * 
+ */
+
+
+
+// Copy Web Fonts
 gulp.task('fontsSrc', function() {
     return gulp.src(['app/fonts/**'])
         .pipe(gulp.dest('src/fonts'))
@@ -98,27 +109,39 @@ gulp.task('fontsSrc', function() {
         }));
 });
 
-
-// Copy Web Fonts To pages
-gulp.task('fonts', function() {
-    return gulp.src(['app/fonts/**'])
-        .pipe(gulp.dest('pages/fonts'))
+// Compile and Automatically Prefix Stylesheets
+gulp.task('stylesSrc', function() {
+    // For best performance, don't add Sass partials to `gulp.src`
+    return gulp.src([
+            'app/patternStyles/zyncro-styleguide.scss'
+        ])
+        .pipe(debug())
+        .pipe($.changed('styles', {
+            extension: '.scss'
+        }))
+        .pipe($.rubySass({
+                style: 'expanded',
+                precision: 10
+            })
+            .on('error', console.error.bind(console))
+        )
+        .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+        // Concatenate And Minify Styles
+        .pipe($.if('*.css', $.csso()))
+        .pipe(gulp.dest('src/'))
         .pipe($.size({
-            title: 'fonts'
+            title: 'styles'
         }));
 });
+
+
+
+
 
 gulp.task('concat', function() {
     var scssStream = gulp.src(['app/patternStyles/main.scss', 'app/main/styles/docs.scss'])
         .pipe(concat('zyncro-styleguide.scss'))
-        .pipe(gulp.dest('app/patternStyles'));
-    return scssStream;
-});
-
-gulp.task('concatSrc', function(concatSrc) {
-    var scssStream = gulp.src(['app/patternStyles/main.scss'])
-        .pipe(concat('zyncro-styleguide.scss'))
-        .pipe(gulp.dest('app/patternStyles'));
+        .pipe(gulp.dest('dev/patternStyles'));
     return scssStream;
 });
 
@@ -139,41 +162,15 @@ gulp.task('styles', function() {
             .on('error', console.error.bind(console))
         )
         .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-        .pipe(gulp.dest('dev/styles'))
         // Concatenate And Minify Styles
         .pipe($.if('*.css', $.csso()))
-        .pipe(gulp.dest('pages/styles'))
+        .pipe(gulp.dest('dev/patternStyles'))
         .pipe($.size({
             title: 'styles'
         }));
 });
 
-// Compile and Automatically Prefix Stylesheets
-gulp.task('stylesSrc', function() {
 
-    // For best performance, don't add Sass partials to `gulp.src`
-    return gulp.src([
-            'app/patternStyles/zyncro-styleguide.scss'
-        ])
-        .pipe(debug())
-        .pipe($.changed('styles', {
-            extension: '.scss'
-        }))
-        .pipe($.rubySass({
-                style: 'expanded',
-                precision: 10
-            })
-            .on('error', console.error.bind(console))
-        )
-        .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-        .pipe(gulp.dest('dev/styles'))
-        // Concatenate And Minify Styles
-        .pipe($.if('*.css', $.csso()))
-        .pipe(gulp.dest('src/styles'))
-        .pipe($.size({
-            title: 'styles'
-        }));
-});
 
 // Scan Your HTML For Assets & Optimize Them
 gulp.task('html', function() {
@@ -214,7 +211,7 @@ gulp.task('html', function() {
     // Minify Any HTML
     .pipe($.if('*.html', $.minifyHtml()))
     // Output Files
-    .pipe(gulp.dest('pages'))
+    .pipe(gulp.dest('dev'))
         .pipe($.size({
             title: 'html'
         }));
@@ -241,18 +238,29 @@ gulp.task('clean', del.bind(null, ['dev', 'pages', 'src', '.publish']));
 // hjs to pages
 gulp.task('hjs2pages', function() {
     return gulp.src(['app/main/bower_components/highlightjs/styles/paraiso.dark.css'])
-        .pipe(gulp.dest('pages/main/bower_components/highlightjs/styles/'))
+        .pipe(gulp.dest('dev/main/bower_components/highlightjs/styles/'))
 });
 
 // Watch Files For Changes & Reload
-gulp.task('serve', ['inject', 'concat', 'fontsTemp', 'styles'], function() {
+gulp.task('serve', [
+        'concat',
+        'styles',
+        'hjs2pages',
+        'html',
+        'images',
+        'copy',
+        'inject',
+        'fonts'
+    ], function() {
+
+
     browserSync({
         notify: false,
         // Run as an https by uncommenting 'https: true'
         // Note: this uses an unsigned certificate which on first access
         //       will present a certificate warning in the browser.
         // https: true,
-        server: ['dev', 'app']
+        server: ['dev']
     });
 
     gulp.watch(['app/**/*.html'], reload);
@@ -285,7 +293,7 @@ gulp.task('serve', ['inject', 'concat', 'fontsTemp', 'styles'], function() {
  * Push build to gh-pages
  */
 gulp.task('pages', function() {
-    return gulp.src("pages/**/*")
+    return gulp.src("dev/**/*")
         .pipe(deploy())
 });
 
@@ -306,7 +314,7 @@ gulp.task('deploy-pages', function(cb) {
 
 // Build Production Files, the Default Task
 gulp.task('deploy-src', ['clean'], function(cb) {
-    runSequence(['concatSrc', 'stylesSrc', 'fontsSrc'], cb);
+    runSequence(['stylesSrc', 'fontsSrc'], cb);
 });
 
 
