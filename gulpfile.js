@@ -248,6 +248,7 @@ gulp.task('serve', function(cb) {
         cb);
 });
 
+
 // Watch Files For Changes & Reload
 gulp.task('browserSync', [
         'stylesDocs',        
@@ -266,7 +267,7 @@ gulp.task('browserSync', [
         // Note: this uses an unsigned certificate which on first access
         //       will present a certificate warning in the browser.
         // https: true,
-        server: ['dev']
+        server: ['dev', 'app']
     });
 
     gulp.watch(['app/**/*.html'], reload);
@@ -282,12 +283,14 @@ gulp.task('browserSync', [
                     return file.contents.toString('utf8');
                 }
             }))
-            .pipe(gulp.dest('app/main/styleguide/'));
+            .pipe(gulp.dest('dev/main/styleguide/'));
     });
-    gulp.watch(['app/patternStyles/**/*.{scss,css}', 'app/main/styles/docs.scss'], ['concatDocs', 'stylesDocs', reload]);
+    gulp.watch(['app/patternStyles/**/*.{scss,css}', 'app/main/styles/docs.scss'], ['concatDocs', 'stylesDocs' , reload]);
     gulp.watch(['app/main/**/*.js'], ['jshint']);
     gulp.watch(['app/images/**/*'], reload);
 });
+
+
 
 // // Build Production Files, the Default Task
 // gulp.task('default', ['clean'], function(cb) {

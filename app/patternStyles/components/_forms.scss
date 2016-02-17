@@ -564,8 +564,8 @@ input[type="checkbox"] {
         margin-top: 8px;
     }
     input.toggle-switch + label:before {
-        content: "\f00c";
-        font-family: FontAwesome;
+    content: "m";
+    font-family: "zyncro-icons";
         padding: 15px 5px;
         position: absolute;
         display: block;
@@ -591,9 +591,11 @@ input[type="checkbox"] {
         transition: .25s ease-in-out;
     }
     input.toggle-switch:checked + label:before {
-        content: "\f00c";
+
+
+    content: "m";
+    font-family: "zyncro-icons";
         line-height: 4px;
-        font-family: FontAwesome;
         width: 50px;
         height: 29px;
         color: #ffffff;
