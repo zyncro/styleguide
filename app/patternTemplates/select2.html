@@ -1,10 +1,27 @@
-<!-- <section id="Select-2" class="styleguide">
+<section id="Select-2" class="styleguide">
     <h1>Select-2</h1>
     <div class="code-sample">
 
   <button class="btn btn-default btn-xs" ng-click="enable()">Enable ui-select</button>
   <button class="btn btn-default btn-xs" ng-click="disable()">Disable ui-select</button>
   <button class="btn btn-default btn-xs" ng-click="clear()">Clear ng-model</button>
+
+
+
+  <h3>Bootstrap theme</h3>
+  <p>Selected: {{address.selected.formatted_address}}</p>
+  <ui-select ng-model="address.selected"
+             theme="bootstrap"
+             ng-disabled="disabled"
+             reset-search-input="false"
+             style="width: 300px;">
+    <ui-select-match placeholder="Enter an address...">{{$select.selected.formatted_address}}</ui-select-match>
+    <ui-select-choices repeat="address in addresses"
+             refresh="refreshAddresses($select.search)"
+             refresh-delay="0">
+      <div ng-bind-html="address.formatted_address | highlight: $select.search"></div>
+    </ui-select-choices>
+  </ui-select>
 
 
 
@@ -72,4 +89,3 @@
 
 </div>
 </section>
- -->

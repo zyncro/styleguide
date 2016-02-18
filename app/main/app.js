@@ -14,7 +14,11 @@ angular.module('myApp', [
   'hljs',
   'nsPopover'
 ]).
-config(['$routeProvider','hljsServiceProvider', function($routeProvider, hljsServiceProvider) {
+config(['$routeProvider','hljsServiceProvider','uiSelectConfig', function($routeProvider, hljsServiceProvider, uiSelectConfig) {
+
+
+  uiSelectConfig.theme = 'bootstrap';
+
   $routeProvider.otherwise({redirectTo: '/styleguide'});
     hljsServiceProvider.setOptions({
         // replace tab with 2 spaces
