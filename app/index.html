@@ -33,10 +33,12 @@
 </head>
 
 <body>
+
     <navbar></navbar>
     <main ng-view=""></main>
     <!-- build:js main/angular.min.js -->
     <script src="main/bower_components/angular/angular.js"></script>
+    <script src="main/bower_components/angular-mocks/angular-mocks.js"></script>
     <script src="main/bower_components/angular-route/angular-route.js"></script>
     <script src="main/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     <script src="main/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
@@ -44,6 +46,7 @@
     <script src="main/bower_components/highlightjs/highlight.pack.js"></script>
     <script src="main/bower_components/angular-highlightjs/angular-highlightjs.min.js"></script>
     <script src="main/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+     <script src="main/bower_components/angular-xeditable/dist/js/xeditable.min.js"></script>
 
     <!-- Select2 theme -->
     <script src="main/bower_components/angular-ui-select/dist/select.js"></script>
@@ -63,6 +66,8 @@
     <!-- endbuild -->
     <!-- inject:js -->
     <!-- endinject -->
+
+
     <!--TODO: VENDOR TEMPLATES (typeahead-template-url) -->
     <script type="text/ng-template" id="customTemplate.html">
         <div class="list-flex list-flex-sm">

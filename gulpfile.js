@@ -269,6 +269,13 @@ gulp.task('browserSync', [
         // https: true,
         server: ['dev', 'app']
     });
+// TODO: copy index to dev on reload
+
+    gulp.watch('app/index.html').on('change', function() {
+        gulp.src('app/index.html')
+            .pipe(debug())
+            .pipe(gulp.dest('dev/'));
+    });
 
     gulp.watch(['app/**/*.html'], reload);
     gulp.watch(['app/**/**/*.html'], reload);
@@ -286,7 +293,7 @@ gulp.task('browserSync', [
             .pipe(gulp.dest('dev/main/styleguide/'));
     });
     gulp.watch(['app/patternStyles/**/*.{scss,css}', 'app/main/styles/docs.scss'], ['concatDocs', 'stylesDocs' , reload]);
-    gulp.watch(['app/main/**/*.js'], ['jshint']);
+    gulp.watch(['app/main/**/*.js'], ['jshint', reload]);
     gulp.watch(['app/images/**/*'], reload);
 });
 

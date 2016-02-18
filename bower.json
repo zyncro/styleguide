@@ -19,7 +19,8 @@
     "angular-highlightjs": "~0.5.1",
     "angular-ui-select": "0.13.0",
     "highlightjs": "~9.0.0",
-    "nsPopover": "~0.6.8"
+    "nsPopover": "~0.6.8",
+    "angular-xeditable": "~0.1.10"
   },
   "resolutions": {
     "angular": "1.2.28"

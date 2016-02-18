@@ -538,7 +538,21 @@ input[type="checkbox"] {
 }
 
 
+textarea {
+  min-height:50px;
+}
 
+.textarea-noresize {
+  resize: none; 
+}
+
+.textarea-vresize {
+  resize: vertical; 
+}
+  
+.textarea-hresize {
+  resize: horizontal;  
+}  
 
 
 
