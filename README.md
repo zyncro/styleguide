@@ -249,3 +249,10 @@ zyncro-styleguide/
   - AVOID -> Attribute, e.g. [type="text"] 
   - Pseudo-classes/-elements, e.g. a:hover
 
+
+#### Reference
+  
+[Bootstrap](http://getbootstrap.com/css)
+[ui select](https://github.com/angular-ui/ui-select)
+[x editable](https://vitalets.github.io/angular-xeditable)
+

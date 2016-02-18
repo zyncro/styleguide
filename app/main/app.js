@@ -31,6 +31,11 @@ config(['$routeProvider','hljsServiceProvider','uiSelectConfig', function($route
 
 
 
+
+/**
+ * xeditable
+ */
+
     $httpBackend.whenGET(/^\/js\/spec\/mocks.*\//).passThrough();
     $httpBackend.whenGET(/^\/html\/mocks.*\//).passThrough();
     $httpBackend.whenGET(/.*/).passThrough();
@@ -40,9 +45,6 @@ config(['$routeProvider','hljsServiceProvider','uiSelectConfig', function($route
     $httpBackend.whenGET(/\.html$/).passThrough();
     // For everything else, don't mock
     $httpBackend.whenGET(/^\w+.*/).passThrough();
-
-
-
 
 // ---------------- mock $http requests --------------------
 
@@ -75,10 +77,6 @@ config(['$routeProvider','hljsServiceProvider','uiSelectConfig', function($route
       }];
     }
   });
-
-
-
-// xeditable
   editableOptions.theme = 'bs3';
 
 

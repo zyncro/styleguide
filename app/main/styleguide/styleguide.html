@@ -1146,6 +1146,14 @@
  -->
             
 
+<section id="Check-input-buttons" class="styleguide">
+    <h1>Check-input-buttons</h1>
+    <div class="code-sample">
+        <input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter email">
+    </div>
+</section>
+            
+
 <section id="cloud-tag" class="styleguide">
 <h1>Cloud-tag</h1>
 <div class="code-sample">
@@ -1499,28 +1507,27 @@
 <section id="Editable-form" class="styleguide">
     <h1>Editable-form</h1>
     <div class="code-sample">
-        <form editable-form name="editableForm" onaftersave="saveUser()" ng-class="{ 'box': editableFormVisible, 'caca': editableFormVisible }">
+        <form editable-form name="editableForm" onaftersave="saveUser()" class="editable-form" ng-class="{ 'box': editableFormVisible }">
+            <label for="title" class="control-label" ng-class="{ 'visible': editableFormVisible }">Title</label>
             <h3 editable-text="user.name" onshow="editableFormToggle()" onhide="editableFormToggle()" e-name="name" e-required>{{ user.name || 'empty' }}</h3>
+            <label for="description" class="control-label" ng-class="{ 'visible': editableFormVisible }">Description</label>
             <p href="#" editable-textarea="user.desc" e-rows="7" e-cols="40">
                 {{ user.desc || 'no description' }}
             </p>
             <div>
                 <!-- button to show form -->
                 <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
-                Edit
+                <i tooltip="Edit" class="icon-edit"></i> 
                 </button>
                 <!-- buttons to submit / cancel form -->
                 <div class="footer-buttons" ng-show="editableForm.$visible">
                     <button type="button" class="btn btn-default"  ng-click="editableForm.$cancel()">Cancel</button>
-                    <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting"> Save</button>                    
+                    <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting"> Save</button>
                 </div>
             </div>
         </form>
     </div>
 </section>
-
-
-
             
 
 <section id="Embedly" class="styleguide">
@@ -2063,6 +2070,55 @@
         <textarea class="form-control textarea-vresize"></textarea>
         <h5>resize horizontal only</h5>
         <textarea class="form-control textarea-hresize"></textarea>
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Form-inline</h1>
+    <div class="code-sample">
+      <form class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputEmail3">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputPassword3">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Remember me
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Sign in</button>
+</form>
+
+
+
+
+<form class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+    <div class="input-group">
+      <div class="input-group-addon">$</div>
+      <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+      <div class="input-group-addon">.00</div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Transfer cash</button>
+</form>
+
+
+
+
+        
     </div>
 </section>
             
