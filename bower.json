@@ -20,7 +20,8 @@
     "angular-ui-select": "0.13.0",
     "highlightjs": "~9.0.0",
     "nsPopover": "~0.6.8",
-    "angular-xeditable": "~0.1.10"
+    "angular-xeditable": "~0.1.10",
+    "angular-google-chart": "~0.1.0"
   },
   "resolutions": {
     "angular": "1.2.28"

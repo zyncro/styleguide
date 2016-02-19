@@ -256,4 +256,6 @@ zyncro-styleguide/
 [Ui Bootstrap](https://angular-ui.github.io/bootstrap/)
 [ui select](https://github.com/angular-ui/ui-select)
 [x editable](https://vitalets.github.io/angular-xeditable)
+[googlecharts](http://angular-google-chart.github.io/)
+
 

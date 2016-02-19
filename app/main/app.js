@@ -14,7 +14,8 @@ angular.module('myApp', [
   'hljs',
   'nsPopover',
   'xeditable',
-  'ngMockE2E'
+  'ngMockE2E',
+  'googlechart'
 ]).
 config(['$routeProvider','hljsServiceProvider','uiSelectConfig', function($routeProvider, hljsServiceProvider, uiSelectConfig) {
 
