@@ -1526,10 +1526,19 @@
 <section id="Editable-Field" class="styleguide">
     <h1>Editable-Field (Angular-xeditable )</h1>
     <div class="code-sample">
+        <h3>Trigger manually</h3>
+        <span editable-text="user.name" e-form="textBtnForm">{{ user.name || 'empty' }}</span>
+        <button class="btn btn-default" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">
+            edit
+        </button>
+        <hr/>
         <h3>Trigger manually No buttons</h3>
         <span editable-text="user.name" e-form="textBtnForm" buttons="no">{{ user.name || 'empty' }}</span>
         <button class="btn btn-default" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">
             edit
+        </button>
+
+
     </div>
 </section>
 
