@@ -1,6 +1,17 @@
 //
 // Avatar-icons
 // --------------------------------------------------
+
+.avatar-icon {
+    @extend .avatar;
+    [class*="icon-"] {
+        font-size: 24px;
+    }
+    &:hover, &:focus {
+        text-decoration: none;
+    }
+}
+
 .avatar-icon-primary {
     @include avatar-icon(35px, $brand_primary);
 }
@@ -71,12 +82,4 @@
 
 .zip-big, .ppt-big {
     @include avatar-icon(105px, $icon-file-other-bg);
-}
-
-.avatar-icon {
-@extend .avatar;
-
-    [class*="icon-"] {
-        font-size: 24px;
-    }
 }

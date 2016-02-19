@@ -1,0 +1,82 @@
+//
+// Avatar-icons
+// --------------------------------------------------
+.rounded-button-primary {
+    @include rounded-button(35px, $brand_primary);
+}
+
+.rounded-button-success {
+    @include rounded-button(35px, $brand_success);
+}
+
+.rounded-button-default {
+    @include rounded-button(35px, $gray);
+}
+
+//
+// File-extension-icons
+// --------------------------------------------------
+
+.xls {
+    @include rounded-button(35px, $icon-file-xls-bg);
+}
+
+.pdf {
+    @include rounded-button(35px, $icon-file-pdf-bg);
+}
+
+.codigo, .txt {
+    @include rounded-button(35px, $icon-file-css-bg);
+}
+
+.doc {
+    @include rounded-button(35px, $icon-file-doc-bg);
+}
+
+.image {
+    @include rounded-button(35px, $icon-file-image-bg);
+}
+
+.folder, .file {
+    @include rounded-button(35px, $icon-folder-bg);
+}
+
+.zip, .ppt {
+    @include rounded-button(35px, $icon-file-other-bg);
+}
+
+.xls-big {
+    @include rounded-button(105px, $icon-file-xls-bg);
+}
+
+.pdf-big {
+    @include rounded-button(105px, $icon-file-pdf-bg);
+}
+
+.codigo-big, .txt-big {
+    @include rounded-button(105px, $icon-file-css-bg);
+}
+
+.doc-big {
+    @include rounded-button(35px, $icon-file-doc-bg);
+}
+
+.image-big, .doc-big {
+    @include rounded-button(105px, $icon-file-image-bg);
+}
+
+.folder-big, .file-big {
+    @include rounded-button(105px, $icon-folder-bg);
+}
+
+.zip-big, .ppt-big {
+    @include rounded-button(105px, $icon-file-other-bg);
+}
+
+.rounded-button {
+@extend .avatar;
+
+    [class*="icon-"] {
+        font-size: 24px;
+    }
+}

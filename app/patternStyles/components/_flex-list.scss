@@ -24,6 +24,8 @@
     background-color: $list-group-bg;
     position: relative;
     margin-bottom: -1px;
+    list-style: none;
+    padding: 0;
     @extend .vertical-container;
     &:first-child {
         @include border-top-radius($list-group-border-radius);

@@ -250,9 +250,10 @@ zyncro-styleguide/
   - Pseudo-classes/-elements, e.g. a:hover
 
 
-#### Reference
+#### External Reference (Vendors)
   
 [Bootstrap](http://getbootstrap.com/css)
+[Ui Bootstrap](https://angular-ui.github.io/bootstrap/)
 [ui select](https://github.com/angular-ui/ui-select)
 [x editable](https://vitalets.github.io/angular-xeditable)
 
