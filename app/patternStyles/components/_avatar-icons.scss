@@ -14,9 +14,9 @@
 }
 
 .avatar-icon-sm {
-    @include avatar-icon-size(18px);
+    @include avatar-icon-size(12px);
     [class*="icon-"] {
-        font-size: 18px;
+        font-size: 12px;
     }
 }
 .avatar-icon-lg {
