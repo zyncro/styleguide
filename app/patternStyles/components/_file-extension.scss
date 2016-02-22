@@ -1,0 +1,32 @@
+//
+// File-extension-icons
+// --------------------------------------------------
+
+.xls {
+    @include avatar-icon-color($icon-file-xls-bg);
+}
+
+.pdf {
+    @include avatar-icon-color($icon-file-pdf-bg);
+}
+
+.codigo, .txt {
+    @include avatar-icon-color($icon-file-css-bg);
+}
+
+.doc {
+    @include avatar-icon-color($icon-file-doc-bg);
+}
+
+.image {
+    @include avatar-icon-color($icon-file-image-bg);
+}
+
+.folder, .file {
+    @include avatar-icon-color($icon-folder-bg);
+}
+
+.zip, .ppt {
+    @include avatar-icon-color($icon-file-other-bg);
+}
+

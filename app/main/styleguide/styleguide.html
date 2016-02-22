@@ -396,70 +396,6 @@
         <div class="avatar-icon avatar-icon-success">
             <i class="icon icon-close"></i>
         </div>
-
-        <hr/>
-        <h2>File-extension-icons</h2>
-        <div class="avatar-icon image">
-            <i class="icon icon-image"></i>
-        </div>
-        <div class="avatar-icon xls">
-            <i class="icon icon-xls"></i>
-        </div>
-        <div class="avatar-icon pdf">
-            <i class="icon icon-pdf"></i>
-        </div>
-        <div class="avatar-icon codigo">
-            <i class="icon icon-codigo"></i>
-        </div>
-        <div class="avatar-icon txt">
-            <i class="icon icon-txt"></i>
-        </div>
-        <div class="avatar-icon doc">
-            <i class="icon icon-doc"></i>
-        </div>
-        <div class="avatar-icon folder">
-            <i class="icon icon-folder"></i>
-        </div>
-        <div class="avatar-icon file">
-            <i class="icon icon-file"></i>
-        </div>
-        <div class="avatar-icon zip">
-            <i class="icon icon-zip"></i>
-        </div>
-        <div class="avatar-icon ppt">
-            <i class="icon icon-pdf"></i>
-        </div>
-        <hr />
-        <div class="avatar-icon image-big">
-            <i class="icon icon-image"></i>
-        </div>
-        <div class="avatar-icon xls-big">
-            <i class="icon icon-xls"></i>
-        </div>
-        <div class="avatar-icon pdf-big">
-            <i class="icon icon-pdf"></i>
-        </div>
-        <div class="avatar-icon codigo-big">
-            <i class="icon icon-codigo"></i>
-        </div>
-        <div class="avatar-icon txt-big">
-            <i class="icon icon-txt"></i>
-        </div>
-        <div class="avatar-icon doc-big">
-            <i class="icon icon-doc"></i>
-        </div>
-        <div class="avatar-icon folder-big">
-            <i class="icon icon-folder"></i>
-        </div>
-        <div class="avatar-icon file-big">
-            <i class="icon icon-file"></i>
-        </div>
-        <div class="avatar-icon zip-big">
-            <i class="icon icon-zip"></i>
-        </div>
-        <div class="avatar-icon ppt-big">
-            <i class="icon icon-ppt"></i>
-        </div>
     </div>
 </section>
 
@@ -1534,27 +1470,28 @@
 <section id="Editable-form" class="styleguide">
     <h1>Editable-form</h1>
     <div class="code-sample">
-        <form editable-form name="editableForm" onaftersave="saveUser()" class="editable-form" ng-class="{ 'box': editableFormVisible }">
-            <label for="title" class="control-label" ng-class="{ 'visible': editableFormVisible }">Title</label>
-            <h3 editable-text="user.name" onshow="editableFormToggle()" onhide="editableFormToggle()" e-name="name" e-required>{{ user.name || 'empty' }}</h3>
-            <label for="description" class="control-label" ng-class="{ 'visible': editableFormVisible }">Description</label>
-            <p href="#" editable-textarea="user.desc" e-rows="7" e-cols="40">
+        <form editable-form name="editableForm" onaftersave="saveUser()" class="editable-form" ng-class="editableFormVisible ? 'edit-enabled' : 'edit-disabled'" onshow="editableFormToggle()" onhide="editableFormToggle()">
+            <label for="title" >Title</label>
+            <div class="editable-form-top">
+                <h3 editable-text="user.name" class="editable-form-title" e-name="name" e-required>{{ user.name || 'empty' }}</h3>
+                <!-- button to show form -->
+                <button type="button" class="editable-form-btn" ng-click="editableForm.$show()">
+                    <i tooltip="Edit" class="icon-edit"></i>
+                </button>
+            </div>
+            <label for="description">Description</label>
+            <p editable-textarea="user.desc" e-rows="7" e-cols="40">
                 {{ user.desc || 'no description' }}
             </p>
-            <div>
-                <!-- button to show form -->
-                <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
-                <i tooltip="Edit" class="icon-edit"></i> 
-                </button>
-                <!-- buttons to submit / cancel form -->
-                <div class="footer-buttons" ng-show="editableForm.$visible">
-                    <button type="button" class="btn btn-default"  ng-click="editableForm.$cancel()">Cancel</button>
-                    <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting"> Save</button>
-                </div>
+            <!-- buttons to submit / cancel form -->
+            <div class="footer-buttons">
+                <button type="button" class="btn btn-default" ng-click="editableForm.$cancel()">Cancel</button>
+                <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting"> Save</button>
             </div>
         </form>
     </div>
 </section>
+
             
 
 <section id="Embedly" class="styleguide">
@@ -1565,6 +1502,84 @@
         <h4 class="embedly-title"><a href="#">Donec idelit - 14m</a></h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet recusandae, et incidunt! Magnam tempore cum unde dignissimos, dolorum facilis tempora commodi dicta quibusdam animi, aspernatur molestias incidunt ducimus modi ratione!</p>
         </div>
+    </div>
+</section>
+
+            
+
+<section id="File-extension" name="File-extension" class="styleguide">
+    <h1>File-extension</h1>
+    <div class="code-sample">
+
+
+        <hr/>
+        <h2>File-extension-icons</h2>
+        <div class="avatar-icon image">
+            <i class="icon icon-image"></i>
+        </div>
+        <div class="avatar-icon xls">
+            <i class="icon icon-xls"></i>
+        </div>
+        <div class="avatar-icon pdf">
+            <i class="icon icon-pdf"></i>
+        </div>
+        <div class="avatar-icon codigo">
+            <i class="icon icon-codigo"></i>
+        </div>
+        <div class="avatar-icon txt">
+            <i class="icon icon-txt"></i>
+        </div>
+        <div class="avatar-icon doc">
+            <i class="icon icon-doc"></i>
+        </div>
+        <div class="avatar-icon folder">
+            <i class="icon icon-folder"></i>
+        </div>
+        <div class="avatar-icon file">
+            <i class="icon icon-file"></i>
+        </div>
+        <div class="avatar-icon zip">
+            <i class="icon icon-zip"></i>
+        </div>
+        <div class="avatar-icon ppt">
+            <i class="icon icon-pdf"></i>
+        </div>
+
+<hr>
+
+        <div class="avatar-icon avatar-icon-lg image">
+            <i class="icon icon-image"></i>
+        </div>
+        <div class="avatar-icon avatar-icon-lg xls">
+            <i class="icon icon-xls"></i>
+        </div>
+        <div class="avatar-icon avatar-icon-lg pdf">
+            <i class="icon icon-pdf"></i>
+        </div>
+        <div class="avatar-icon avatar-icon-lg codigo">
+            <i class="icon icon-codigo"></i>
+        </div>
+        <div class="avatar-icon avatar-icon-lg txt">
+            <i class="icon icon-txt"></i>
+        </div>
+        <div class="avatar-icon avatar-icon-lg doc">
+            <i class="icon icon-doc"></i>
+        </div>
+        <div class="avatar-icon avatar-icon-lg folder">
+            <i class="icon icon-folder"></i>
+        </div>
+        <div class="avatar-icon avatar-icon-lg file">
+            <i class="icon icon-file"></i>
+        </div>
+        <div class="avatar-icon avatar-icon-lg zip">
+            <i class="icon icon-zip"></i>
+        </div>
+        <div class="avatar-icon avatar-icon-lg ppt">
+            <i class="icon icon-pdf"></i>
+        </div>
+
+
+
     </div>
 </section>
 

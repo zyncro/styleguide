@@ -8,8 +8,7 @@
     background-repeat: no-repeat;
 }
 
-@mixin avatar-icon($size, $background) {
-    background: $background;
+@mixin avatar-icon-size($size) {
     width: $size;
     height: $size;
     border-radius: 50%;
@@ -17,5 +16,8 @@
     line-height: $size + 5;
     vertical-align: middle;
     padding: 0px;
+}
+@mixin avatar-icon-color($background) {
+    background: $background;
     color: #ffffff;
 }

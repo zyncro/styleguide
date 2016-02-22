@@ -238,6 +238,7 @@ zyncro-styleguide/
 - Most direct selectors, less is better.
 - Use less classes names, less combinations
 - Use @extend and @mixins
+- Use theme classes & styling classes
 - Always take care of Key selector (Performance ordered)
   - AVOID -> ID, e.g. #header 
   - Class, e.g. .promo 

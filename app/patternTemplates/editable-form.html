@@ -1,23 +1,23 @@
 <section id="Editable-form" class="styleguide">
     <h1>Editable-form</h1>
     <div class="code-sample">
-        <form editable-form name="editableForm" onaftersave="saveUser()" class="editable-form" ng-class="{ 'box': editableFormVisible }">
-            <label for="title" class="control-label" ng-class="{ 'visible': editableFormVisible }">Title</label>
-            <h3 editable-text="user.name" onshow="editableFormToggle()" onhide="editableFormToggle()" e-name="name" e-required>{{ user.name || 'empty' }}</h3>
-            <label for="description" class="control-label" ng-class="{ 'visible': editableFormVisible }">Description</label>
-            <p href="#" editable-textarea="user.desc" e-rows="7" e-cols="40">
+        <form editable-form name="editableForm" onaftersave="saveUser()" class="editable-form" ng-class="editableFormVisible ? 'edit-enabled' : 'edit-disabled'" onshow="editableFormToggle()" onhide="editableFormToggle()">
+            <label for="title" >Title</label>
+            <div class="editable-form-top">
+                <h3 editable-text="user.name" class="editable-form-title" e-name="name" e-required>{{ user.name || 'empty' }}</h3>
+                <!-- button to show form -->
+                <button type="button" class="editable-form-btn" ng-click="editableForm.$show()">
+                    <i tooltip="Edit" class="icon-edit"></i>
+                </button>
+            </div>
+            <label for="description">Description</label>
+            <p editable-textarea="user.desc" e-rows="7" e-cols="40">
                 {{ user.desc || 'no description' }}
             </p>
-            <div>
-                <!-- button to show form -->
-                <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
-                <i tooltip="Edit" class="icon-edit"></i> 
-                </button>
-                <!-- buttons to submit / cancel form -->
-                <div class="footer-buttons" ng-show="editableForm.$visible">
-                    <button type="button" class="btn btn-default"  ng-click="editableForm.$cancel()">Cancel</button>
-                    <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting"> Save</button>
-                </div>
+            <!-- buttons to submit / cancel form -->
+            <div class="footer-buttons">
+                <button type="button" class="btn btn-default" ng-click="editableForm.$cancel()">Cancel</button>
+                <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting"> Save</button>
             </div>
         </form>
     </div>

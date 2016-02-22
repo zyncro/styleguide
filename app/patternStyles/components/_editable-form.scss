@@ -2,42 +2,43 @@
 // editableForm
 // --------------------------------------------------
 
-// TODO: clean
-
 .editable-form {
-    label {
-        display: none;
+    > label {
+        @extend .control-label;
     }
-    label.visible {
+    textarea {
+        @extend .textarea-vresize;
+    }
+}
+
+.editable-form-btn {
+    @extend .btn;
+    @extend .btn-link;
+}
+
+.editable-form-title {
+    margin-top: 0;
+}
+
+.editable-form.edit-enabled {
+    @extend .box;
+    > label,
+    > .footer-buttons {
         display: block;
     }
+     .editable-form-btn {
+        display: none;
+    }
 }
-
-div[ng-app] {
-    margin: 10px;
-}
-
-form[name="editableForm"] > div {
-    height: auto;
-    padding: 5px 0;
-}
-
-form[name="editableForm"] .title {
-    font-weight: bold;
-    padding-top: 5px;
-    vertical-align: top;
-    min-width: 90px;
-}
-
-form[name="editableForm"] .editable {
-    padding-top: 5px;
-    vertical-align: top;
-}
-
-form[name="editableForm"] select {
-    width: 120px;
-}
-
-form[name="editableForm"] .editable.editable-hide {
-    display: none;
+.editable-form.edit-disabled {
+    > .editable-form-top {
+        display: flex;
+    }
+    .editable-form-btn {
+        display: block;
+    }
+    > label,
+    > .footer-buttons {
+        display: none;
+    }
 }
