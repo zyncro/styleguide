@@ -5,6 +5,16 @@
 .avatar-icon {
     @extend .avatar;
     @include avatar-icon-size(35px);
+
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1em;
+    padding: 0px;
+
     &:hover, &:focus {
         text-decoration: none;
     }

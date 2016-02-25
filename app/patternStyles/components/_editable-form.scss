@@ -9,6 +9,9 @@
     textarea {
         @extend .textarea-vresize;
     }
+    span{
+        display: block;
+    }
 }
 
 .editable-form-btn {

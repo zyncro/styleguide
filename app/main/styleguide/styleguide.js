@@ -85,13 +85,75 @@ angular.module('myApp.styleguide', ['ngRoute', 'ngSanitize', 'ui.select'])
       }]
     };
 
-    $scope.chart = chart1;
+    $scope.chart1 = chart1;
 
-    $scope.aa=1*$scope.chart.data[1][1];
-    $scope.bb=1*$scope.chart.data[2][1];
-    $scope.cc=1*$scope.chart.data[3][1];
+    $scope.aa=1*$scope.chart1.data[1][1];
+    $scope.bb=1*$scope.chart1.data[2][1];
+    $scope.cc=1*$scope.chart1.data[3][1];
 
 
+
+
+
+    var chart2 = {};
+    chart2.type = "ColumnChart";
+    chart2.data = [
+       ['Component', 'cost'],
+       ['Software', 50000],
+       ['Hardware', 80000]
+      ];
+    chart2.data.push(['Services',20000]);
+    chart2.options = {
+        displayExactValues: true,
+        width: 400,
+        height: 200,
+        is3D: true,
+        chartArea: {left:10,top:10,bottom:0,height:"100%"}
+    };
+
+    chart2.formatters = {
+      number : [{
+        columnNum: 1,
+        pattern: "$ #,##0.00"
+      }]
+    };
+
+    $scope.chart2 = chart2;
+
+    $scope.aa=1*$scope.chart2.data[1][1];
+    $scope.bb=1*$scope.chart2.data[2][1];
+    $scope.cc=1*$scope.chart2.data[3][1];
+
+
+
+    var chart3 = {};
+    chart3.type = "BarChart";
+    chart3.data = [
+       ['Component', 'cost'],
+       ['Software', 50000],
+       ['Hardware', 80000]
+      ];
+    chart3.data.push(['Services',20000]);
+    chart3.options = {
+        displayExactValues: true,
+        width: 400,
+        height: 200,
+        is3D: true,
+        chartArea: {left:10,top:10,bottom:0,height:"100%"}
+    };
+
+    chart3.formatters = {
+      number : [{
+        columnNum: 1,
+        pattern: "$ #,##0.00"
+      }]
+    };
+
+    $scope.chart3 = chart3;
+
+    $scope.aa=1*$scope.chart3.data[1][1];
+    $scope.bb=1*$scope.chart3.data[2][1];
+    $scope.cc=1*$scope.chart3.data[3][1];
 
 
 
@@ -127,6 +189,16 @@ angular.module('myApp.styleguide', ['ngRoute', 'ngSanitize', 'ui.select'])
                 }
             });
         };
+
+
+
+
+
+
+
+
+
+
 
 
 

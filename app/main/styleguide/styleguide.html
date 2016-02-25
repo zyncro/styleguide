@@ -386,32 +386,35 @@
 <section id="Avatar-icons" name="Avatar-icons" class="styleguide">
     <h1>Avatar-icons</h1>
     <div class="code-sample">
+        <a href class="avatar-icon avatar-icon-sm avatar-icon-primary">
+            <i class="icon icon-check"></i>
+        </a>
+        <a href class="avatar-icon avatar-icon-sm avatar-icon-default">
+            <i class="icon icon-close"></i>
+        </a>
+        <div class="avatar-icon avatar-icon-sm avatar-icon-success">
+            <i class="icon icon-close"></i>
+        </div>
+        <hr/>
         <a href class="avatar-icon avatar-icon-primary">
             <i class="icon icon-check"></i>
         </a>
         <a href class="avatar-icon avatar-icon-default">
             <i class="icon icon-close"></i>
         </a>
-
         <div class="avatar-icon avatar-icon-success">
             <i class="icon icon-close"></i>
         </div>
-
-
-<hr/>
-
-
+        <hr/>
         <a href class="avatar-icon avatar-icon-lg avatar-icon-primary">
             <i class="icon icon-check"></i>
         </a>
         <a href class="avatar-icon avatar-icon-lg avatar-icon-default">
             <i class="icon icon-close"></i>
         </a>
-
         <div class="avatar-icon avatar-icon-lg avatar-icon-success">
             <i class="icon icon-close"></i>
         </div>
-
     </div>
 </section>
 
@@ -912,33 +915,21 @@
                 </ul>
             </div>
         </div>
-        
-        <!--         <h2>Group Buttons Justified</h2>
-        <hr />
-        <div class="btn-group btn-group-justified" role="group" aria-label="...">
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default">Left</button>
-            </div>
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default">Middle</button>
-            </div>
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default">Right</button>
-            </div>
-        </div>
-        <hr />
-        <a role="button" href="#" class="btn btn-default">
-            <i tooltip="Add like" class="icon-like-off"></i>
-        </a>
-        <h2>Vertical Group Buttons</h2>
-        <hr />
-        <div class="btn-group btn-group-vertical" role="group" aria-label="...">
-            <button type="button" class="btn btn-default">Left</button>
-            <button type="button" class="btn btn-default">Middle</button>
-            <button type="button" class="btn btn-default">Right</button>
-        </div> -->
+
+     <h2>Button Rounded</h2>
+
+       <!-- Standard gray button with gradient -->
+        <button type="button" class="btn-rounded btn-default"><i class="icon-add"></i></button>
+        <button type="button" class="btn-rounded btn-primary"><i class="icon-add"></i></button>
+        <button type="button" class="btn-rounded btn-success"><i class="icon-add"></i></button>
+        <button type="button" class="btn-rounded btn-info"><i class="icon-close"></i></button>
+        <button type="button" class="btn-rounded btn-warning"> <i class="icon-close"></i></button>
+        <button type="button" class="btn-rounded btn-danger"><i class="icon-close"></i></button>
+        <button type="button" class="btn-rounded btn-link btn-link-icon"><i class="icon-close"></i></button>
 
 
+        <button type="button" class="btn-rounded btn-default btn-rounded-lg"><i class="icon-add"></i></button>
+        <button type="button" class="btn-rounded btn-primary btn-rounded-sm"><i class="icon-add"></i></button>
 
 
 
@@ -1106,7 +1097,11 @@
 <section id="Charts" class="styleguide">
     <h1> Charts (Google-charts) </h1>
     <div class="code-sample">
-        <div google-chart chart="chart" class="charts"></div>
+        <div google-chart chart="chart1" class="charts"></div>
+        <hr/>
+        <div google-chart chart="chart2" class="charts"></div>     
+        <hr/>
+        <div google-chart chart="chart3" class="charts"></div>        
     </div>
 </section>
 
